@@ -1,0 +1,90 @@
+name: Converter lojas
+
+# Todo dia de madrugada (horário de Brasília), quando o código muda e pelo botão "Run workflow".
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: garimpo
+  cancel-in-progress: false
+
+jobs:
+  testes:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml==6.0.2
+      - name: Testes do conversor
+        run: python -m unittest discover -s tests -v
+
+  converter:
+    needs: testes
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        origem: [casaos, linuxserver]
+    env:
+      ORIGEM: ${{ matrix.origem }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: garimpo
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: oven-sh/setup-bun@v2
+      - name: Ferramentas (PyYAML, Pillow e rsvg para os logos)
+        run: |
+          pip install pyyaml==6.0.2 pillow==11.3.0
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq librsvg2-bin
+
+      - name: Baixar a loja de origem e a loja oficial do Runtipi
+        run: |
+          fonte=$(jq -r --arg o "$ORIGEM" '.[] | select(.slug == $o) | .fonte' garimpo/origens.json)
+          ramo=$(jq -r --arg o "$ORIGEM" '.[] | select(.slug == $o) | .ramo_fonte' garimpo/origens.json)
+          git clone -q --depth 1 --branch "$ramo" "$fonte" fonte
+          git clone -q --depth 1 https://github.com/runtipi/runtipi-appstore oficial
+          echo "origem: $(git -C fonte rev-parse --short HEAD) · oficial: $(git -C oficial rev-parse --short HEAD)"
+
+      - name: Abrir o ramo da loja convertida
+        run: |
+          cd garimpo
+          if git ls-remote --exit-code --heads origin "$ORIGEM" >/dev/null; then
+            git fetch -q --depth 1 origin "$ORIGEM:$ORIGEM"
+            git worktree add -q ../saida "$ORIGEM"
+          else
+            git worktree add -q --orphan -b "$ORIGEM" ../saida
+          fi
+
+      - name: Converter
+        run: python -I garimpo/garimpo/converter.py --origem "$ORIGEM" --fonte fonte --oficial oficial --saida saida --origens garimpo/origens.json
+
+      - name: Conferir a segurança de novo (independente da conversão)
+        run: python -I garimpo/garimpo/confere.py saida
+
+      - name: Testes oficiais da loja do Runtipi
+        run: bash garimpo/garimpo/testes-oficiais.sh oficial saida
+
+      - name: Publicar no ramo da loja
+        run: |
+          cd saida
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nada mudou."
+            exit 0
+          fi
+          git -c user.name="garimpo[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Loja $ORIGEM atualizada ($(jq -r .apps garimpo.json) apps)"
+          git push -q origin "HEAD:$ORIGEM"

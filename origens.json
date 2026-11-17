@@ -1,0 +1,21 @@
+[
+  {
+    "slug": "casaos",
+    "nome": "CasaOS",
+    "selo": "via CasaOS",
+    "fonte": "https://github.com/IceWhaleTech/CasaOS-AppStore",
+    "ramo_fonte": "main",
+    "licenca": "Apache-2.0",
+    "sobre": "Apps da loja oficial do CasaOS e do ZimaOS (IceWhale), convertidos para o formato do Runtipi."
+  },
+  {
+    "slug": "linuxserver",
+    "nome": "LinuxServer",
+    "selo": "via LinuxServer",
+    "fonte": "https://github.com/WisdomSky/LinuxServer-AppStore",
+    "ramo_fonte": "main",
+    "licenca": "GPL-3.0",
+    "tira_prefixo": "linuxserver-",
+    "sobre": "Apps da LinuxServer-AppStore (imagens do LinuxServer.io no formato do CasaOS), convertidos para o formato do Runtipi."
+  }
+]
