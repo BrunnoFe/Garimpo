@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Kasm (LinuxServer.io)",
+  "id": "kasm",
+  "available": true,
+  "port": 20036,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.19.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "O Workspaces é uma plataforma de streaming de contêineres Docker para fornecer acesso baseado em navegador a desktops, aplicativos e serviços web. O Kasm utiliza Infraestrutura de Desktop Contêinerizada (CDI) habilitada para DevOps para criar contêineres Docker descartáveis e sob demanda, acessíveis",
+  "short_desc": "O Workspaces é uma plataforma de streaming de contêineres Docker para fornecer acesso baseado em navegador a desktops, aplicativos e serviços web. O K",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794954319126,
+  "updated_at": 1794954319126
+}

@@ -2,6 +2,8 @@
 
 O phpMyAdmin é uma ferramenta de software livre escrita em PHP, destinada a gerenciar o MySQL pela Web. O phpMyAdmin suporta uma ampla gama de operações no MySQL e no MariaDB.
 
+A receita original vinha com uma senha fixa (igual para todo mundo); aqui você escolhe a sua na instalação.
+
 ---
 
 Convertido automaticamente da loja LinuxServer (https://github.com/WisdomSky/LinuxServer-AppStore, licença GPL-3.0) pelo Garimpo do BrunOS. Pastas: os dados do app ficam na pasta do app no Runtipi; filmes, músicas, fotos e downloads, na pasta de mídia do Runtipi. Problemas com o app em si: fale com o autor dele.

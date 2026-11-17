@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Mullvad browser (LinuxServer.io)",
+  "id": "mullvad-browser",
+  "available": true,
+  "port": 3095,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "16.0.2",
+  "categories": [
+    "utilities"
+  ],
+  "description": "O Mullvad Browser é um navegador web focado em privacidade, desenvolvido em colaboração entre a Mullvad VPN e o Projeto Tor. Ele foi projetado para minimizar o rastreamento e a identificação do usuário. Pode-se dizer que é um navegador Tor para usar sem a rede Tor. Em vez disso, você pode usá-lo com",
+  "short_desc": "O Mullvad Browser é um navegador web focado em privacidade, desenvolvido em colaboração entre a Mullvad VPN e o Projeto Tor. Ele foi projetado para mi",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794954319126,
+  "updated_at": 1794954319126
+}

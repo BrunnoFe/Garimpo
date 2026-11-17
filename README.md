@@ -6,7 +6,7 @@ Esta loja do Runtipi é gerada automaticamente todo dia a partir de <https://git
 
 Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `linuxserver`, endereço `https://github.com/BrunnoFe/Garimpo/tree/linuxserver`. No BrunOS: janela Loja → Lojas.
 
-## Apps (188)
+## Apps (198)
 
 - Airsonic advanced (LinuxServer.io) (`airsonic-advanced`)
 - Altus (LinuxServer.io) (`altus`)
@@ -33,6 +33,7 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `linuxserver`, endere�
 - Chromium (LinuxServer.io) (`chromium`)
 - Ci (`ci`)
 - Ci debug (`ci-debug`)
+- Citron (`citron`)
 - Cops (LinuxServer.io) (`cops`)
 - Craft apps (LinuxServer.io) (`craft-apps`)
 - Cura (LinuxServer.io) (`cura`)
@@ -82,6 +83,7 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `linuxserver`, endere�
 - Intellij idea (LinuxServer.io) (`intellij-idea`)
 - Jenkins builder (`jenkins-builder`)
 - Kali linux (LinuxServer.io) (`kali-linux`)
+- Kasm (LinuxServer.io) (`kasm`)
 - Kdenlive (LinuxServer.io) (`kdenlive`)
 - Keepassxc (LinuxServer.io) (`keepassxc`)
 - Kicad (LinuxServer.io) (`kicad`)
@@ -107,6 +109,7 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `linuxserver`, endere�
 - Modmanager (LinuxServer.io) (`modmanager`)
 - Modrinth (LinuxServer.io) (`modrinth`)
 - Msedge (LinuxServer.io) (`msedge`)
+- Mullvad browser (LinuxServer.io) (`mullvad-browser`)
 - Mysql workbench (LinuxServer.io) (`mysql-workbench`)
 - Nano (`nano`)
 - Nano wallet (`nano-wallet`)
@@ -121,6 +124,7 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `linuxserver`, endere�
 - Onlyoffice (LinuxServer.io) (`onlyoffice`)
 - Openshot (LinuxServer.io) (`openshot`)
 - Openssh server (LinuxServer.io) (`openssh-server`)
+- Openvscode server (`openvscode-server`)
 - Opera (LinuxServer.io) (`opera`)
 - Orcaslicer (LinuxServer.io) (`orcaslicer`)
 - Oscam (LinuxServer.io) (`oscam`)
@@ -144,6 +148,7 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `linuxserver`, endere�
 - Quassel web (`quassel-web`)
 - Raneto (LinuxServer.io) (`raneto`)
 - Rawtherapee (LinuxServer.io) (`rawtherapee`)
+- Rdesktop (`rdesktop`)
 - Readme sync (`readme-sync`)
 - Remmina (LinuxServer.io) (`remmina`)
 - Requestrr (`requestrr`)
@@ -152,6 +157,7 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `linuxserver`, endere�
 - Rsnapshot (LinuxServer.io) (`rsnapshot`)
 - Rustdesk (LinuxServer.io) (`rustdesk`)
 - Scummvm (LinuxServer.io) (`scummvm`)
+- Sealskin (LinuxServer.io) (`sealskin`)
 - Series troxide (`series-troxide`)
 - Shadps4 (LinuxServer.io) (`shadps4`)
 - Shotcut (LinuxServer.io) (`shotcut`)
@@ -165,12 +171,15 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `linuxserver`, endere�
 - Spotube (LinuxServer.io) (`spotube`)
 - Sqlitebrowser (LinuxServer.io) (`sqlitebrowser`)
 - Steam (LinuxServer.io) (`steam`)
+- Steamos (`steamos`)
 - Swag (LinuxServer.io) (`swag`)
 - Synclounge (LinuxServer.io) (`synclounge`)
+- Syslog ng (LinuxServer.io) (`syslog-ng`)
 - Telegram (LinuxServer.io) (`telegram`)
 - Tester (`tester`)
 - Thelounge (LinuxServer.io) (`thelounge`)
 - Thunderbird (LinuxServer.io) (`thunderbird`)
+- Tvheadend (LinuxServer.io) (`tvheadend`)
 - Ubooquity (LinuxServer.io) (`ubooquity`)
 - Ungoogled chromium (LinuxServer.io) (`ungoogled-chromium`)
 - Unifi controller (`unifi-controller`)
@@ -191,28 +200,34 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `linuxserver`, endere�
 - Wps office (LinuxServer.io) (`wps-office`)
 - Xbackbone (LinuxServer.io) (`xbackbone`)
 - Xemu (LinuxServer.io) (`xemu`)
+- Xvfb (`xvfb`)
 - Yaak (LinuxServer.io) (`yaak`)
 - Yq (`yq`)
 - Zen (LinuxServer.io) (`zen`)
 - Znc (LinuxServer.io) (`znc`)
 - Zotero (LinuxServer.io) (`zotero`)
 
-## Recusados por segurança ou formato (12)
+## Requerem privilégios (10)
 
-Receitas que dariam poder demais sobre o servidor ou que não deu para converter:
+Estes apps pedem poderes sobre o servidor que os apps comuns não têm. No BrunOS eles aparecem com o selo **Requer privilégios** e só instalam depois de "Entendo os riscos" + Senha de configuração. Na tela do próprio Runtipi aparecem sem aviso: instale só se confia no app.
 
-- Citron: o serviço app monta a pasta /srv/lsio/citron/config do servidor
+- `citron`: Mexe na pasta /srv/lsio/citron/config do servidor
+- `kasm`: Mexe na pasta /dev/input do servidor; Mexe na pasta /run/udev/data do servidor
+- `mullvad-browser`: Poderes de administrador do Linux (NET_ADMIN)
+- `openvscode-server`: Mexe na pasta / do servidor
+- `rdesktop`: Controla o Docker do servidor (socket do Docker): equivale a controle total
+- `sealskin`: Controla o Docker do servidor (socket do Docker): equivale a controle total
+- `steamos`: Mexe na pasta /dev/input do servidor; Mexe na pasta /run/udev/data do servidor
+- `syslog-ng`: Mexe na pasta /var/log do servidor
+- `tvheadend`: Acesso ao aparelho /dev/dvb do servidor
+- `xvfb`: Mexe na pasta /srv/lsio/xvfb/config do servidor
+
+## Não convertidos (2)
+
+Receitas que não funcionariam no Runtipi ou que não deu para converter:
+
 - Feed2toot: não tem página web (porta) para abrir
-- Kasm: o serviço app monta a pasta /dev/input do servidor
-- Mullvad-browser: o serviço app pede poderes de administrador do Linux (NET_ADMIN)
-- Openvscode-server: o serviço app monta a pasta / do servidor
 - Plex-meta-manager: não tem página web (porta) para abrir
-- Rdesktop: o serviço app usa o socket do Docker (controle total do servidor)
-- Sealskin: o serviço app usa o socket do Docker (controle total do servidor)
-- Steamos: o serviço app monta a pasta /dev/input do servidor
-- Syslog-ng: o serviço app monta a pasta /var/log do servidor
-- Tvheadend: o serviço app usa o aparelho /dev/dvb do servidor (só a placa de vídeo é permitida)
-- Xvfb: o serviço app monta a pasta /srv/lsio/xvfb/config do servidor
 
 ## Já existem na loja oficial do Runtipi (49)
 

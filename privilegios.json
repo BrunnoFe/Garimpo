@@ -1,0 +1,34 @@
+{
+  "citron": [
+    "Mexe na pasta /srv/lsio/citron/config do servidor"
+  ],
+  "kasm": [
+    "Mexe na pasta /dev/input do servidor",
+    "Mexe na pasta /run/udev/data do servidor"
+  ],
+  "mullvad-browser": [
+    "Poderes de administrador do Linux (NET_ADMIN)"
+  ],
+  "openvscode-server": [
+    "Mexe na pasta / do servidor"
+  ],
+  "rdesktop": [
+    "Controla o Docker do servidor (socket do Docker): equivale a controle total"
+  ],
+  "sealskin": [
+    "Controla o Docker do servidor (socket do Docker): equivale a controle total"
+  ],
+  "steamos": [
+    "Mexe na pasta /dev/input do servidor",
+    "Mexe na pasta /run/udev/data do servidor"
+  ],
+  "syslog-ng": [
+    "Mexe na pasta /var/log do servidor"
+  ],
+  "tvheadend": [
+    "Acesso ao aparelho /dev/dvb do servidor"
+  ],
+  "xvfb": [
+    "Mexe na pasta /srv/lsio/xvfb/config do servidor"
+  ]
+}

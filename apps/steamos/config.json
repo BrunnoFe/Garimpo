@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Steamos",
+  "id": "steamos",
+  "available": true,
+  "port": 3097,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-2024-12-20",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Uma distribuição Linux baseada em Arch, criada pela Valve Software. Este contêiner é uma instalação padrão do Arch com os repositórios do Steam adicionados para suporte a softwares. Este contêiner funcionará apenas com GPUs AMD/Intel modernas em um host Linux real.",
+  "short_desc": "Uma distribuição Linux baseada em Arch, criada pela Valve Software. Este contêiner é uma instalação padrão do Arch com os repositórios do Steam adicio",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794954319126,
+  "updated_at": 1794954319126
+}

@@ -1,0 +1,24 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Syslog-ng).
+services:
+  syslog-ng:
+    image: linuxserver/syslog-ng:4.11.0
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      LOG_TO_STDOUT: ''
+    ports:
+    - target: 601
+      published: 6601
+      protocol: tcp
+    - target: 6514
+      published: 6514
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - /var/log:/var/log
+    x-runtipi:
+      is_main: true
+      internal_port: 514
+x-runtipi:
+  schema_version: 2

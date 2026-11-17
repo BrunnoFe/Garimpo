@@ -1,0 +1,24 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Mullvad-browser).
+services:
+  mullvad-browser:
+    image: linuxserver/mullvad-browser:16.0.2
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      LOCAL_NET: ''
+    ports:
+    - target: 3001
+      published: 3001
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${ROOT_FOLDER_HOST}/media/downloads:/config/Downloads
+    cap_add:
+    - NET_ADMIN
+    shm_size: 1gb
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+x-runtipi:
+  schema_version: 2

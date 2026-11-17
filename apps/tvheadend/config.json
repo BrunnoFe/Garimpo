@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Tvheadend (LinuxServer.io)",
+  "id": "tvheadend",
+  "available": true,
+  "port": 9981,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-8837853a",
+  "categories": [
+    "media"
+  ],
+  "description": "Funciona como um servidor proxy: é um servidor de streaming e gravador de TV para Linux, FreeBSD e Android, compatível com DVB-S, DVB-S2, DVB-C, DVB-T, ATSC, ISDB-T, IPTV, SAT>IP e HDHomeRun como fontes de entrada. O Tvheadend oferece streaming via HTTP (VLC, MPlayer), HTSP (Kodi, Movian) e SAT>IP. ",
+  "short_desc": "Funciona como um servidor proxy: é um servidor de streaming e gravador de TV para Linux, FreeBSD e Android, compatível com DVB-S, DVB-S2, DVB-C, DVB-T",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794954319126,
+  "updated_at": 1794954319126
+}

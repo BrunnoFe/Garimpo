@@ -6,7 +6,7 @@
   "port": 20019,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "5.2.3",
   "categories": [
     "development"
@@ -15,12 +15,27 @@
   "short_desc": "Uma ferramenta de software livre escrita em PHP, destinada a gerenciar o MySQL pela Web. O PhpMyAdmin suporta uma ampla gama de operações em MySQL e M",
   "author": "LinuxServer.io",
   "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
-  "form_fields": [],
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Senha (PMA_PASSWORD)",
+      "env_variable": "PMA_PASSWORD",
+      "required": true,
+      "hint": "A receita original vinha com uma senha fixa, igual para todo mundo: escolha a sua."
+    },
+    {
+      "type": "text",
+      "label": "Usuário (PMA_USER)",
+      "env_variable": "PMA_USER",
+      "required": true,
+      "default": "casaos"
+    }
+  ],
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
   "min_tipi_version": "4.7.0",
   "created_at": 1794933869158,
-  "updated_at": 1794933869158
+  "updated_at": 1794954319126
 }

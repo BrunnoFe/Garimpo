@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Syslog ng (LinuxServer.io)",
+  "id": "syslog-ng",
+  "available": true,
+  "port": 5514,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "4.11.0",
+  "categories": [
+    "development"
+  ],
+  "description": "Permite coletar, analisar, classificar, reescrever e correlacionar logs de toda a sua infraestrutura de forma flexível, armazenando-os ou encaminhando-os para ferramentas de análise de logs.",
+  "short_desc": "Permite coletar, analisar, classificar, reescrever e correlacionar logs de toda a sua infraestrutura de forma flexível, armazenando-os ou encaminhando",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794954319126,
+  "updated_at": 1794954319126
+}

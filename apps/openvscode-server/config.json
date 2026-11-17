@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Openvscode server",
+  "id": "openvscode-server",
+  "available": true,
+  "port": 3096,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.109.5",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Fornece uma versão do VS Code que executa um servidor em uma máquina remota e permite o acesso por meio de um navegador web moderno.",
+  "short_desc": "Fornece uma versão do VS Code que executa um servidor em uma máquina remota e permite o acesso por meio de um navegador web moderno.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794954319126,
+  "updated_at": 1794954319126
+}
