@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "OpenHAB",
+  "id": "openhab",
+  "available": true,
+  "port": 8080,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "5.1.4",
+  "categories": [
+    "automation"
+  ],
+  "description": "Empoderando o lar inteligente",
+  "short_desc": "Empoderando o lar inteligente",
+  "author": "openHAB",
+  "source": "https://github.com/openhab/openhab-distro",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.openhab.org",
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

@@ -3,10 +3,10 @@
   "name": "Adminer",
   "id": "adminer",
   "available": true,
-  "port": 8080,
+  "port": 8085,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "5.4.2",
   "categories": [
     "development"
@@ -23,5 +23,5 @@
   "min_tipi_version": "4.7.0",
   "website": "https://www.adminer.org",
   "created_at": 1794934190919,
-  "updated_at": 1794934190919
+  "updated_at": 1794954339507
 }

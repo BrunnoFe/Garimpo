@@ -11,7 +11,7 @@ services:
     - ${APP_DATA_DIR}/data/data:/opt/openlist/data
     environment:
       UMASK: '022'
-      OPENLIST_ADMIN_PASSWORD: casaos
+      OPENLIST_ADMIN_PASSWORD: ${OPENLIST_ADMIN_PASSWORD}
     x-runtipi:
       is_main: true
       internal_port: 5244

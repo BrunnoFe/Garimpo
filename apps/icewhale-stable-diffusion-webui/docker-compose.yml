@@ -1,0 +1,23 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/StableDiffusionWebUI).
+services:
+  icewhale-stable-diffusion-webui:
+    image: johnguan/stable-diffusion-webui:latest
+    runtime: nvidia
+    ipc: host
+    environment:
+    - NVIDIA_VISIBLE_DEVICES=all
+    - CPU_FALLBACK=true
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    volumes:
+    - ${APP_DATA_DIR}/data/models:/data/models
+    - ${APP_DATA_DIR}/data/outputs:/data/outputs
+    - ${APP_DATA_DIR}/data/config:/data/config
+    privileged: false
+    x-runtipi:
+      is_main: true
+      internal_port: 7860
+x-runtipi:
+  schema_version: 2

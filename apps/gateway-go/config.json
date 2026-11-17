@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "gateway-go",
+  "id": "gateway-go",
+  "available": true,
+  "port": 34323,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v2.0.12",
+  "categories": [
+    "network"
+  ],
+  "description": "A third-party client for casaos and zimaOS, remote access management interface, remote access to installed applications.",
+  "short_desc": "A third-party client for casaos and zimaOS, remote access management interface, remote access to installed applications.",
+  "author": "iotserv",
+  "source": "https://github.com/OpenIoTHub/gateway-go",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

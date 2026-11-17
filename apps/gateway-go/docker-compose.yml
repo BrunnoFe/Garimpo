@@ -1,0 +1,16 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Gateway-go).
+services:
+  gateway-go:
+    image: openiothub/gateway-go:v2.0.12
+    network_mode: host
+    deploy:
+      resources:
+        reservations:
+          memory: 32M
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/root
+    x-runtipi:
+      is_main: true
+      internal_port: 34323
+x-runtipi:
+  schema_version: 2

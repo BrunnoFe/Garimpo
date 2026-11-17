@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "WebDAV",
+  "id": "webdav",
+  "available": true,
+  "port": 5005,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "amd64",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um protocolo de compartilhamento e gerenciamento de arquivos baseado na web",
+  "short_desc": "Um protocolo de compartilhamento e gerenciamento de arquivos baseado na web",
+  "author": "ZimaOS Team",
+  "source": "https://github.com/ugeek/docker-webdav",
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Senha (PASSWORD)",
+      "env_variable": "PASSWORD",
+      "required": true,
+      "hint": "A receita original vinha com uma senha fixa, igual para todo mundo: escolha a sua."
+    },
+    {
+      "type": "text",
+      "label": "Usuário (USERNAME)",
+      "env_variable": "USERNAME",
+      "required": true,
+      "default": "casaos"
+    }
+  ],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

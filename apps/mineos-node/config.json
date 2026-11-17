@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "MineOS",
+  "id": "mineos-node",
+  "available": true,
+  "port": 8444,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "media"
+  ],
+  "description": "Ferramenta gratuita e fácil de usar para gerenciamento de servidor Minecraft.",
+  "short_desc": "Ferramenta gratuita e fácil de usar para gerenciamento de servidor Minecraft.",
+  "author": "hexparrot",
+  "source": "https://github.com/hexparrot/mineos-node",
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Senha (USER_PASSWORD)",
+      "env_variable": "USER_PASSWORD",
+      "required": true,
+      "hint": "A receita original vinha com uma senha fixa, igual para todo mundo: escolha a sua."
+    }
+  ],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.mineos.net/",
+  "url_suffix": "/admin/index.html",
+  "https": true,
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

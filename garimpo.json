@@ -7,7 +7,8 @@
   "licenca": "Apache-2.0",
   "sobre": "Apps da loja oficial do CasaOS e do ZimaOS (IceWhale), convertidos para o formato do Runtipi.",
   "garimpo": "https://github.com/BrunnoFe/Garimpo",
-  "apps": 86,
-  "recusados": 26,
+  "apps": 107,
+  "privilegios": 21,
+  "recusados": 5,
   "repetidos": 71
 }

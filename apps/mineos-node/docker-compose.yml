@@ -1,0 +1,21 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/MineOS).
+services:
+  mineos-node:
+    image: hexparrot/mineos:latest
+    stop_grace_period: 10m
+    volumes:
+    - /var/games/mineos/minecraft:/var/games/minecraft
+    environment:
+      USE_HTTPS: 'true'
+      SERVER_PORT: 8443
+      USER_NAME: mc
+      USER_UID: 1000
+      USER_PASSWORD: ${USER_PASSWORD}
+    ports:
+    - 25565-25570:25565-25570/tcp
+    - 25565-25570:25565-25570/udp
+    x-runtipi:
+      is_main: true
+      internal_port: 8443
+x-runtipi:
+  schema_version: 2

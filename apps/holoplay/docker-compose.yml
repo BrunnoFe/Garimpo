@@ -1,0 +1,10 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/HoloPlay).
+services:
+  holoplay:
+    image: spout8301/holoplay:1.12.3
+    privileged: true
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+x-runtipi:
+  schema_version: 2

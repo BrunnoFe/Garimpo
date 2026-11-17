@@ -6,7 +6,7 @@
   "port": 8082,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "v3.3.4",
   "categories": [
     "utilities"
@@ -15,7 +15,15 @@
   "short_desc": "Share files through your browser",
   "author": "rejetto",
   "source": "https://github.com/rejetto/hfs",
-  "form_fields": [],
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Senha (HFS_INITIAL_ADMIN_PASSWORD)",
+      "env_variable": "HFS_INITIAL_ADMIN_PASSWORD",
+      "required": true,
+      "hint": "A receita original vinha com uma senha fixa, igual para todo mundo: escolha a sua."
+    }
+  ],
   "supported_architectures": [
     "amd64",
     "arm64"
@@ -24,5 +32,5 @@
   "website": "https://rejetto.com/hfs/",
   "url_suffix": "/~/admin/",
   "created_at": 1794934190919,
-  "updated_at": 1794934190919
+  "updated_at": 1794954339507
 }

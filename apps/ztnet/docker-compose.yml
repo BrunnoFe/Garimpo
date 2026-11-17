@@ -1,0 +1,36 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Ztnet).
+services:
+  ztnet:
+    image: sinamics/ztnet:0.7.18
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    working_dir: /app
+    volumes:
+    - /var/lib/zerotier-one:/var/lib/zerotier-one
+    environment:
+      ZT_ADDR: http://172.17.0.1:9993
+      POSTGRES_HOST: ztnet-postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: ztnet
+      POSTGRES_PASSWORD: ${GARIMPO_SEGREDO_1}
+      POSTGRES_DB: ztnet
+      NEXTAUTH_URL: http://0.0.0.0:3050
+      NEXTAUTH_SECRET: ${GARIMPO_SEGREDO_2}
+      NEXTAUTH_URL_INTERNAL: http://ztnet:3000
+    depends_on:
+    - ztnet-postgres
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+  ztnet-postgres:
+    image: postgres:15.2-alpine
+    environment:
+      POSTGRES_USER: ztnet
+      POSTGRES_PASSWORD: ${GARIMPO_SEGREDO_1}
+      POSTGRES_DB: ztnet
+    volumes:
+    - ${APP_DATA_DIR}/data/postgres-data:/var/lib/postgresql/data
+x-runtipi:
+  schema_version: 2

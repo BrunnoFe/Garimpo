@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Stable Diffusion",
+  "id": "icewhale-stable-diffusion-webui",
+  "available": true,
+  "port": 7860,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "ai"
+  ],
+  "description": "An AI model used to generate images conditioned on text descriptions.",
+  "short_desc": "An AI model used to generate images conditioned on text descriptions.",
+  "author": "stability.ai",
+  "source": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

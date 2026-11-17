@@ -1,0 +1,17 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/AnythingLLM).
+services:
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    cap_add:
+    - SYS_ADMIN
+    volumes:
+    - ${APP_DATA_DIR}/data/storage:/app/server/storage
+    environment:
+    - STORAGE_DIR=/app/server/storage
+    extra_hosts:
+    - host.docker.internal:host-gateway
+    x-runtipi:
+      is_main: true
+      internal_port: 3001
+x-runtipi:
+  schema_version: 2

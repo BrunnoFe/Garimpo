@@ -1,0 +1,24 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/OpenHAB).
+services:
+  openhab:
+    environment:
+      CRYPTO_POLICY: unlimited
+      PGID: '1000'
+      PUID: '1000'
+    image: openhab/openhab:5.1.4
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    network_mode: host
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /etc/timezone:/etc/timezone:ro
+    - ${APP_DATA_DIR}/data/addons:/openhab/addons
+    - ${APP_DATA_DIR}/data/conf:/openhab/conf
+    - ${APP_DATA_DIR}/data/userdata:/openhab/userdata
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,24 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Firefly).
+services:
+  firefly:
+    image: uusec/firefly:latest
+    devices:
+    - /dev/net/tun:/dev/net/tun
+    network_mode: host
+    volumes:
+    - /lib/modules:/lib/modules
+    - ${APP_DATA_DIR}/data/conf:/firefly/conf
+    cap_add:
+    - NET_ADMIN
+    - SYS_MODULE
+    environment:
+    - FIREFLY_PASSWORD=${FIREFLY_PASSWORD}
+    deploy:
+      resources:
+        reservations:
+          memory: 32M
+    x-runtipi:
+      is_main: true
+      internal_port: 50121
+x-runtipi:
+  schema_version: 2

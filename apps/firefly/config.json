@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Firefly",
+  "id": "firefly",
+  "available": true,
+  "port": 50121,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "network"
+  ],
+  "description": "Firefly, the easiest using of WireGuard VPN server, plus version of wg-easy.",
+  "short_desc": "Firefly, the easiest using of WireGuard VPN server, plus version of wg-easy.",
+  "author": "Safe3",
+  "source": "https://github.com/Safe3/firefly",
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Senha (FIREFLY_PASSWORD)",
+      "env_variable": "FIREFLY_PASSWORD",
+      "required": true,
+      "hint": "A receita original vinha com uma senha fixa, igual para todo mundo: escolha a sua."
+    }
+  ],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://qq.uusec.com/",
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

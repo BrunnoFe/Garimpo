@@ -1,0 +1,26 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/WireGuardEasy).
+services:
+  wg-easy:
+    image: ghcr.io/wg-easy/wg-easy:13
+    environment:
+      PASSWORD: ${PASSWORD}
+      WG_HOST: casaos.local
+      WG_PORT: '51820'
+      WG_DEFAULT_DNS: 1.1.1.1
+    ports:
+    - target: 51820
+      published: '51820'
+      protocol: udp
+    volumes:
+    - ${APP_DATA_DIR}/data/wireguard:/etc/wireguard
+    cap_add:
+    - NET_ADMIN
+    - SYS_MODULE
+    sysctls:
+    - net.ipv4.ip_forward=1
+    - net.ipv4.conf.all.src_valid_mark=1
+    x-runtipi:
+      is_main: true
+      internal_port: 51821
+x-runtipi:
+  schema_version: 2

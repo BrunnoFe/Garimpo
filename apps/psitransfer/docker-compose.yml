@@ -3,7 +3,7 @@ services:
   psitransfer:
     image: psitrax/psitransfer:v2.4.1
     environment:
-      PSITRANSFER_ADMIN_PASS: secret
+      PSITRANSFER_ADMIN_PASS: ${PSITRANSFER_ADMIN_PASS}
     volumes:
     - ${APP_DATA_DIR}/data/data:/data
     deploy:

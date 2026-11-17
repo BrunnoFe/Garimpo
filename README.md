@@ -6,7 +6,7 @@ Esta loja do Runtipi é gerada automaticamente todo dia a partir de <https://git
 
 Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `casaos`, endereço `https://github.com/BrunnoFe/Garimpo/tree/casaos`. No BrunOS: janela Loja → Lojas.
 
-## Apps (86)
+## Apps (107)
 
 - AdGuard Home (`adguard-home`)
 - Adminer (`adminer`)
@@ -14,6 +14,7 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `casaos`, endereço `h
 - Alist (`alist`)
 - Alist-Sync (`alist-sync`)
 - Anaconda3 (`anaconda3`)
+- AnythingLLM (`anythingllm`)
 - BeaverHabitTracker (`beaverhabittracker`)
 - BentoPDF (`bentopdf`)
 - Blinko (`blinko`)
@@ -32,14 +33,21 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `casaos`, endereço `h
 - Embystat (`embystat`)
 - Etherpad (`etherpad`)
 - FileDrop (`filedrop`)
+- FileFlows (`fileflows`)
+- Firefly (`firefly`)
+- Frigate (`frigate`)
+- gateway-go (`gateway-go`)
 - Gopeed (`gopeed`)
+- handbrake (`handbrake`)
 - Hermes (`hermes`)
 - HFS (`hfs`)
+- HoloPlay (`holoplay`)
 - Hugo (`hugo`)
 - Index-TTS (`index-tts`)
 - Index-TTS(Nvidia GPU) (`index-tts-nvidia`)
 - JDownloader2 (`jdownloader2`)
 - Jellyseerr (`jellyseerr`)
+- Jenkins CI/CD (`jenkins`)
 - Karakeep (`karakeep`)
 - Label Studio (`label-studio`)
 - Langflow (`langflow`)
@@ -48,10 +56,13 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `casaos`, endereço `h
 - LibreDB Studio (`libredb-studio`)
 - LLaMA Factory(Nvidia GPU) (`llama-factory-nvidia`)
 - llama.cpp (`llamacpp`)
+- Logseq (`logseq`)
+- Lucky (`lucky`)
 - LyrionMusicServer (`lyrionmusicserver`)
 - MariaDB (`mariadb`)
 - Maybe (`maybe-web`)
 - Medusa (`medusa`)
+- MineOS (`mineos-node`)
 - MongoDB 4 (`mongodb4`)
 - Motioneye (`motioneye`)
 - MySpeed (`myspeed`)
@@ -63,6 +74,8 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `casaos`, endereço `h
 - Obsidian (`obsidian`)
 - Ollama (`ollama`)
 - Ombi (`ombi`)
+- OpenHAB (`openhab`)
+- OpenHands (`openhands`)
 - OpenList (`openlist`)
 - OpenSpeedTest (`openspeedtest`)
 - oPodSync (`opodsync`)
@@ -72,9 +85,11 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `casaos`, endereço `h
 - Petio (`petio`)
 - PocketBase (`pocketbase`)
 - PostgreSQL (`postgresql`)
+- Project NOMAD (`admin`)
 - PsiTransfer (`psitransfer`)
 - PyLoad (`pyload`)
 - Qui (`qui`)
+- RagFlow (`ragflow`)
 - Real-Debrid Torrent Client (`rdtclient`)
 - RetroArch (`retroarch`)
 - Sickchill (`sickchill`)
@@ -82,6 +97,7 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `casaos`, endereço `h
 - Smokeping (`smokeping`)
 - snapdrop (`snapdrop`)
 - SnapOtter (`snapotter`)
+- Stable Diffusion (`icewhale-stable-diffusion-webui`)
 - Stremio (`stremio`)
 - Sure (`sure-web`)
 - Swing Music (`swingmusic`)
@@ -91,39 +107,49 @@ Para usar no Runtipi: *Lojas de apps → Adicionar*, nome `casaos`, endereço `h
 - Unifi Network Application (`unifi-network-application`)
 - Unifi-controller [legacy] (`unifi-controller`)
 - Upload Assistant (`upload-assistant`)
+- V2rayA (`v2raya`)
+- Virtual Machine Manager (`virt-manager`)
 - VoceChat (`vocechat`)
 - Wallabag (`wallabag`)
+- WebDAV (`webdav`)
 - WeKnora (`weknora`)
+- WireGuard Easy (`wg-easy`)
+- ZTnet (`ztnet`)
 
-## Recusados por segurança ou formato (26)
+## Requerem privilégios (21)
 
-Receitas que dariam poder demais sobre o servidor ou que não deu para converter:
+Estes apps pedem poderes sobre o servidor que os apps comuns não têm. No BrunOS eles aparecem com o selo **Requer privilégios** e só instalam depois de "Entendo os riscos" + Senha de configuração. Na tela do próprio Runtipi aparecem sem aviso: instale só se confia no app.
 
-- AnythingLLM: o serviço anythingllm pede poderes de administrador do Linux (SYS_ADMIN)
-- FileFlows: o serviço fileflows usa o socket do Docker (controle total do servidor)
-- Firefly: o serviço firefly usa a rede do servidor (network_mode: host)
-- Frigate: o serviço frigate pede privileged (controle total do servidor)
-- Gateway-go: o serviço gateway-go usa a rede do servidor (network_mode: host)
-- Handbrake: o serviço handbrake pede privileged (controle total do servidor)
-- HoloPlay: o serviço holoplay pede privileged (controle total do servidor)
-- Jenkin: o serviço jenkins monta a pasta /var/lib/docker/volumes/b098c98b2c5dec792246dc33375853c05958ace7c144f4aa157326a6f6c0de4c/_data do servidor
-- Logseq: o serviço logseq pede privileged (controle total do servidor)
-- Lucky: o serviço lucky usa a rede do servidor (network_mode: host)
-- MineOS: o serviço mineos monta a pasta /var/games/mineos/minecraft do servidor
-- NetBird: o serviço netbird usa a rede do servidor (network_mode: host)
-- OpenHAB: o serviço openhab usa a rede do servidor (network_mode: host)
-- OpenHands: o serviço openhands usa o socket do Docker (controle total do servidor)
-- ProjectNOMAD: o serviço admin usa o socket do Docker (controle total do servidor)
-- RagFlow: o serviço ragflow-sandbox-executor-manager pede privileged (controle total do servidor)
-- RoonServer: o serviço roonserver usa a rede do servidor (network_mode: host)
-- StableDiffusionWebUI: o serviço icewhale-stable-diffusion-webui compartilha ipc com o servidor
+- `admin`: Controla o Docker do servidor (socket do Docker): equivale a controle total; Mexe na pasta / do servidor
+- `anythingllm`: Poderes de administrador do Linux (SYS_ADMIN)
+- `fileflows`: Controla o Docker do servidor (socket do Docker): equivale a controle total
+- `firefly`: Usa a rede do servidor direto, sem isolamento (network_mode: host); Poderes de administrador do Linux (NET_ADMIN, SYS_MODULE); Acesso ao aparelho /dev/net/tun do servidor; Mexe na pasta /lib/modules do servidor
+- `frigate`: Controle total do servidor (privileged); Acesso ao aparelho /dev/bus/usb do servidor; Acesso ao aparelho /dev/apex_0 do servidor; Acesso ao aparelho /dev/video11 do servidor
+- `gateway-go`: Usa a rede do servidor direto, sem isolamento (network_mode: host)
+- `handbrake`: Controle total do servidor (privileged)
+- `holoplay`: Controle total do servidor (privileged)
+- `icewhale-stable-diffusion-webui`: Compartilha a memória compartilhada com o servidor (ipc: host)
+- `jenkins`: Mexe na pasta /var/lib/docker/volumes/b098c98b2c5dec792246dc33375853c05958ace7c144f4aa157326a6f6c0de4c/_data do servidor
+- `logseq`: Controle total do servidor (privileged)
+- `lucky`: Usa a rede do servidor direto, sem isolamento (network_mode: host)
+- `mineos-node`: Mexe na pasta /var/games/mineos/minecraft do servidor
+- `openhab`: Usa a rede do servidor direto, sem isolamento (network_mode: host)
+- `openhands`: Controla o Docker do servidor (socket do Docker): equivale a controle total
+- `ragflow`: Controle total do servidor (privileged); Controla o Docker do servidor (socket do Docker): equivale a controle total
+- `v2raya`: Controle total do servidor (privileged); Usa a rede do servidor direto, sem isolamento (network_mode: host); Mexe na pasta /lib/modules do servidor; Mexe na pasta /etc/resolv.conf do servidor
+- `virt-manager`: Acesso ao aparelho /dev/kvm do servidor; Mexe na pasta /var/run/libvirt/libvirt-sock do servidor; Mexe na pasta /var/lib/libvirt do servidor
+- `webdav`: Mexe na pasta /media/ZimaOS-HD/Media do servidor
+- `wg-easy`: Poderes de administrador do Linux (NET_ADMIN, SYS_MODULE)
+- `ztnet`: Mexe na pasta /var/lib/zerotier-one do servidor
+
+## Não convertidos (5)
+
+Receitas que não funcionariam no Runtipi ou que não deu para converter:
+
+- NetBird: não tem página web (porta) para abrir
+- RoonServer: não tem página web (porta) para abrir
 - TaskingAI: outro app desta loja já usa o mesmo nome
 - Twingate: não tem página web (porta) para abrir
-- V2rayA: o serviço v2raya pede privileged (controle total do servidor)
-- VirtualMachineManager: o serviço virt-manager usa o aparelho /dev/kvm do servidor (só a placa de vídeo é permitida)
-- WebDav: o serviço webdav monta a pasta /media/ZimaOS-HD/Media do servidor
-- WireGuardEasy: o serviço wg-easy pede poderes de administrador do Linux (NET_ADMIN, SYS_MODULE)
-- Ztnet: o serviço ztnet monta a pasta /var/lib/zerotier-one do servidor
 - playit-agent: não tem página web (porta) para abrir
 
 ## Já existem na loja oficial do Runtipi (71)

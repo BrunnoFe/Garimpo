@@ -1,0 +1,24 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/WebDav).
+services:
+  webdav:
+    cpu_shares: 90
+    command: []
+    deploy:
+      resources:
+        limits:
+          memory: 15806M
+    environment:
+    - GID=1000
+    - PASSWORD=${PASSWORD}
+    - TZ=Europe/Madrid
+    - UDI=1000
+    - USERNAME=${USERNAME}
+    image: ugeek/webdav:amd64
+    volumes:
+    - /media/ZimaOS-HD/Media:/media
+    privileged: false
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+x-runtipi:
+  schema_version: 2

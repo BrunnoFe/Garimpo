@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "V2rayA",
+  "id": "v2raya",
+  "available": true,
+  "port": 2017,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v2.2.7.5",
+  "categories": [
+    "network"
+  ],
+  "description": "Um cliente GUI web do Project V que suporta protocolos VMess, VLESS, SS, SSR, Trojan, Tuic e Juicity",
+  "short_desc": "Um cliente GUI web do Project V que suporta protocolos VMess, VLESS, SS, SSR, Trojan, Tuic e Juicity",
+  "author": "v2rayA",
+  "source": "https://github.com/v2rayA/v2rayA",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://v2raya.org/",
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

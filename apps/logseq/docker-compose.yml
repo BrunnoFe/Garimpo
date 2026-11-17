@@ -1,0 +1,24 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Logseq).
+services:
+  logseq:
+    environment:
+      PGID: '0'
+      PUID: '0'
+    image: correctroad/logseq:v0.10.10
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    ports:
+    - target: 12315
+      published: '12315'
+      protocol: tcp
+    privileged: true
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${ROOT_FOLDER_HOST}/media/data/documents/notes:/notes
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+x-runtipi:
+  schema_version: 2

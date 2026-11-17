@@ -1,0 +1,37 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Frigate).
+services:
+  frigate:
+    image: ghcr.io/blakeblackshear/frigate:0.17.2
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    devices:
+    - /dev/bus/usb:/dev/bus/usb
+    - /dev/apex_0:/dev/apex_0
+    - /dev/video11:/dev/video11
+    - /dev/dri/renderD128:/dev/dri/renderD128
+    privileged: true
+    ports:
+    - target: 8554
+      published: '8554'
+      protocol: tcp
+    - target: 8555
+      published: '8555'
+      protocol: tcp
+    - target: 8555
+      published: '8555'
+      protocol: udp
+    stop_grace_period: 30s
+    shm_size: 512mb
+    tmpfs:
+    - /tmp/cache:size=1000000000
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${ROOT_FOLDER_HOST}/media/data:/media/frigate
+    x-runtipi:
+      is_main: true
+      internal_port: 8971
+x-runtipi:
+  schema_version: 2

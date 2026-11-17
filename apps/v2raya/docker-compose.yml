@@ -1,0 +1,19 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/V2rayA).
+services:
+  v2raya:
+    image: mzz2017/v2raya:v2.2.7.5
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+    privileged: true
+    network_mode: host
+    volumes:
+    - /lib/modules:/lib/modules:ro
+    - /etc/resolv.conf:/etc/resolv.conf
+    - ${APP_DATA_DIR}/data:/etc/v2raya
+    x-runtipi:
+      is_main: true
+      internal_port: 2017
+x-runtipi:
+  schema_version: 2

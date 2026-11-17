@@ -6,7 +6,7 @@
   "port": 6789,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "26.1.20260522",
   "categories": [
     "media"
@@ -15,7 +15,22 @@
   "short_desc": "Downloader Usenet eficiente",
   "author": "Nzbget Team",
   "source": "https://github.com/nzbgetcom/nzbget",
-  "form_fields": [],
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Senha (NZBGET_PASS)",
+      "env_variable": "NZBGET_PASS",
+      "required": true,
+      "hint": "A receita original vinha com uma senha fixa, igual para todo mundo: escolha a sua."
+    },
+    {
+      "type": "text",
+      "label": "Usuário (NZBGET_USER)",
+      "env_variable": "NZBGET_USER",
+      "required": true,
+      "default": "nzbget"
+    }
+  ],
   "supported_architectures": [
     "amd64",
     "arm64"
@@ -23,5 +38,5 @@
   "min_tipi_version": "4.7.0",
   "website": "https://nzbget.com",
   "created_at": 1794934190919,
-  "updated_at": 1794934190919
+  "updated_at": 1794954339507
 }

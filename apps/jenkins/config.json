@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Jenkins CI/CD",
+  "id": "jenkins",
+  "available": true,
+  "port": 8087,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "lts-jdk17",
+  "categories": [
+    "development"
+  ],
+  "description": "Servidor de Integração Contínua e Entrega Jenkins.",
+  "short_desc": "Servidor de Integração Contínua e Entrega Jenkins.",
+  "author": "bepp-boop",
+  "source": "https://github.com/jenkinsci/jenkins",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.jenkins.io/",
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

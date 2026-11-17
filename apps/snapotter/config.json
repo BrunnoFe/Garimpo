@@ -6,7 +6,7 @@
   "port": 1349,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "2.2.0",
   "categories": [
     "utilities"
@@ -15,7 +15,22 @@
   "short_desc": "Self-hosted file toolkit for images, video, audio, PDFs, and files",
   "author": "SnapOtter",
   "source": "https://github.com/snapotter-hq/SnapOtter",
-  "form_fields": [],
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Senha (DEFAULT_PASSWORD)",
+      "env_variable": "DEFAULT_PASSWORD",
+      "required": true,
+      "hint": "A receita original vinha com uma senha fixa, igual para todo mundo: escolha a sua."
+    },
+    {
+      "type": "text",
+      "label": "Usuário (DEFAULT_USERNAME)",
+      "env_variable": "DEFAULT_USERNAME",
+      "required": true,
+      "default": "admin"
+    }
+  ],
   "supported_architectures": [
     "amd64",
     "arm64"
@@ -23,5 +38,5 @@
   "min_tipi_version": "4.7.0",
   "website": "https://snapotter.com",
   "created_at": 1794934190919,
-  "updated_at": 1794934190919
+  "updated_at": 1794954339507
 }

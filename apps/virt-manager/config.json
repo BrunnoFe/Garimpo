@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Virtual Machine Manager",
+  "id": "virt-manager",
+  "available": true,
+  "port": 8185,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "development"
+  ],
+  "description": "Uma interface de usuário da Web GTK Broadway para libvirt e virt-manager.",
+  "short_desc": "Uma interface de usuário da Web GTK Broadway para libvirt e virt-manager.",
+  "author": "Red Hat",
+  "source": "https://github.com/m-bers/docker-virt-manager",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://virt-manager.org",
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

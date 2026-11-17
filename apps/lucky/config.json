@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Lucky",
+  "id": "lucky",
+  "available": true,
+  "port": 16601,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.27.2",
+  "categories": [
+    "network"
+  ],
+  "description": "Powerful networking tool",
+  "short_desc": "Powerful networking tool",
+  "author": "gdy666",
+  "source": "https://github.com/gdy666/lucky",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://lucky666.cn/",
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

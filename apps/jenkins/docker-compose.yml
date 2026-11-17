@@ -1,0 +1,16 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Jenkin).
+services:
+  jenkins:
+    image: jenkins/jenkins:lts-jdk17
+    privileged: false
+    user: root
+    cpu_shares: 50
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/data
+    - /var/lib/docker/volumes/b098c98b2c5dec792246dc33375853c05958ace7c144f4aa157326a6f6c0de4c/_data:/var/jenkins_home
+    hostname: Jenkins
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

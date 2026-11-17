@@ -6,7 +6,7 @@
   "port": 9001,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "3.1.0",
   "categories": [
     "utilities"
@@ -15,7 +15,15 @@
   "short_desc": "Editor colaborativo de documentos em tempo real",
   "author": "Etherpad Foundation",
   "source": "https://github.com/ether/etherpad",
-  "form_fields": [],
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Senha (ADMIN_PASSWORD)",
+      "env_variable": "ADMIN_PASSWORD",
+      "required": true,
+      "hint": "A receita original vinha com uma senha fixa, igual para todo mundo: escolha a sua."
+    }
+  ],
   "supported_architectures": [
     "amd64",
     "arm64"
@@ -23,5 +31,5 @@
   "min_tipi_version": "4.7.0",
   "website": "https://etherpad.org/",
   "created_at": 1794934190919,
-  "updated_at": 1794934190919
+  "updated_at": 1794954339507
 }

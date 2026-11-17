@@ -20,6 +20,8 @@ Inclui um painel de administração integrado, um ecossistema com mais de 250 ex
 
 A palavra-passe de administrador predefinida é "admin". Altere ADMIN_PASSWORD antes de expor o Etherpad à rede. Os pads são guardados em disco em /DATA/AppData/etherpad/var usando a base de dados dirty incorporada; esta configuração é ideal para uso pessoal e pequenas equipas. Para cargas de produção multiutilizador mais pesadas, altere DB_TYPE para postgres ou mysql e aponte DB_HOST, DB_NAME, DB_USER e DB_PASS para uma base de dados externa.
 
+A receita original vinha com uma senha fixa (igual para todo mundo); aqui você escolhe a sua na instalação.
+
 ---
 
 Convertido automaticamente da loja CasaOS (https://github.com/IceWhaleTech/CasaOS-AppStore, licença Apache-2.0) pelo Garimpo do BrunOS. Pastas: os dados do app ficam na pasta do app no Runtipi; filmes, músicas, fotos e downloads, na pasta de mídia do Runtipi. Problemas com o app em si: fale com o autor dele.

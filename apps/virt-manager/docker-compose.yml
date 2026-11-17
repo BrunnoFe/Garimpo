@@ -1,0 +1,18 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/VirtualMachineManager).
+services:
+  virt-manager:
+    devices:
+    - /dev/kvm:/dev/kvm
+    environment:
+      DARK_MODE: 'false'
+      HOSTS: '[''qemu:///system'']'
+    image: mber5/virt-manager:latest
+    volumes:
+    - /var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock
+    - /var/lib/libvirt:/var/lib/libvirt
+    - ${ROOT_FOLDER_HOST}/media/downloads:/DATA/Downloads
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+x-runtipi:
+  schema_version: 2

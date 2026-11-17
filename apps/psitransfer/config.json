@@ -6,7 +6,7 @@
   "port": 13001,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "v2.4.1",
   "categories": [
     "utilities"
@@ -15,12 +15,20 @@
   "short_desc": "Um host de partilha de ficheiros simples e de código aberto.",
   "author": "psitrax",
   "source": "https://github.com/psi-4ward/psitransfer",
-  "form_fields": [],
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Senha (PSITRANSFER_ADMIN_PASS)",
+      "env_variable": "PSITRANSFER_ADMIN_PASS",
+      "required": true,
+      "hint": "A receita original vinha com uma senha fixa, igual para todo mundo: escolha a sua."
+    }
+  ],
   "supported_architectures": [
     "amd64",
     "arm64"
   ],
   "min_tipi_version": "4.7.0",
   "created_at": 1794934190919,
-  "updated_at": 1794934190919
+  "updated_at": 1794954339507
 }

@@ -2,8 +2,8 @@
 services:
   nzbget:
     environment:
-      NZBGET_PASS: tegbzn6789
-      NZBGET_USER: nzbget
+      NZBGET_PASS: ${NZBGET_PASS}
+      NZBGET_USER: ${NZBGET_USER}
       PGID: '1000'
       PUID: '1000'
       TZ: Europe/London

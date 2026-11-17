@@ -12,6 +12,8 @@ Default login is admin / admin. You will be asked to change the password after f
 
 This package uses SnapOtter embedded mode, so leave DATABASE_URL and REDIS_URL unset unless you are moving to the upstream multi-container PostgreSQL and Redis stack.
 
+A receita original vinha com uma senha fixa (igual para todo mundo); aqui você escolhe a sua na instalação.
+
 ---
 
 Convertido automaticamente da loja CasaOS (https://github.com/IceWhaleTech/CasaOS-AppStore, licença Apache-2.0) pelo Garimpo do BrunOS. Pastas: os dados do app ficam na pasta do app no Runtipi; filmes, músicas, fotos e downloads, na pasta de mídia do Runtipi. Problemas com o app em si: fale com o autor dele.

@@ -1,0 +1,78 @@
+{
+  "admin": [
+    "Controla o Docker do servidor (socket do Docker): equivale a controle total",
+    "Mexe na pasta / do servidor"
+  ],
+  "anythingllm": [
+    "Poderes de administrador do Linux (SYS_ADMIN)"
+  ],
+  "fileflows": [
+    "Controla o Docker do servidor (socket do Docker): equivale a controle total"
+  ],
+  "firefly": [
+    "Usa a rede do servidor direto, sem isolamento (network_mode: host)",
+    "Poderes de administrador do Linux (NET_ADMIN, SYS_MODULE)",
+    "Acesso ao aparelho /dev/net/tun do servidor",
+    "Mexe na pasta /lib/modules do servidor"
+  ],
+  "frigate": [
+    "Controle total do servidor (privileged)",
+    "Acesso ao aparelho /dev/bus/usb do servidor",
+    "Acesso ao aparelho /dev/apex_0 do servidor",
+    "Acesso ao aparelho /dev/video11 do servidor"
+  ],
+  "gateway-go": [
+    "Usa a rede do servidor direto, sem isolamento (network_mode: host)"
+  ],
+  "handbrake": [
+    "Controle total do servidor (privileged)"
+  ],
+  "holoplay": [
+    "Controle total do servidor (privileged)"
+  ],
+  "icewhale-stable-diffusion-webui": [
+    "Compartilha a memória compartilhada com o servidor (ipc: host)"
+  ],
+  "jenkins": [
+    "Mexe na pasta /var/lib/docker/volumes/b098c98b2c5dec792246dc33375853c05958ace7c144f4aa157326a6f6c0de4c/_data do servidor"
+  ],
+  "logseq": [
+    "Controle total do servidor (privileged)"
+  ],
+  "lucky": [
+    "Usa a rede do servidor direto, sem isolamento (network_mode: host)"
+  ],
+  "mineos-node": [
+    "Mexe na pasta /var/games/mineos/minecraft do servidor"
+  ],
+  "openhab": [
+    "Usa a rede do servidor direto, sem isolamento (network_mode: host)"
+  ],
+  "openhands": [
+    "Controla o Docker do servidor (socket do Docker): equivale a controle total"
+  ],
+  "ragflow": [
+    "Controle total do servidor (privileged)",
+    "Controla o Docker do servidor (socket do Docker): equivale a controle total"
+  ],
+  "v2raya": [
+    "Controle total do servidor (privileged)",
+    "Usa a rede do servidor direto, sem isolamento (network_mode: host)",
+    "Mexe na pasta /lib/modules do servidor",
+    "Mexe na pasta /etc/resolv.conf do servidor"
+  ],
+  "virt-manager": [
+    "Acesso ao aparelho /dev/kvm do servidor",
+    "Mexe na pasta /var/run/libvirt/libvirt-sock do servidor",
+    "Mexe na pasta /var/lib/libvirt do servidor"
+  ],
+  "webdav": [
+    "Mexe na pasta /media/ZimaOS-HD/Media do servidor"
+  ],
+  "wg-easy": [
+    "Poderes de administrador do Linux (NET_ADMIN, SYS_MODULE)"
+  ],
+  "ztnet": [
+    "Mexe na pasta /var/lib/zerotier-one do servidor"
+  ]
+}

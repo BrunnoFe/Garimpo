@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "AnythingLLM",
+  "id": "anythingllm",
+  "available": true,
+  "port": 3051,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "ai"
+  ],
+  "description": "The all-in-one AI application.",
+  "short_desc": "The all-in-one AI application.",
+  "author": "Mintplex Labs",
+  "source": "https://github.com/Mintplex-Labs/anything-llm",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://anythingllm.com",
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

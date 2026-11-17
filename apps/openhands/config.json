@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "OpenHands",
+  "id": "openhands",
+  "available": true,
+  "port": 13333,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.59",
+  "categories": [
+    "ai"
+  ],
+  "description": "Assistente de Codificação de Código Aberto Alimentado por IA",
+  "short_desc": "Assistente de Codificação de Código Aberto Alimentado por IA",
+  "author": "All-Hands-AI",
+  "source": "https://github.com/All-Hands-AI/OpenHands",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.openhands.dev/",
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

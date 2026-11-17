@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Frigate",
+  "id": "frigate",
+  "available": true,
+  "port": 8971,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.17.2",
+  "categories": [
+    "automation"
+  ],
+  "description": "Monitore suas câmeras de segurança com IA processada localmente",
+  "short_desc": "Monitore suas câmeras de segurança com IA processada localmente",
+  "author": "Frigate",
+  "source": "https://github.com/blakeblackshear/frigate",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://frigate.video/",
+  "https": true,
+  "created_at": 1794954339507,
+  "updated_at": 1794954339507
+}

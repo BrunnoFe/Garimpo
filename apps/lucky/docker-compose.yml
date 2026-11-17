@@ -1,0 +1,19 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Lucky).
+services:
+  lucky:
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    image: gdy666/lucky:2.27.2
+    volumes:
+    - ${APP_DATA_DIR}/data:/goodluck
+    environment:
+      TZ: ${TZ}
+    network_mode: host
+    privileged: false
+    x-runtipi:
+      is_main: true
+      internal_port: 16601
+x-runtipi:
+  schema_version: 2

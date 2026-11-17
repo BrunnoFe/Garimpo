@@ -1,0 +1,15 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Handbrake).
+services:
+  handbrake:
+    image: jlesage/handbrake:v26.03.3
+    privileged: true
+    volumes:
+    - ${ROOT_FOLDER_HOST}/media/data:/storage
+    - ${APP_DATA_DIR}/data/watch:/watch
+    - ${ROOT_FOLDER_HOST}/media/data:/output
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 5800
+x-runtipi:
+  schema_version: 2
