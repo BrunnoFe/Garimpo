@@ -2,37 +2,54 @@
 """Segunda conferência, independente da conversão: relê a loja convertida e falha se algum app escapou
 das regras (o GitHub Actions não publica a loja quando isto falha).
 
+Desde a decisão 62 do BrunOS (17/11/2026) apps que pedem poderes sobre o servidor entram na loja, mas
+TODOS precisam estar no privilegios.json com a lista certa: é por ela que o README avisa, e um app com
+privilégio escondido é exatamente o que esta conferência existe para pegar. Também confere o que não
+funcionaria (rede de outro container, volumes_from, runtime estranho), chaves secretas escritas, portas
+repetidas, logo, descrição e o formato da loja.
+
 Uso: python3 garimpo/confere.py <pasta da loja convertida>
 """
 import json
 import os
-import re
 import sys
 
 import yaml
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from converter import ARQUIVOS_LIVRES, ID_RE, SEGREDO_RE, Recusa, confere_servico, le  # noqa: E402
+from converter import ID_RE, SEGREDO_RE, Recusa, confere_servico, le, privilegios  # noqa: E402
 
-ORIGENS_OK = ("${APP_DATA_DIR}/data", "${ROOT_FOLDER_HOST}/media/")
+ORIGENS_VARIAVEIS = ("${APP_DATA_DIR}", "${ROOT_FOLDER_HOST}/media")
 
 
 def volume_ok(v):
+    """Volume que o Runtipi sabe montar: sem '..' e sem variável que ele não preenche."""
     if isinstance(v, dict):
-        return v.get("type") == "tmpfs"
-    partes = str(v).split(":")
-    if len(partes) == 1:
-        return partes[0].startswith("/")  # volume anônimo dentro do container
-    o = partes[0]
+        if v.get("type") == "tmpfs":
+            return True
+        o = str(v.get("source") or "")
+    else:
+        partes = str(v).split(":")
+        if len(partes) == 1:
+            return partes[0].startswith("/")  # volume anônimo dentro do container
+        o = partes[0]
     if ".." in o.split("/"):
         return False
-    return o in ARQUIVOS_LIVRES or o.startswith("/dev/dri") or o == "${APP_DATA_DIR}/data" or any(o.startswith(p) for p in ORIGENS_OK)
+    if "$" in o:
+        return any(o == p or o.startswith(p + "/") for p in ORIGENS_VARIAVEIS)
+    return True
 
 
 def confere_loja(pasta):
     erros = []
     apps = os.path.join(pasta, "apps")
     portas = {}
+    try:
+        lista = json.loads(le(os.path.join(pasta, "privilegios.json")))
+    except (OSError, ValueError):
+        lista = None
+        erros.append("falta o privilegios.json (ou está com erro)")
+    vistos = set()
     for d in sorted(os.listdir(apps)):
         base = os.path.join(apps, d)
         if not ID_RE.match(d):
@@ -68,13 +85,25 @@ def confere_loja(pasta):
                 confere_servico(n, s)
             except Recusa as e:
                 erros.append(f"{d}: {e.args[0]}")
-            if s.get("network_mode") and not str(s["network_mode"]).startswith("service:"):
-                erros.append(f"{d}: o serviço {n} mexe na rede ({s['network_mode']})")
+            rede = str(s.get("network_mode") or "")
+            if rede and rede != "host" and not rede.startswith("service:"):
+                erros.append(f"{d}: o serviço {n} usa a rede {rede}")
             for v in s.get("volumes") or []:
                 if not volume_ok(v):
                     erros.append(f"{d}: o serviço {n} monta {v}")
-            if re.search(r"docker\.sock", json.dumps(s)):
-                erros.append(f"{d}: o serviço {n} cita o socket do Docker")
+        # privilégios: recalculados aqui e conferidos com a lista publicada (nada pode ficar escondido)
+        tem = privilegios(comp)
+        if lista is not None:
+            declarados = lista.get(d) or []
+            if sorted(tem) != sorted(declarados):
+                erros.append(f"{d}: privilégios não batem com o privilegios.json (receita: {tem}; lista: {declarados})")
+            if tem:
+                vistos.add(d)
+        # socket do Docker citado em qualquer lugar da receita: só se estiver na lista de privilégios
+        if "docker.sock" in json.dumps(comp) and not any("socket do Docker" in t for t in tem):
+            erros.append(f"{d}: cita o socket do Docker fora de um volume")
+    for d in sorted(set(lista or {}) - vistos):
+        erros.append(f"{d}: está no privilegios.json, mas não existe na loja (ou não pede nada)")
     return erros
 
 

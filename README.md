@@ -27,13 +27,21 @@ Um GitHub Actions roda todo dia de madrugada (e quando o código muda):
    - dados do app (`/DATA/AppData/<app>`) → pasta do app no Runtipi (entra no backup dele);
      `/DATA/Media`, `/DATA/Downloads`... → pasta de mídia compartilhada do Runtipi;
    - `$PUID`/`$PGID` → 1000, `$TZ` → fuso do Runtipi; outras variáveis viram perguntas da instalação;
+   - **perguntas da instalação**: senha fixa na receita vira pergunta obrigatória (menos as de serviços
+     internos do app: banco, busca, MinIO...); o usuário que anda com ela e as variáveis que o CasaOS descreve
+     (`x-casaos.envs`) viram perguntas já preenchidas. O `perguntas.json` corrige app a app (`perguntar` /
+     `nao_perguntar`);
    - textos em português quando a receita tem, senão em inglês; logo em JPEG 256×256;
    - apps que já existem na loja oficial do Runtipi ficam de fora (para não aparecer duas vezes);
    - `tipi_version` sobe sozinho quando a receita muda (é assim que o Runtipi avisa de atualização);
-3. **recusa receitas perigosas** e lista o motivo no README do ramo: `privileged`, socket do Docker, rede do
-   servidor (`network_mode: host`), `pid`/`ipc` do servidor, poderes de administrador do Linux (`SYS_ADMIN`,
-   `NET_ADMIN`...), pastas do sistema e aparelhos do servidor (só a placa de vídeo, `/dev/dri`, é permitida);
-4. confere tudo de novo com um programa separado (`garimpo/confere.py`);
+3. **lista o que dá poder sobre o servidor** (`privilegios.json` e README do ramo): `privileged`, socket do
+   Docker, rede do servidor (`network_mode: host`), `pid`/`ipc` do servidor, poderes de administrador do Linux
+   (`SYS_ADMIN`, `NET_ADMIN`...), pastas do sistema e aparelhos além da placa de vídeo. Desde 17/11/2026 esses
+   apps entram na loja: o BrunOS mostra o selo **Requer privilégios** e só instala depois de "Entendo os riscos"
+   + Senha de configuração (na tela do próprio Runtipi eles aparecem sem aviso). Ficam de fora só as receitas
+   que não funcionariam (rede de outro container, `volumes_from`, variável desconhecida numa pasta...);
+4. confere tudo de novo com um programa separado (`garimpo/confere.py`), inclusive se cada privilégio da
+   receita está no `privilegios.json` (nada pode ficar escondido);
 5. roda os **testes oficiais da loja do Runtipi** (`garimpo/testes-oficiais.sh`) sobre a loja convertida;
 6. só então publica no ramo.
 

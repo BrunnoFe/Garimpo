@@ -11,7 +11,13 @@ depois a pasta apps/ é reescrita do zero.
 
 Segurança: as lojas de origem são de terceiros. Receitas que dão poder sobre o servidor (privileged,
 socket do Docker, rede do host, pastas do sistema, poderes de administrador do Linux, aparelhos além da
-placa de vídeo) são recusadas, e a lista de recusados vai para o README da loja com o motivo.
+placa de vídeo) entram na loja, mas listadas em privilegios.json e no README com o que pedem: o BrunOS
+mostra o selo "Requer privilégios" e só instala depois de "Entendo os riscos" + Senha de configuração
+(decisão 62 do BrunOS, 17/11/2026). Ficam de fora só as receitas que não funcionariam no Runtipi.
+
+Perguntas da instalação: senha fixa na receita (menos as de banco de dados, que só os serviços do app usam)
+vira pergunta obrigatória; o usuário que anda com ela vira pergunta já preenchida; variáveis que o CasaOS
+descreve (x-casaos.envs) viram perguntas já preenchidas. O arquivo perguntas.json corrige app a app.
 """
 
 import argparse
@@ -31,20 +37,35 @@ import yaml
 
 # ── regras de segurança ──────────────────────────────────────────────────────────────────────────
 
-# poderes do Linux que dão controle do servidor (ou da rede dele)
+# poderes do Linux que dão controle do servidor (ou da rede dele): o app "requer privilégios"
 CAPS_PROIBIDAS = {
     "ALL", "SYS_ADMIN", "NET_ADMIN", "SYS_MODULE", "SYS_RAWIO", "SYS_PTRACE", "SYS_BOOT", "SYS_TIME",
     "DAC_READ_SEARCH", "LINUX_IMMUTABLE", "MAC_ADMIN", "MAC_OVERRIDE", "SYSLOG", "BPF", "PERFMON",
 }
-# pastas do servidor que um app nunca pode montar
+# pastas do servidor do sistema (montar uma delas: o app "requer privilégios")
 PASTAS_SISTEMA = (
     "/", "/bin", "/boot", "/dev", "/etc", "/home", "/lib", "/lib32", "/lib64", "/media", "/mnt", "/opt",
     "/proc", "/root", "/run", "/sbin", "/srv", "/sys", "/usr", "/var",
 )
 # arquivos do sistema que podem ser montados, sempre só para leitura (hora certa)
 ARQUIVOS_LIVRES = {"/etc/localtime", "/etc/timezone"}
-# chaves do serviço que o conversor entende; o resto passa como está (compose padrão)
-CHAVES_TIRADAS = {"restart", "container_name", "x-casaos", "network_mode", "networks"}
+# chaves do serviço que o conversor entende; o resto passa como está (compose padrão). network_mode é
+# tratado à parte (host fica, service: é renomeado, o resto sai).
+CHAVES_TIRADAS = {"restart", "container_name", "x-casaos", "networks"}
+COMPARTILHA = {"pid": "os processos", "ipc": "a memória compartilhada", "userns_mode": "os usuários",
+               "uts": "o nome do servidor", "cgroup": "os grupos de controle"}
+
+# perguntas da instalação (decisão 62 f do BrunOS)
+SENHA_NOME = re.compile(r"(PASS|PASSWORD|PASSWD|PWD)", re.I)
+# variável de opção, não de senha (ALLOW_PASSWORD_RESET, PASSWORD_MIN_LENGTH...)
+OPCAO_NOME = re.compile(r"(^|_)(ALLOW|ENABLE|DISABLE|RESET|MIN|MAX|LENGTH|POLICY|HASH|FILE|PATH|TYPE|MODE)(_|$)", re.I)
+USUARIO_NOME = re.compile(r"(^|_)(USER|USERNAME)$|^(ADMIN|ROOT|WEBUI|WEB|UI)_?(USER|NAME|USERNAME|EMAIL|LOGIN)$|^ADMIN$", re.I)
+# serviços internos do app (banco, busca, fila, armazenamento): só os serviços do próprio app usam a senha
+BANCO_NOME = re.compile(r"^(DB|DATABASE|POSTGRES|PG|MYSQL|MARIADB|MONGO|MONGODB|REDIS|SQL|ELASTIC|ELASTICSEARCH|OPENSEARCH|MINIO|"
+                        r"RABBITMQ|INFLUX|INFLUXDB|CLICKHOUSE|MEILI|NEO4J|ARANGO|KEYDB|VALKEY)_", re.I)
+SIM_NAO = {"true", "false", "yes", "no", "on", "off", "0", "1", ""}
+COMUNS = {"TZ", "PUID", "PGID", "UMASK", "UMASK_SET", "LANG", "LANGUAGE", "LC_ALL", "PORT", "WEBUI_PORT", "HOST",
+          "UID", "GID", "USER_ID", "GROUP_ID"}
 
 # ── mapeamentos ──────────────────────────────────────────────────────────────────────────────────
 
@@ -196,12 +217,13 @@ def pasta_midia(resto):
 
 
 def converte_origem_volume(origem, servico):
-    """Pasta do servidor no CasaOS → pasta no Runtipi. Recusa o que é do sistema."""
+    """Pasta do servidor no CasaOS → pasta no Runtipi. Pastas do sistema e o socket do Docker ficam como
+    estão (o app passa a "requerer privilégios"); recusa só o que não funcionaria."""
     o = re.sub(r"/{2,}", "/", origem.strip())
     if ".." in o.split("/"):
         raise Recusa(f"o serviço {servico} monta uma pasta com '..'")
     if "docker.sock" in o or o.endswith("/docker") and dentro_de(o, "/var/run"):
-        raise Recusa(f"o serviço {servico} usa o socket do Docker (controle total do servidor)")
+        return o  # socket do Docker: controle total do servidor (vai para a lista de privilégios)
     if o.startswith("./"):
         return "${APP_DATA_DIR}/data/" + o[2:].strip("/")
     if not o.startswith("/"):
@@ -221,14 +243,9 @@ def converte_origem_volume(origem, servico):
         return "${ROOT_FOLDER_HOST}/media/data"
     if dentro_de(o, "/DATA"):
         return "${ROOT_FOLDER_HOST}/media/data/" + pasta_midia(o[len("/DATA"):])
-    if o in ARQUIVOS_LIVRES:
-        return o
-    if o.startswith("/dev/dri"):
-        return o
-    for p in PASTAS_SISTEMA:
-        if dentro_de(o, p):
-            raise Recusa(f"o serviço {servico} monta a pasta {o} do servidor")
-    raise Recusa(f"o serviço {servico} monta a pasta {o}, fora das pastas do CasaOS")
+    # hora certa, placa de vídeo, pastas do sistema e o resto do servidor: ficam como estão; o que não for
+    # das pastas comuns entra na lista de privilégios (privilegios())
+    return o
 
 
 def converte_volumes(volumes, servico):
@@ -264,32 +281,175 @@ def converte_volumes(volumes, servico):
 
 
 def confere_servico(nome, s):
-    """Recusa o que dá poder sobre o servidor."""
-    if s.get("privileged") in (True, "true", "True"):
-        raise Recusa(f"o serviço {nome} pede privileged (controle total do servidor)")
+    """Recusa só o que não funcionaria no Runtipi (os privilégios entram na lista, não recusam)."""
     rede = str(s.get("network_mode") or "")
-    if rede == "host":
-        raise Recusa(f"o serviço {nome} usa a rede do servidor (network_mode: host)")
     if rede.startswith("container:"):
-        raise Recusa(f"o serviço {nome} usa a rede de outro container de fora do app")
-    for k in ("pid", "ipc", "userns_mode", "uts", "cgroup"):
-        if str(s.get(k) or "") == "host":
-            raise Recusa(f"o serviço {nome} compartilha {k} com o servidor")
-    if s.get("cgroup_parent") or s.get("volumes_from"):
-        raise Recusa(f"o serviço {nome} usa cgroup_parent ou volumes_from")
-    caps = {str(c).upper().removeprefix("CAP_") for c in (s.get("cap_add") or [])}
-    ruins = sorted(caps & CAPS_PROIBIDAS)
-    if ruins:
-        raise Recusa(f"o serviço {nome} pede poderes de administrador do Linux ({', '.join(ruins)})")
-    for d in s.get("devices") or []:
-        origem = (d.get("source") if isinstance(d, dict) else str(d).split(":")[0]) or ""
-        if not str(origem).startswith("/dev/dri"):
-            raise Recusa(f"o serviço {nome} usa o aparelho {origem} do servidor (só a placa de vídeo é permitida)")
-    for o in s.get("security_opt") or []:
-        if "unconfined" in str(o) or "disable" in str(o):
-            raise Recusa(f"o serviço {nome} desliga uma proteção do Docker ({o})")
+        raise Recusa(f"o serviço {nome} usa a rede de outro container, de fora do app")
+    if s.get("volumes_from"):
+        raise Recusa(f"o serviço {nome} usa volumes_from (pastas de outro container)")
     if s.get("runtime") not in (None, "nvidia"):
         raise Recusa(f"o serviço {nome} usa o runtime {s.get('runtime')}")
+
+
+def pasta_comum(o):
+    """Pasta que todo app usa: a do próprio app, a mídia do Runtipi, discos e pastas pessoais, hora certa,
+    placa de vídeo, volume com nome. A mesma régua do BrunOS (internal/appcfg/recipe.go)."""
+    if not o.startswith(("/", "$")):
+        return True
+    if "docker.sock" in o or ".." in o.split("/"):
+        return False
+    for p in ("${APP_DATA_DIR}", "$APP_DATA_DIR", "${ROOT_FOLDER_HOST}/media", "${ROOT_FOLDER_HOST}/app-data"):
+        if o == p or o.startswith(p + "/"):
+            return True
+    if o.startswith("$"):
+        return False
+    o = os.path.normpath(o)
+    return o in ARQUIVOS_LIVRES or o.startswith(("/mnt/", "/home/", "/dev/dri"))
+
+
+def separa_dois_pontos(s):
+    """Separa por ":", menos dentro de ${...} ("${PASTA:-/x}:/data" são duas partes)."""
+    partes, nivel, atual, i = [], 0, "", 0
+    while i < len(s):
+        if s.startswith("${", i):
+            nivel, atual, i = nivel + 1, atual + "${", i + 2
+            continue
+        ch = s[i]
+        if ch == "}" and nivel:
+            nivel -= 1
+        if ch == ":" and not nivel:
+            partes.append(atual)
+            atual = ""
+        else:
+            atual += ch
+        i += 1
+    return partes + [atual]
+
+
+def pasta_legivel(o):
+    """A mesma frase do BrunOS (recipe.go, niceHost) para a pasta do Runtipi."""
+    if o.startswith("${ROOT_FOLDER_HOST}"):
+        resto = o[len("${ROOT_FOLDER_HOST}"):]
+        return "do Runtipi " + resto if resto else "do Runtipi (inteira)"
+    return o
+
+
+def origem_volume(v):
+    if isinstance(v, dict):
+        return "" if v.get("type") not in (None, "bind", "volume") else str(v.get("source") or "")
+    partes = separa_dois_pontos(str(v))
+    return partes[0] if len(partes) >= 2 else ""
+
+
+def privilegios(compose):
+    """O que a receita pede de poder sobre o servidor, em português (lista vazia = app comum). Mesmas
+    frases do BrunOS, que confere de novo por conta própria antes de instalar."""
+    out = []
+
+    def add(t):
+        if t not in out:
+            out.append(t)
+    for _, s in (compose.get("services") or {}).items():
+        if not isinstance(s, dict):
+            continue
+        if s.get("privileged") in (True, "true", "True"):
+            add("Controle total do servidor (privileged)")
+        rede = str(s.get("network_mode") or "")
+        if rede == "host":
+            add("Usa a rede do servidor direto, sem isolamento (network_mode: host)")
+        for k in ("pid", "ipc", "userns_mode", "uts", "cgroup"):
+            if str(s.get(k) or "") == "host":
+                add(f"Compartilha {COMPARTILHA[k]} com o servidor ({k}: host)")
+        if s.get("cgroup_parent"):
+            add("Usa cgroup_parent ou volumes_from (recursos de fora do app)")
+        caps = sorted({str(c).upper().removeprefix("CAP_") for c in (s.get("cap_add") or [])} & CAPS_PROIBIDAS)
+        if caps:
+            add(f"Poderes de administrador do Linux ({', '.join(caps)})")
+        for d in s.get("devices") or []:
+            origem = str((d.get("source") if isinstance(d, dict) else str(d).split(":")[0]) or "")
+            if not origem.startswith("/dev/dri"):
+                add(f"Acesso ao aparelho {origem} do servidor")
+        for o in s.get("security_opt") or []:
+            if "unconfined" in str(o) or "disable" in str(o):
+                add(f"Desliga uma proteção do Docker ({o})")
+        for v in s.get("volumes") or []:
+            o = origem_volume(v)
+            if not o:
+                continue
+            if "docker.sock" in o:
+                add("Controla o Docker do servidor (socket do Docker): equivale a controle total")
+            elif not pasta_comum(o):
+                add(f"Mexe na pasta {pasta_legivel(o)} do servidor")
+    return out
+
+
+def perguntas(servicos, principal, x, app_id, excecoes):
+    """Variáveis que viram perguntas da instalação. Devolve (campos, trocas) onde trocas = {serviço: {VAR: novo
+    valor}}. Regras: senha fixa (curta: as longas viram chave aleatória em segredos_fixos), menos as de banco
+    de dados; o usuário que anda com ela; as variáveis que o CasaOS descreve (x-casaos.envs). O perguntas.json
+    força ("perguntar") ou tira ("nao_perguntar") app a app."""
+    exc = excecoes.get(app_id) or {}
+    forcar, tirar = set(exc.get("perguntar") or []), set(exc.get("nao_perguntar") or [])
+
+    def pares(s):
+        env = s.get("environment") if isinstance(s, dict) else None
+        if isinstance(env, dict):
+            return [(str(k), "" if v is None else str(v)) for k, v in env.items()]
+        return [tuple(str(e).split("=", 1)) for e in env or [] if "=" in str(e)]
+    literal = lambda v: "$" not in v and "\n" not in v and len(v) < 16 and v.lower() not in SIM_NAO  # noqa: E731
+    nome_var = lambda k: k if k not in VARS_CONHECIDAS and not k.startswith("APP_") else "GARIMPO_" + k  # noqa: E731
+    descritas = {}
+    for e in x.get("envs") or []:
+        if isinstance(e, dict) and e.get("container"):
+            descritas[str(e["container"])] = texto(e.get("description"))
+    campos, ja = [], set()
+    principal_env = dict(pares(servicos.get(principal) or {}))
+    # senhas (de qualquer serviço: o mesmo valor muda junto em todos)
+    senhas = {}
+    for s in servicos.values():
+        for k, v in pares(s):
+            if k in tirar or not SENHA_NOME.search(k) or OPCAO_NOME.search(k) or not literal(v) or (BANCO_NOME.match(k) and k not in forcar):
+                continue
+            if v and v not in senhas:
+                senhas[v] = k
+    for v, k in senhas.items():
+        var = nome_var(k)
+        campos.append({"type": "password", "label": f"Senha ({k})", "env_variable": var, "required": True,
+                       "hint": "A receita original vinha com uma senha fixa, igual para todo mundo: escolha a sua."})
+        ja.add(k)
+    # usuário que anda com a senha, e variáveis descritas pelo CasaOS ou pedidas no perguntas.json
+    for k, v in principal_env.items():
+        if k in ja or k in tirar or not literal(v):
+            continue
+        usuario = bool(senhas) and USUARIO_NOME.search(k)
+        descrita = k in descritas and k not in COMUNS and not SENHA_NOME.search(k)
+        if usuario or descrita or k in forcar:
+            campo = {"type": "text", "label": f"Usuário ({k})" if usuario else k, "env_variable": nome_var(k), "required": True, "default": v}
+            if descritas.get(k):
+                campo["hint"] = descritas[k][:240]
+            campos.append(campo)
+            ja.add(k)
+    # o valor na receita vira ${VAR}: em todos os serviços para as senhas, no principal para o resto
+    trocas = {}
+    for n, s in servicos.items():
+        for k, v in pares(s):
+            if v in senhas and SENHA_NOME.search(k) and not OPCAO_NOME.search(k) and k not in tirar and (not BANCO_NOME.match(k) or k in forcar):
+                trocas.setdefault(n, {})[k] = "${" + nome_var(senhas[v]) + "}"
+            elif n == principal and k in ja and k not in senhas.values():
+                trocas.setdefault(n, {})[k] = "${" + nome_var(k) + "}"
+    return campos, trocas
+
+
+def aplica_trocas(s, troca):
+    env = s.get("environment")
+    if not troca or not env:
+        return
+    if isinstance(env, dict):
+        for k, v in troca.items():
+            if k in env:
+                env[k] = v
+    else:
+        s["environment"] = [f"{k}={troca[k]}" if (k := str(e).split("=", 1)[0]) in troca and "=" in str(e) else e for e in env]
 
 
 def portas(s):
@@ -337,8 +497,9 @@ def imagem_e_versao(imagem):
 
 # ── conversão de um app ──────────────────────────────────────────────────────────────────────────
 
-def converte_app(pasta, compose, origem, oficiais, usados_ids):
-    """Devolve (id, config, compose_runtipi, descricao_md, info) ou levanta Recusa."""
+def converte_app(pasta, compose, origem, oficiais, usados_ids, excecoes=None):
+    """Devolve (id, config, compose_runtipi, descricao_md, info) ou levanta Recusa. excecoes = o pedaço do
+    perguntas.json desta origem ({app: {"perguntar": [...], "nao_perguntar": [...]}})."""
     x = compose.get("x-casaos") or {}
     servicos = compose.get("services") or {}
     if not isinstance(servicos, dict) or not servicos:
@@ -384,10 +545,17 @@ def converte_app(pasta, compose, origem, oficiais, usados_ids):
         web = principal
     if web is None:
         web = next((n for n, s in servicos.items() if portas(s)), None)
+    # app na rede do servidor (network_mode: host) não publica porta: a página abre direto na porta do port_map
+    rede_host = None
+    if web is None and mapa_porta.isdigit() and 1 <= int(mapa_porta) <= 65535:
+        rede_host = next((n for n in [principal, *servicos] if str((servicos[n] or {}).get("network_mode") or "") == "host"), None)
+        web = rede_host
     if web is None:
         raise Recusa("não tem página web (porta) para abrir")
     # segredo fixo na receita (todo mundo teria a mesma chave): vira um valor aleatório por instalação
     trocas = {v: "${GARIMPO_SEGREDO_%d}" % (i + 1) for i, v in enumerate(segredos_fixos(servicos))}
+    # senha fixa, usuário e variáveis descritas pelo CasaOS viram perguntas da instalação
+    campos_perg, trocas_env = perguntas(servicos, principal, x, app_id, excecoes or {})
     for n, s in servicos.items():
         s = copy.deepcopy(s)
         novo_nome = app_id if n == principal else n
@@ -397,6 +565,8 @@ def converte_app(pasta, compose, origem, oficiais, usados_ids):
         if rede.startswith("service:"):
             alvo = rede.split(":", 1)[1]
             s["network_mode"] = "service:" + (app_id if alvo == principal else alvo)
+        elif rede != "host":  # host fica (o app requer privilégios); bridge e afins saem (o Runtipi cuida da rede)
+            s.pop("network_mode", None)
         if "labels" in s and isinstance(s["labels"], dict):
             s["labels"] = {k: v for k, v in s["labels"].items() if not str(k).startswith(("casaos", "icon"))} or None
             if s["labels"] is None:
@@ -410,9 +580,13 @@ def converte_app(pasta, compose, origem, oficiais, usados_ids):
             elif isinstance(d, dict):
                 s["depends_on"] = {(app_id if k == principal else k): v for k, v in d.items()}
         s = troca_texto(troca_vars(s, app_id, desconhecidas), trocas)
+        aplica_trocas(s, trocas_env.get(n))
         if n == principal:
             s["image"], versao = imagem_e_versao(s.get("image"))
-        if n == web:
+        if n == web and n == rede_host:
+            porta_ui = porta_interna = int(mapa_porta)
+            s["x-runtipi"] = {"is_main": True, "internal_port": porta_interna}
+        elif n == web:
             lista = portas(s)
             escolhida = next((p for p in lista if mapa_porta and str(p[0]) == mapa_porta), None) or lista[0]
             porta_ui = escolhida[0] or escolhida[1]
@@ -449,8 +623,10 @@ def converte_app(pasta, compose, origem, oficiais, usados_ids):
     descricao = texto(x.get("description")) or tagline
     fonte = next((u for u in (x.get("repo"), x.get("project_url"), x.get("website")) if url_ok(u)), origem["fonte"])
     site = next((u for u in (x.get("website"), x.get("project_url")) if url_ok(u)), None)
-    campos = [{"type": "text", "label": f"{v} (pedido pela receita original)", "env_variable": v, "required": False}
-              for v in sorted(desconhecidas)]
+    campos = list(campos_perg)
+    ja = {c["env_variable"] for c in campos}
+    campos += [{"type": "text", "label": f"{v} (pedido pela receita original)", "env_variable": v, "required": False}
+               for v in sorted(desconhecidas) if v not in ja]
     campos += [{"type": "random", "label": f"Chave secreta {i + 1} (gerada na instalação)", "env_variable": f"GARIMPO_SEGREDO_{i + 1}",
                 "min": 32} for i in range(len(trocas))]
     if SEGREDO_RE.search(json.dumps(saida)):
@@ -486,21 +662,28 @@ def converte_app(pasta, compose, origem, oficiais, usados_ids):
     md = [f"# {nome_app}", "", descricao, ""]
     if dicas:
         md += ["## Antes de instalar", "", dicas, ""]
-    campos_texto = [c for c in campos if c["type"] == "text"]
+    campos_texto = [c for c in campos if c["type"] == "text" and not c.get("required")]
     if campos_texto:
         md += ["## Perguntas da instalação", "",
                "A receita original usa estas variáveis; preencha na instalação se o app precisar: "
                + ", ".join(f"`{c['env_variable']}`" for c in campos_texto) + ".", ""]
+    if any(c["type"] == "password" for c in campos_perg):
+        md += ["A receita original vinha com uma senha fixa (igual para todo mundo); aqui você escolhe a sua na instalação.", ""]
     if trocas:
         md += ["A receita original trazia uma chave secreta fixa (igual para todo mundo); aqui o Runtipi gera uma "
                "nova em cada instalação.", ""]
+    privs = privilegios(saida)
+    if privs:
+        md += ["## Requer privilégios", "",
+               "A receita deste app pede poderes sobre o servidor que os apps comuns não têm. Instale só se confia nele:", ""]
+        md += [f"- {p}" for p in privs] + [""]
     md += ["---", "", f"Convertido automaticamente da loja {origem['nome']} ({origem['fonte']}, licença {origem['licenca']}) "
            "pelo Garimpo do BrunOS. Pastas: os dados do app ficam na pasta do app no Runtipi; filmes, músicas, fotos e "
            "downloads, na pasta de mídia do Runtipi. Problemas com o app em si: fale com o autor dele.", ""]
     md = "\n".join(md)
     if SEGREDO_RE.search(md):
         raise Recusa("a descrição traz uma chave secreta escrita nela")
-    return app_id, config, saida, md, {"icone": x.get("icon"), "porta": porta_ui}
+    return app_id, config, saida, md, {"icone": x.get("icon"), "porta": porta_ui, "privilegios": privs, "porta_fixa": rede_host is not None}
 
 
 # ── logos ────────────────────────────────────────────────────────────────────────────────────────
@@ -631,8 +814,20 @@ def porta_livre(p, usadas):
     return p
 
 
-def converte_loja(origem, fonte, oficial, saida, padrao, agora_ms=None):
+def le_excecoes(origem, caminho=None):
+    """O pedaço do perguntas.json desta origem (perguntas da instalação corrigidas app a app)."""
+    caminho = caminho or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "perguntas.json")
+    try:
+        tudo = json.loads(le(caminho))
+    except (OSError, ValueError):
+        return {}
+    parte = tudo.get(origem["slug"]) if isinstance(tudo, dict) else None
+    return parte if isinstance(parte, dict) else {}
+
+
+def converte_loja(origem, fonte, oficial, saida, padrao, agora_ms=None, excecoes=None):
     agora_ms = agora_ms or int(time.time() * 1000) - 60_000  # um minuto antes: a loja recusa datas no futuro
+    excecoes = le_excecoes(origem) if excecoes is None else excecoes
     oficiais = le_oficiais(oficial)
     anteriores = le_anteriores(saida)
     pastas = sorted(d for d in os.listdir(os.path.join(fonte, "Apps")) if os.path.isdir(os.path.join(fonte, "Apps", d)))
@@ -652,7 +847,7 @@ def converte_loja(origem, fonte, oficial, saida, padrao, agora_ms=None):
             compose = yaml.safe_load(le(arq))
             if not isinstance(compose, dict):
                 raise Recusa("docker-compose.yml inválido")
-            app_id, config, comp, md, info = converte_app(pasta, compose, origem, oficiais, usados_ids)
+            app_id, config, comp, md, info = converte_app(pasta, compose, origem, oficiais, usados_ids, excecoes)
         except Recusa as e:
             (duplicados if len(e.args) > 1 and e.args[1] == "duplicado" else recusados).append((d, e.args[0]))
             continue
@@ -661,8 +856,15 @@ def converte_loja(origem, fonte, oficial, saida, padrao, agora_ms=None):
             continue
         usados_ids.add(app_id)
         convertidos.append((d, pasta, app_id, config, comp, md, info))
-    # portas: a de cada app tem que ser única na loja; quem já estava publicado guarda a sua
+    # portas: a de cada app tem que ser única na loja. Primeiro os apps na rede do servidor (a porta é a que o
+    # programa escuta, não dá para trocar); depois quem já estava publicado guarda a sua
+    for _, _, _, config, _, _, info in convertidos:
+        if info.get("porta_fixa") and config["port"] not in usadas:
+            usadas.add(config["port"])
+            config["_porta_ok"] = True
     for _, _, app_id, config, *_ in convertidos:
+        if config.get("_porta_ok"):
+            continue
         p = anteriores.get(app_id, ({}, ""))[0].get("port")
         if isinstance(p, int) and p not in usadas:
             config["port"] = p
@@ -672,6 +874,7 @@ def converte_loja(origem, fonte, oficial, saida, padrao, agora_ms=None):
         if not config.pop("_porta_ok", False):
             config["port"] = porta_livre(config["port"], usadas)
     sem_logo = []
+    privs = {}
     for d, pasta, app_id, config, comp, md, info in convertidos:
         txt = yaml.dump(comp, Dumper=Dumper, sort_keys=False, allow_unicode=True, width=200)
         ant = anteriores.get(app_id)
@@ -704,16 +907,23 @@ def converte_loja(origem, fonte, oficial, saida, padrao, agora_ms=None):
         with open(os.path.join(saida, ".resumos", app_id), "w", encoding="utf-8") as f:
             f.write(resumo(config, txt, md) + "\n")
         ok.append((app_id, config["name"], d))
+        if info.get("privilegios"):
+            privs[app_id] = info["privilegios"]
     # resumos de apps que saíram
     rdir = os.path.join(saida, ".resumos")
     for r in os.listdir(rdir) if os.path.isdir(rdir) else []:
         if r not in usados_ids:
             os.remove(os.path.join(rdir, r))
-    escreve_extras(origem, fonte, saida, ok, recusados, duplicados, agora_ms)
+    escreve_extras(origem, fonte, saida, ok, recusados, duplicados, agora_ms, privs)
     return ok, recusados, duplicados, sem_logo
 
 
-def escreve_extras(origem, fonte, saida, ok, recusados, duplicados, agora_ms):
+def escreve_extras(origem, fonte, saida, ok, recusados, duplicados, agora_ms, privs=None):
+    privs = privs or {}
+    # o que cada app pede de poder sobre o servidor (o BrunOS confere de novo na receita, por conta própria)
+    with open(os.path.join(saida, "privilegios.json"), "w", encoding="utf-8") as f:
+        json.dump(dict(sorted(privs.items())), f, ensure_ascii=False, indent=2)
+        f.write("\n")
     info = {
         "brunos": 1,
         "nome": origem["nome"],
@@ -724,6 +934,7 @@ def escreve_extras(origem, fonte, saida, ok, recusados, duplicados, agora_ms):
         "sobre": origem["sobre"],
         "garimpo": "https://github.com/BrunnoFe/Garimpo",
         "apps": len(ok),
+        "privilegios": len(privs),
         "recusados": len(recusados),
         "repetidos": len(duplicados),
     }
@@ -744,8 +955,13 @@ def escreve_extras(origem, fonte, saida, ok, recusados, duplicados, agora_ms):
         f"## Apps ({len(ok)})", "",
     ]
     linhas += [f"- {nome} (`{i}`)" for i, nome, _ in sorted(ok, key=lambda t: t[1].lower())]
-    linhas += ["", f"## Recusados por segurança ou formato ({len(recusados)})", "",
-               "Receitas que dariam poder demais sobre o servidor ou que não deu para converter:", ""]
+    linhas += ["", f"## Requerem privilégios ({len(privs)})", "",
+               "Estes apps pedem poderes sobre o servidor que os apps comuns não têm. No BrunOS eles aparecem com o selo "
+               "**Requer privilégios** e só instalam depois de \"Entendo os riscos\" + Senha de configuração. Na tela do "
+               "próprio Runtipi aparecem sem aviso: instale só se confia no app.", ""]
+    linhas += [f"- `{i}`: " + "; ".join(p) for i, p in sorted(privs.items())]
+    linhas += ["", f"## Não convertidos ({len(recusados)})", "",
+               "Receitas que não funcionariam no Runtipi ou que não deu para converter:", ""]
     linhas += [f"- {d}: {m}" for d, m in recusados]
     linhas += ["", f"## Já existem na loja oficial do Runtipi ({len(duplicados)})", "",
                "Ficaram de fora para não aparecer duas vezes: " + ", ".join(d for d, _ in duplicados) + ".", ""]
@@ -767,7 +983,7 @@ def main(argv=None):
     os.makedirs(a.saida, exist_ok=True)
     padrao = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logo-padrao.jpg")
     ok, recusados, duplicados, sem_logo = converte_loja(origens[a.origem], a.fonte, a.oficial, a.saida, padrao)
-    print(f"{origens[a.origem]['nome']}: {len(ok)} convertidos, {len(recusados)} recusados, "
+    print(f"{origens[a.origem]['nome']}: {len(ok)} convertidos, {len(recusados)} não convertidos, "
           f"{len(duplicados)} já na loja oficial, {len(sem_logo)} com o logo padrão")
     for d, m in recusados:
         print(f"  recusado {d}: {m}")

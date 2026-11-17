@@ -1,0 +1,5 @@
+{
+  "_como_usar": "Correções app a app das perguntas da instalação (decisão 62 f do BrunOS). Por origem e id do app: \"perguntar\" = variáveis do serviço principal que viram pergunta (já preenchida com o valor da receita); \"nao_perguntar\" = variáveis que a regra automática perguntaria, mas o app não precisa. Ex.: \"casaos\": {\"meuapp\": {\"perguntar\": [\"ADMIN_EMAIL\"], \"nao_perguntar\": [\"WEB_PASSWORD\"]}}",
+  "casaos": {},
+  "linuxserver": {}
+}

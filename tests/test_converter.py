@@ -94,18 +94,47 @@ class TesteConversao(unittest.TestCase):
         self.assertEqual(comp["x-runtipi"], {"schema_version": 2})
         self.assertIn("Convertido automaticamente da loja Teste", md)
 
-    def test_recusas(self):
+    def test_privilegios_entram_com_a_lista(self):
+        # decisão 62 do BrunOS: o app entra na loja, com o que pede listado (e a receita intacta)
         casos = {
             "privileged: true": "privileged",
-            "network_mode: host": "rede do servidor",
-            "pid: host": "pid",
-            "cap_add: [NET_ADMIN]": "NET_ADMIN",
+            "network_mode: host": "network_mode: host",
+            "pid: host": "pid: host",
+            "cap_add: [NET_ADMIN, CHOWN]": "(NET_ADMIN)",
             "devices: [/dev/kvm:/dev/kvm]": "/dev/kvm",
             "security_opt: [apparmor:unconfined]": "proteção",
             "volumes: [/var/run/docker.sock:/var/run/docker.sock]": "socket do Docker",
-            "volumes: [/etc:/host-etc]": "/etc",
+            "volumes: [/etc:/host-etc]": "pasta /etc",
             "volumes: [/:/raiz]": "pasta / ",
-            "volumes: [/home/fulano:/x]": "/home/fulano",
+        }
+        for extra, motivo in casos.items():
+            txt = f"""
+name: forte
+services:
+  forte:
+    image: x/forte:1
+    ports: ["8080:80"]
+    {extra}
+x-casaos: {{main: forte, port_map: "8080"}}
+"""
+            with self.subTest(extra=extra):
+                _, _, comp, md, info = self.converte(txt)
+                self.assertTrue(any(motivo.strip() in p + " " for p in info["privilegios"]), info["privilegios"])
+                self.assertIn("## Requer privilégios", md)
+        _, _, comp, _, info = self.converte(SIMPLES.replace("network_mode: bridge", "network_mode: host"))
+        self.assertEqual(comp["services"]["meuapp"]["network_mode"], "host")
+        # pasta pessoal e hora certa não são privilégio
+        _, _, _, md, info = self.converte(SIMPLES.replace("/DATA/Downloads:/downloads", "/home/fulano:/x"))
+        self.assertEqual(info["privilegios"], [])
+        self.assertNotIn("Requer privilégios", md)
+
+    def test_recusa_o_que_nao_funciona(self):
+        casos = {
+            "network_mode: container:outro": "rede de outro container",
+            "volumes_from: [outro]": "volumes_from",
+            "runtime: kata": "runtime",
+            "volumes: [$PASTA_X:/x]": "variável desconhecida",
+            "volumes: [/DATA/../etc:/x]": "'..'",
         }
         for extra, motivo in casos.items():
             txt = f"""
@@ -120,7 +149,55 @@ x-casaos: {{main: ruim, port_map: "8080"}}
             with self.subTest(extra=extra):
                 with self.assertRaises(c.Recusa) as e:
                     self.converte(txt)
-                self.assertIn(motivo.strip(), e.exception.args[0] + " ")
+                self.assertIn(motivo, e.exception.args[0])
+
+    def test_perguntas_da_instalacao(self):
+        txt = """
+name: painel
+services:
+  painel:
+    image: x/painel:1
+    ports: ["8080:80"]
+    environment:
+      ADMIN_USER: admin
+      ADMIN_PASSWORD: casaos
+      DB_PASSWORD: interna
+      SITE_NAME: Meu Painel
+      TZ: $TZ
+  worker:
+    image: x/painel:1
+    environment: ["ADMIN_PASSWORD=casaos", "DB_PASSWORD=interna"]
+x-casaos:
+  main: painel
+  port_map: "8080"
+  envs:
+    - container: SITE_NAME
+      description: {en_US: Name shown on the page}
+    - container: TZ
+      description: {en_US: Time zone}
+"""
+        _, cfg, comp, md, _ = self.converte(txt)
+        campos = {f["env_variable"]: f for f in cfg["form_fields"]}
+        self.assertEqual(campos["ADMIN_PASSWORD"]["type"], "password")
+        self.assertTrue(campos["ADMIN_PASSWORD"]["required"])
+        self.assertNotIn("default", campos["ADMIN_PASSWORD"])  # a senha fixa nunca vai como sugestão
+        self.assertEqual((campos["ADMIN_USER"]["type"], campos["ADMIN_USER"]["default"]), ("text", "admin"))
+        self.assertEqual((campos["SITE_NAME"]["default"], campos["SITE_NAME"]["hint"]), ("Meu Painel", "Name shown on the page"))
+        self.assertNotIn("DB_PASSWORD", campos)  # senha de banco: só os serviços do app usam
+        self.assertNotIn("TZ", campos)
+        env = comp["services"]["painel"]["environment"]
+        self.assertEqual((env["ADMIN_PASSWORD"], env["ADMIN_USER"], env["SITE_NAME"], env["DB_PASSWORD"]),
+                         ("${ADMIN_PASSWORD}", "${ADMIN_USER}", "${SITE_NAME}", "interna"))
+        self.assertEqual(comp["services"]["worker"]["environment"], ["ADMIN_PASSWORD=${ADMIN_PASSWORD}", "DB_PASSWORD=interna"])
+        self.assertIn("senha fixa", md)
+        # exceções app a app: tirar uma pergunta e forçar outra
+        exc = {"painel": {"nao_perguntar": ["SITE_NAME", "ADMIN_PASSWORD"], "perguntar": ["DB_PASSWORD"]}}
+        _, cfg, comp, _, _ = c.converte_app("/x/Painel", receita(txt), ORIGEM, OFICIAIS, set(), exc)
+        nomes = [f["env_variable"] for f in cfg["form_fields"]]
+        self.assertIn("DB_PASSWORD", nomes)
+        self.assertNotIn("SITE_NAME", nomes)
+        self.assertNotIn("ADMIN_PASSWORD", nomes)
+        self.assertEqual(comp["services"]["painel"]["environment"]["ADMIN_PASSWORD"], "casaos")
 
     def test_segredo_fixo_vira_aleatorio(self):
         chave = "sk-" + "A1b2C3d4" * 6  # valor falso no formato de chave da OpenAI
@@ -217,15 +294,18 @@ class TesteLoja(unittest.TestCase):
         return json.loads(c.le(os.path.join(self.saida, "apps", app, "config.json")))
 
     def test_loja_inteira_e_versoes(self):
-        ok, recusados, dup, _ = c.converte_loja(ORIGEM, self.fonte, self.oficial, self.saida, self.padrao, agora_ms=1_800_000_000_000)
-        self.assertEqual(sorted(i for i, _, _ in ok), ["meuapp", "outro"])
-        self.assertEqual([d for d, _ in recusados], ["Ruim"])
-        # portas únicas na loja (as duas receitas pedem 8123)
-        self.assertEqual({self.cfg("meuapp")["port"], self.cfg("outro")["port"]}, {8123, 8124})
+        ok, recusados, dup, _ = c.converte_loja(ORIGEM, self.fonte, self.oficial, self.saida, self.padrao, agora_ms=1_800_000_000_000, excecoes={})
+        self.assertEqual(sorted(i for i, _, _ in ok), ["meuapp", "outro", "ruim"])
+        self.assertEqual(recusados, [])
+        # portas únicas na loja (as três receitas pedem 8123)
+        self.assertEqual({self.cfg("meuapp")["port"], self.cfg("outro")["port"], self.cfg("ruim")["port"]}, {8123, 8124, 8125})
         self.assertTrue(os.path.isfile(os.path.join(self.saida, "apps", "meuapp", "metadata", "logo.jpg")))
         g = json.loads(c.le(os.path.join(self.saida, "garimpo.json")))
-        self.assertEqual((g["nome"], g["selo"], g["apps"], g["recusados"]), ("Teste", "via Teste", 2, 1))
-        self.assertIn("Ruim: o serviço ruim pede privileged", c.le(os.path.join(self.saida, "README.md")))
+        self.assertEqual((g["nome"], g["selo"], g["apps"], g["privilegios"], g["recusados"]), ("Teste", "via Teste", 3, 1, 0))
+        self.assertEqual(json.loads(c.le(os.path.join(self.saida, "privilegios.json"))), {"ruim": ["Controle total do servidor (privileged)"]})
+        readme = c.le(os.path.join(self.saida, "README.md"))
+        self.assertIn("## Requerem privilégios (1)", readme)
+        self.assertIn("- `ruim`: Controle total do servidor (privileged)", readme)
         self.assertEqual(confere.confere_loja(self.saida), [])
         # rodar de novo sem mudança: mesma versão e mesma data; com mudança: tipi_version sobe
         c.converte_loja(ORIGEM, self.fonte, self.oficial, self.saida, self.padrao, agora_ms=1_800_000_100_000)
@@ -249,8 +329,13 @@ class TesteLoja(unittest.TestCase):
         with open(p, "w", encoding="utf-8") as f:
             yaml.safe_dump(comp, f)
         erros = confere.confere_loja(self.saida)
-        self.assertTrue(any("privileged" in e for e in erros))
-        self.assertTrue(any("/etc:/etc" in e for e in erros))
+        # privilégio que não está no privilegios.json: é exatamente o que a conferência existe para pegar
+        self.assertTrue(any("meuapp: privilégios não batem" in e and "privileged" in e and "/etc" in e for e in erros), erros)
+        # e o contrário: um app listado que não pede nada também é erro
+        with open(os.path.join(self.saida, "privilegios.json"), "w", encoding="utf-8") as f:
+            json.dump({"outro": ["Controle total do servidor (privileged)"]}, f)
+        erros = confere.confere_loja(self.saida)
+        self.assertTrue(any(e.startswith("outro: privilégios não batem") for e in erros), erros)
 
 
 if __name__ == "__main__":
