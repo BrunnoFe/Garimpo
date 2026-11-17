@@ -77,6 +77,14 @@ VARS_CONHECIDAS = {
 }
 
 
+# variável que guarda segredo (o valor fixo vira um "random" do Runtipi, gerado em cada instalação)
+NOME_SEGREDO = re.compile(r"(SECRET|PASSWORD|PASSWD|TOKEN|API_?KEY|PRIVATE_?KEY|_KEY$|^KEY$|SALT)", re.I)
+# coisas com cara de chave de verdade: nunca publicar (o GitHub também barra)
+SEGREDO_RE = re.compile(
+    r"(sk-[A-Za-z0-9_-]{20,}|sk-proj-[A-Za-z0-9_-]{10,}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}"
+    r"|AKIA[0-9A-Z]{16}|xox[baprs]-[A-Za-z0-9-]{10,}|AIza[0-9A-Za-z_-]{35}|-----BEGIN [A-Z ]*PRIVATE KEY-----)")
+
+
 class Recusa(Exception):
     """App que não entra na loja convertida (o motivo vai para o README)."""
 
@@ -148,6 +156,31 @@ def troca_vars(valor, app_id, desconhecidas):
         return [troca_vars(v, app_id, desconhecidas) for v in valor]
     if isinstance(valor, dict):
         return {k: troca_vars(v, app_id, desconhecidas) for k, v in valor.items()}
+    return valor
+
+
+def segredos_fixos(servicos):
+    """Valores fixos de variáveis de segredo (16+ letras, sem variável dentro), na ordem em que aparecem."""
+    achados = []
+    for s in servicos.values():
+        env = s.get("environment") if isinstance(s, dict) else None
+        pares = env.items() if isinstance(env, dict) else (str(e).split("=", 1) for e in env or [] if "=" in str(e))
+        for k, v in pares:
+            v = "" if v is None else str(v)
+            if NOME_SEGREDO.search(str(k)) and len(v) >= 16 and "$" not in v and " " not in v and v not in achados:
+                achados.append(v)
+    return achados
+
+
+def troca_texto(valor, trocas):
+    if isinstance(valor, str):
+        for velho, novo in trocas.items():
+            valor = valor.replace(velho, novo)
+        return valor
+    if isinstance(valor, list):
+        return [troca_texto(v, trocas) for v in valor]
+    if isinstance(valor, dict):
+        return {k: troca_texto(v, trocas) for k, v in valor.items()}
     return valor
 
 
@@ -353,6 +386,8 @@ def converte_app(pasta, compose, origem, oficiais, usados_ids):
         web = next((n for n, s in servicos.items() if portas(s)), None)
     if web is None:
         raise Recusa("não tem página web (porta) para abrir")
+    # segredo fixo na receita (todo mundo teria a mesma chave): vira um valor aleatório por instalação
+    trocas = {v: "${GARIMPO_SEGREDO_%d}" % (i + 1) for i, v in enumerate(segredos_fixos(servicos))}
     for n, s in servicos.items():
         s = copy.deepcopy(s)
         novo_nome = app_id if n == principal else n
@@ -374,7 +409,7 @@ def converte_app(pasta, compose, origem, oficiais, usados_ids):
                 s["depends_on"] = [app_id if i == principal else i for i in d]
             elif isinstance(d, dict):
                 s["depends_on"] = {(app_id if k == principal else k): v for k, v in d.items()}
-        s = troca_vars(s, app_id, desconhecidas)
+        s = troca_texto(troca_vars(s, app_id, desconhecidas), trocas)
         if n == principal:
             s["image"], versao = imagem_e_versao(s.get("image"))
         if n == web:
@@ -397,7 +432,7 @@ def converte_app(pasta, compose, origem, oficiais, usados_ids):
         if k == "volumes":
             continue  # volumes com nome viraram pastas do app
         if compose.get(k):
-            saida[k] = troca_vars(compose[k], app_id, desconhecidas)
+            saida[k] = troca_texto(troca_vars(compose[k], app_id, desconhecidas), trocas)
 
     archs = sorted({ARQUITETURAS[a] for a in (x.get("architectures") or ["amd64"]) if a in ARQUITETURAS})
     if not archs:
@@ -416,6 +451,10 @@ def converte_app(pasta, compose, origem, oficiais, usados_ids):
     site = next((u for u in (x.get("website"), x.get("project_url")) if url_ok(u)), None)
     campos = [{"type": "text", "label": f"{v} (pedido pela receita original)", "env_variable": v, "required": False}
               for v in sorted(desconhecidas)]
+    campos += [{"type": "random", "label": f"Chave secreta {i + 1} (gerada na instalação)", "env_variable": f"GARIMPO_SEGREDO_{i + 1}",
+                "min": 32} for i in range(len(trocas))]
+    if SEGREDO_RE.search(json.dumps(saida)):
+        raise Recusa("a receita traz uma chave secreta escrita nela")
     config = {
         "$schema": "https://schemas.runtipi.io/app-info.json",
         "name": nome_app[:60],
@@ -447,14 +486,21 @@ def converte_app(pasta, compose, origem, oficiais, usados_ids):
     md = [f"# {nome_app}", "", descricao, ""]
     if dicas:
         md += ["## Antes de instalar", "", dicas, ""]
-    if campos:
+    campos_texto = [c for c in campos if c["type"] == "text"]
+    if campos_texto:
         md += ["## Perguntas da instalação", "",
                "A receita original usa estas variáveis; preencha na instalação se o app precisar: "
-               + ", ".join(f"`{c['env_variable']}`" for c in campos) + ".", ""]
+               + ", ".join(f"`{c['env_variable']}`" for c in campos_texto) + ".", ""]
+    if trocas:
+        md += ["A receita original trazia uma chave secreta fixa (igual para todo mundo); aqui o Runtipi gera uma "
+               "nova em cada instalação.", ""]
     md += ["---", "", f"Convertido automaticamente da loja {origem['nome']} ({origem['fonte']}, licença {origem['licenca']}) "
            "pelo Garimpo do BrunOS. Pastas: os dados do app ficam na pasta do app no Runtipi; filmes, músicas, fotos e "
            "downloads, na pasta de mídia do Runtipi. Problemas com o app em si: fale com o autor dele.", ""]
-    return app_id, config, saida, "\n".join(md), {"icone": x.get("icon"), "porta": porta_ui}
+    md = "\n".join(md)
+    if SEGREDO_RE.search(md):
+        raise Recusa("a descrição traz uma chave secreta escrita nela")
+    return app_id, config, saida, md, {"icone": x.get("icon"), "porta": porta_ui}
 
 
 # ── logos ────────────────────────────────────────────────────────────────────────────────────────

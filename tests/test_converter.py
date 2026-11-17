@@ -122,6 +122,36 @@ x-casaos: {{main: ruim, port_map: "8080"}}
                     self.converte(txt)
                 self.assertIn(motivo.strip(), e.exception.args[0] + " ")
 
+    def test_segredo_fixo_vira_aleatorio(self):
+        chave = "sk-" + "A1b2C3d4" * 6  # valor falso no formato de chave da OpenAI
+        txt = f"""
+name: pilha
+services:
+  pilha:
+    image: x/pilha:1
+    ports: ["8080:80"]
+    environment:
+      SECRET_KEY: {chave}
+      DB_PASSWORD: curta
+  worker:
+    image: x/pilha:1
+    environment: ["SECRET_KEY={chave}", "URL=http://x?k={chave}"]
+x-casaos: {{main: pilha, port_map: "8080"}}
+"""
+        _, cfg, comp, md, _ = self.converte(txt)
+        self.assertEqual(comp["services"]["pilha"]["environment"]["SECRET_KEY"], "${GARIMPO_SEGREDO_1}")
+        self.assertEqual(comp["services"]["pilha"]["environment"]["DB_PASSWORD"], "curta")  # curta: senha interna, fica
+        self.assertEqual(comp["services"]["worker"]["environment"], ["SECRET_KEY=${GARIMPO_SEGREDO_1}", "URL=http://x?k=${GARIMPO_SEGREDO_1}"])
+        self.assertEqual([(f["type"], f["env_variable"]) for f in cfg["form_fields"]], [("random", "GARIMPO_SEGREDO_1")])
+        self.assertNotIn("required", cfg["form_fields"][0])  # random nunca obrigatório (teste da loja oficial)
+        self.assertIn("chave secreta fixa", md)
+
+    def test_chave_escrita_fora_de_variavel_de_segredo_recusa(self):
+        txt = SIMPLES.replace("CHAVE: ${CHAVE_API}", "CONFIG: sk-" + "Z9y8X7w6" * 6)
+        with self.assertRaises(c.Recusa) as e:
+            self.converte(txt)
+        self.assertIn("chave secreta", e.exception.args[0])
+
     def test_placa_de_video_pode(self):
         txt = SIMPLES.replace("    restart: unless-stopped", "    devices: [/dev/dri:/dev/dri]")
         _, _, comp, _, _ = self.converte(txt)

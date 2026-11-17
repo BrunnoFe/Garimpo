@@ -12,7 +12,7 @@ import sys
 import yaml
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from converter import ARQUIVOS_LIVRES, ID_RE, Recusa, confere_servico, le  # noqa: E402
+from converter import ARQUIVOS_LIVRES, ID_RE, SEGREDO_RE, Recusa, confere_servico, le  # noqa: E402
 
 ORIGENS_OK = ("${APP_DATA_DIR}/data", "${ROOT_FOLDER_HOST}/media/")
 
@@ -46,6 +46,10 @@ def confere_loja(pasta):
             continue
         if cfg.get("id") != d:
             erros.append(f"{d}: id diferente da pasta")
+        for nome in ("config.json", "docker-compose.yml", os.path.join("metadata", "description.md")):
+            p = os.path.join(base, nome)
+            if os.path.isfile(p) and SEGREDO_RE.search(le(p)):
+                erros.append(f"{d}: {nome} tem algo com cara de chave secreta")
         p = cfg.get("port")
         if p in portas:
             erros.append(f"{d}: porta {p} repetida com {portas[p]}")
