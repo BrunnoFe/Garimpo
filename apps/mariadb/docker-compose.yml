@@ -1,0 +1,21 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Mariadb).
+services:
+  mariadb:
+    image: linuxserver/mariadb:11.8.9
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_DATABASE: ''
+      MYSQL_USER: ''
+      MYSQL_PASSWORD: ''
+      REMOTE_SQL: ''
+      CLI_OPTS: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 3306
+x-runtipi:
+  schema_version: 2

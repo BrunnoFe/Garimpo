@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Dogwalk (LinuxServer.io)",
+  "id": "dogwalk",
+  "available": true,
+  "port": 3016,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-2508f138",
+  "categories": [
+    "utilities"
+  ],
+  "description": "O tão aguardado segundo projeto de jogo da Blender Studio, focado na criação de um playground interativo de narrativa em tamanho reduzido. Jogue como um cachorro grande e adorável e explore a floresta de inverno com uma criança pequena.",
+  "short_desc": "O tão aguardado segundo projeto de jogo da Blender Studio, focado na criação de um playground interativo de narrativa em tamanho reduzido. Jogue como ",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

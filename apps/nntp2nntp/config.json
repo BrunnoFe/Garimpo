@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Nntp2nntp",
+  "id": "nntp2nntp",
+  "available": true,
+  "port": 1563,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.3.20230704",
+  "categories": [
+    "utilities"
+  ],
+  "description": "O proxy permite que você use sua conta NNTP em vários sistemas, cada um com seu próprio nome de usuário e senha. Ele oferece suporte completo a SSL e você também pode limitar o acesso ao proxy com certificados SSL. O proxy Nntp2nntp é muito simples e bastante rápido. ## Aviso Embora não tenhamos con",
+  "short_desc": "O proxy permite que você use sua conta NNTP em vários sistemas, cada um com seu próprio nome de usuário e senha. Ele oferece suporte completo a SSL e ",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/linuxserver/nntp2nntp",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://github.com/linuxserver/nntp2nntp",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

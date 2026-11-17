@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Intellij idea (LinuxServer.io)",
+  "id": "intellij-idea",
+  "available": true,
+  "port": 3035,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2026.3.20261116",
+  "categories": [
+    "development"
+  ],
+  "description": "Ajuda você a escrever código mais rapidamente com ferramentas que eliminam tarefas tediosas e permitem que você se concentre no que importa: criar um ótimo software.",
+  "short_desc": "Ajuda você a escrever código mais rapidamente com ferramentas que eliminam tarefas tediosas e permitem que você se concentre no que importa: criar um ",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

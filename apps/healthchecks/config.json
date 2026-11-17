@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Healthchecks (LinuxServer.io)",
+  "id": "healthchecks",
+  "available": true,
+  "port": 8002,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "5.0.3",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um monitor para suas tarefas cron. É um servidor web que fica à escuta de pings das suas tarefas cron, além de oferecer uma interface web.",
+  "short_desc": "Um monitor para suas tarefas cron. É um servidor web que fica à escuta de pings das suas tarefas cron, além de oferecer uma interface web.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

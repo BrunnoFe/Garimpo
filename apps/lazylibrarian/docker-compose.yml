@@ -1,0 +1,18 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Lazylibrarian).
+services:
+  lazylibrarian:
+    image: linuxserver/lazylibrarian:version-184c8bd2
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      DOCKER_MODS: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${APP_DATA_DIR}/data/downloads:/downloads
+    - ${APP_DATA_DIR}/data/books:/books
+    x-runtipi:
+      is_main: true
+      internal_port: 5299
+x-runtipi:
+  schema_version: 2

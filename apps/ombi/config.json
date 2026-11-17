@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Ombi (LinuxServer.io)",
+  "id": "ombi",
+  "available": true,
+  "port": 3579,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "4.53.10",
+  "categories": [
+    "media"
+  ],
+  "description": "Permite hospedar seu próprio sistema de gerenciamento de solicitações e usuários do Plex. Se você compartilha seu servidor Plex com outros usuários, permita que eles solicitem novos conteúdos usando uma interface fácil de usar. Gerencie todas as suas solicitações de filmes e séries com facilidade, d",
+  "short_desc": "Permite hospedar seu próprio sistema de gerenciamento de solicitações e usuários do Plex. Se você compartilha seu servidor Plex com outros usuários, p",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

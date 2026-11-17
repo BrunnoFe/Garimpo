@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Doplarr",
+  "id": "doplarr",
+  "available": true,
+  "port": 20009,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "3.8.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um bot de pedidos *arr para o Discord.",
+  "short_desc": "Um bot de pedidos *arr para o Discord.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

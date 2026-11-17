@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Openssh server (LinuxServer.io)",
+  "id": "openssh-server",
+  "available": true,
+  "port": 2223,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-10.3_p1-r2",
+  "categories": [
+    "development"
+  ],
+  "description": "Um ambiente isolado (sandbox) que permite acesso SSH sem fornecer as chaves de acesso a todo o servidor. Conceder acesso SSH por meio de uma chave privada geralmente significa conceder acesso total ao servidor. Este contêiner cria um ambiente limitado e isolado ao qual outros usuários podem acessar ",
+  "short_desc": "Um ambiente isolado (sandbox) que permite acesso SSH sem fornecer as chaves de acesso a todo o servidor. Conceder acesso SSH por meio de uma chave pri",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

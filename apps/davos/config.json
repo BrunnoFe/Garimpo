@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Davos (LinuxServer.io)",
+  "id": "davos",
+  "available": true,
+  "port": 8083,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.2.2",
+  "categories": [
+    "media"
+  ],
+  "description": "Uma ferramenta de automação FTP que verifica periodicamente locais de hospedagem específicos em busca de novos arquivos. Ela pode ser configurada para diversas finalidades, incluindo a detecção de arquivos específicos no local de hospedagem, para que possa ser baixada e movida, se necessário. Também",
+  "short_desc": "Uma ferramenta de automação FTP que verifica periodicamente locais de hospedagem específicos em busca de novos arquivos. Ela pode ser configurada para",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

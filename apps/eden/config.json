@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Eden (LinuxServer.io)",
+  "id": "eden",
+  "available": true,
+  "port": 3021,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.2.1",
+  "categories": [
+    "media"
+  ],
+  "description": "Um emulador experimental de código aberto para o Nintendo Switch, desenvolvido com foco em desempenho e estabilidade.",
+  "short_desc": "Um emulador experimental de código aberto para o Nintendo Switch, desenvolvido com foco em desempenho e estabilidade.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

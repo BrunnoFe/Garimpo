@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Steam (LinuxServer.io)",
+  "id": "steam",
+  "available": true,
+  "port": 3075,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-0007b177",
+  "categories": [
+    "utilities"
+  ],
+  "description": "O destino definitivo para jogar, discutir e criar jogos.",
+  "short_desc": "O destino definitivo para jogar, discutir e criar jogos.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

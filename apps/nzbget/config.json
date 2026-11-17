@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Nzbget (LinuxServer.io)",
+  "id": "nzbget",
+  "available": true,
+  "port": 6789,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "26.3.20261113",
+  "categories": [
+    "media"
+  ],
+  "description": "Um programa para baixar arquivos da Usenet, escrito em C++ e projetado com foco em desempenho para atingir a velocidade máxima de download utilizando poucos recursos do sistema.",
+  "short_desc": "Um programa para baixar arquivos da Usenet, escrito em C++ e projetado com foco em desempenho para atingir a velocidade máxima de download utilizando ",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

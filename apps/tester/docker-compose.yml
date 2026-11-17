@@ -1,0 +1,11 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Tester).
+services:
+  tester:
+    image: linuxserver/tester:version-66f677b0
+    environment:
+      URL: ''
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Diskover (LinuxServer.io)",
+  "id": "diskover",
+  "available": true,
+  "port": 20008,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.3.5",
+  "categories": [
+    "development"
+  ],
+  "description": "Um indexador de sistema de arquivos de código aberto que usa o Elasticsearch para indexar e gerenciar dados em sistemas de armazenamento heterogêneos.",
+  "short_desc": "Um indexador de sistema de arquivos de código aberto que usa o Elasticsearch para indexar e gerenciar dados em sistemas de armazenamento heterogêneos.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

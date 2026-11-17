@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Ubooquity (LinuxServer.io)",
+  "id": "ubooquity",
+  "available": true,
+  "port": 2202,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "3.1.0",
+  "categories": [
+    "media"
+  ],
+  "description": "Um servidor doméstico gratuito, leve e fácil de usar para seus quadrinhos e ebooks. Acesse seus arquivos de qualquer lugar, com um tablet, um e-reader, um celular ou um computador.",
+  "short_desc": "Um servidor doméstico gratuito, leve e fácil de usar para seus quadrinhos e ebooks. Acesse seus arquivos de qualquer lugar, com um tablet, um e-reader",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

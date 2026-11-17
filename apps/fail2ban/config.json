@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Fail2ban (LinuxServer.io)",
+  "id": "fail2ban",
+  "available": true,
+  "port": 20011,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.1.0",
+  "categories": [
+    "network"
+  ],
+  "description": "Um serviço (daemon) para banir hosts que causam múltiplos erros de autenticação.",
+  "short_desc": "Um serviço (daemon) para banir hosts que causam múltiplos erros de autenticação.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Calibre (LinuxServer.io)",
+  "id": "calibre",
+  "available": true,
+  "port": 8082,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "9.18.0",
+  "categories": [
+    "media"
+  ],
+  "description": "Um gerenciador de e-books poderoso e fácil de usar. Os usuários dizem que é excelente e indispensável. Ele permite fazer praticamente tudo e vai além dos softwares comuns de gerenciamento de e-books. Além disso, é totalmente gratuito e de código aberto, sendo ótimo tanto para usuários casuais quanto",
+  "short_desc": "Um gerenciador de e-books poderoso e fácil de usar. Os usuários dizem que é excelente e indispensável. Ele permite fazer praticamente tudo e vai além ",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Scummvm (LinuxServer.io)",
+  "id": "scummvm",
+  "available": true,
+  "port": 3068,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2026.4.0",
+  "categories": [
+    "media"
+  ],
+  "description": "Um programa que permite executar certos jogos clássicos de aventura gráfica e RPG, desde que você já possua os arquivos de dados. A genialidade do programa reside no fato de que o ScummVM simplesmente substitui os executáveis originais dos jogos, permitindo jogá-los em sistemas para os quais eles nu",
+  "short_desc": "Um programa que permite executar certos jogos clássicos de aventura gráfica e RPG, desde que você já possua os arquivos de dados. A genialidade do pro",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

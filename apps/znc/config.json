@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Znc (LinuxServer.io)",
+  "id": "znc",
+  "available": true,
+  "port": 6501,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.10.3",
+  "categories": [
+    "social"
+  ],
+  "description": "Um bouncer de rede IRC ou BNC. Ele pode desconectar o cliente do servidor IRC real e também de canais selecionados. Vários clientes de locais diferentes podem se conectar a uma única conta ZNC simultaneamente e, portanto, aparecer com o mesmo apelido no IRC.",
+  "short_desc": "Um bouncer de rede IRC ou BNC. Ele pode desconectar o cliente do servidor IRC real e também de canais selecionados. Vários clientes de locais diferent",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

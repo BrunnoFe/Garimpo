@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Lazylibrarian (LinuxServer.io)",
+  "id": "lazylibrarian",
+  "available": true,
+  "port": 5299,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-184c8bd2",
+  "categories": [
+    "media"
+  ],
+  "description": "Um programa para seguir autores e obter metadados para todas as suas necessidades de leitura digital. Ele utiliza uma combinação do Goodreads Librarything e, opcionalmente, do Google Books como fontes de informações sobre autores e livros. Este contêiner é baseado no fork DobyTang.",
+  "short_desc": "Um programa para seguir autores e obter metadados para todas as suas necessidades de leitura digital. Ele utiliza uma combinação do Goodreads Libraryt",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

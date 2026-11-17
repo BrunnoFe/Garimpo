@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Apprise api (LinuxServer.io)",
+  "id": "apprise-api",
+  "available": true,
+  "port": 8000,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.1.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Aproveite o Apprise em sua rede com uma API fácil de usar. * Envie notificações para mais de 100 serviços. * Um gateway incrivelmente leve para o Apprise. * Um microsserviço pronto para produção à sua disposição. * Um site simples para verificar e testar sua configuração. A API do Apprise foi projet",
+  "short_desc": "Aproveite o Apprise em sua rede com uma API fácil de usar. * Envie notificações para mais de 100 serviços. * Um gateway incrivelmente leve para o Appr",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

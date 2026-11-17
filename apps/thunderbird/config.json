@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Thunderbird (LinuxServer.io)",
+  "id": "thunderbird",
+  "available": true,
+  "port": 3078,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1140.17.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um gerenciador de informações pessoais gratuito e de código aberto, usado principalmente como cliente de e-mail com calendário e agenda de contatos, além de leitor de feeds RSS, cliente de bate-papo e leitor de notícias.",
+  "short_desc": "Um gerenciador de informações pessoais gratuito e de código aberto, usado principalmente como cliente de e-mail com calendário e agenda de contatos, a",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

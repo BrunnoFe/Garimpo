@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Blade of-agony (LinuxServer.io)",
+  "id": "blade-of-agony",
+  "available": true,
+  "port": 3006,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "3.1.20261112",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um jogo de tiro da Segunda Guerra Mundial com foco na narrativa, inspirado em Wolfenstein e Doom.",
+  "short_desc": "Um jogo de tiro da Segunda Guerra Mundial com foco na narrativa, inspirado em Wolfenstein e Doom.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

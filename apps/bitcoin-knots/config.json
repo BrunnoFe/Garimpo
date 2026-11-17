@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Bitcoin knots (LinuxServer.io)",
+  "id": "bitcoin-knots",
+  "available": true,
+  "port": 3005,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-29.5knots20260508-resolute2",
+  "categories": [
+    "finance"
+  ],
+  "description": "Pode ser usado como um cliente de desktop para pagamentos regulares ou como um utilitário de servidor Node completo para comerciantes e outros serviços de pagamento.",
+  "short_desc": "Pode ser usado como um cliente de desktop para pagamentos regulares ou como um utilitário de servidor Node completo para comerciantes e outros serviço",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Pylon",
+  "id": "pylon",
+  "available": true,
+  "port": 3131,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.10.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um ambiente de desenvolvimento integrado baseado na web, construído com Node.js como backend e com um frontend JavaScript/HTML5 superpotente, licenciado sob a GPL versão 3. Este projeto tem origem no projeto Cloud9 v2.",
+  "short_desc": "Um ambiente de desenvolvimento integrado baseado na web, construído com Node.js como backend e com um frontend JavaScript/HTML5 superpotente, licencia",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/pylonide/pylon",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://github.com/pylonide/pylon",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

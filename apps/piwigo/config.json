@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Piwigo (LinuxServer.io)",
+  "id": "piwigo",
+  "available": true,
+  "port": 20020,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "16.5.0",
+  "categories": [
+    "media"
+  ],
+  "description": "Um software de galeria de fotos para a web que oferece recursos poderosos para publicar e gerenciar sua coleção de imagens.",
+  "short_desc": "Um software de galeria de fotos para a web que oferece recursos poderosos para publicar e gerenciar sua coleção de imagens.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

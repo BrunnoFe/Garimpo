@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Wireshark (LinuxServer.io)",
+  "id": "wireshark",
+  "available": true,
+  "port": 20033,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "4.6.9",
+  "categories": [
+    "network"
+  ],
+  "description": "O analisador de protocolos de rede mais importante e amplamente utilizado do mundo. Ele permite visualizar o que está acontecendo em sua rede em um nível microscópico e é o padrão de fato (e muitas vezes de direito) em diversas empresas comerciais e sem fins lucrativos, agências governamentais e ins",
+  "short_desc": "O analisador de protocolos de rede mais importante e amplamente utilizado do mundo. Ele permite visualizar o que está acontecendo em sua rede em um ní",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

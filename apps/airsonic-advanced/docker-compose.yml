@@ -1,0 +1,21 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Airsonic-advanced).
+services:
+  airsonic-advanced:
+    image: linuxserver/airsonic-advanced:11.1.4
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      CONTEXT_PATH: ''
+      JAVA_OPTS: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${APP_DATA_DIR}/data/music:/music
+    - ${APP_DATA_DIR}/data/playlists:/playlists
+    - ${APP_DATA_DIR}/data/podcasts:/podcasts
+    - ${APP_DATA_DIR}/data/media:/media
+    x-runtipi:
+      is_main: true
+      internal_port: 4040
+x-runtipi:
+  schema_version: 2

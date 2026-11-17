@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Foldingathome (LinuxServer.io)",
+  "id": "foldingathome",
+  "available": true,
+  "port": 20013,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "8.5.6",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um projeto de computação distribuída para simulação da dinâmica de proteínas, incluindo o processo de dobramento proteico e os movimentos de proteínas envolvidas em diversas doenças. Ele reúne cientistas cidadãos que se voluntariam para executar simulações da dinâmica de proteínas em seus computador",
+  "short_desc": "Um projeto de computação distribuída para simulação da dinâmica de proteínas, incluindo o processo de dobramento proteico e os movimentos de proteínas",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

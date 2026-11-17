@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Ci",
+  "id": "ci",
+  "available": true,
+  "port": 20002,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "b1ca9f98-ls65",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Este contêiner requer atenção especial. Consulte https://hub.docker.com/r/linuxserver/ci para obter detalhes.",
+  "short_desc": "Este contêiner requer atenção especial. Consulte https://hub.docker.com/r/linuxserver/ci para obter detalhes.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

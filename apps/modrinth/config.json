@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Modrinth (LinuxServer.io)",
+  "id": "modrinth",
+  "available": true,
+  "port": 3048,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.23.3",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um lançador único e de código aberto que permite jogar seus mods favoritos e mantê-los atualizados, tudo em um único pacote compacto e organizado.",
+  "short_desc": "Um lançador único e de código aberto que permite jogar seus mods favoritos e mantê-los atualizados, tudo em um único pacote compacto e organizado.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Daapd",
+  "id": "daapd",
+  "available": true,
+  "port": 20006,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "28.10.20250108",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Servidor de mídia (iTunes) com suporte para dispositivos AirPlay, Apple Remote (e compatíveis), Chromecast, MPD e rádio via internet.",
+  "short_desc": "Servidor de mídia (iTunes) com suporte para dispositivos AirPlay, Apple Remote (e compatíveis), Chromecast, MPD e rádio via internet.",
+  "author": "LinuxServer.io",
+  "source": "https://ejurgensen.github.io/forked-daapd/",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://ejurgensen.github.io/forked-daapd/",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

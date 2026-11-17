@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Telegram (LinuxServer.io)",
+  "id": "telegram",
+  "available": true,
+  "port": 3076,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "7.4.4",
+  "categories": [
+    "social"
+  ],
+  "description": "Um aplicativo de mensagens para dispositivos móveis e computadores baseado na nuvem.",
+  "short_desc": "Um aplicativo de mensagens para dispositivos móveis e computadores baseado na nuvem.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Filezilla (LinuxServer.io)",
+  "id": "filezilla",
+  "available": true,
+  "port": 3023,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "3.69.6",
+  "categories": [
+    "utilities"
+  ],
+  "description": "O Client é um cliente FTP, FTPS e SFTP multiplataforma rápido e confiável, com diversos recursos úteis e uma interface gráfica intuitiva.",
+  "short_desc": "O Client é um cliente FTP, FTPS e SFTP multiplataforma rápido e confiável, com diversos recursos úteis e uma interface gráfica intuitiva.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

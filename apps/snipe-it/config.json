@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Snipe it",
+  "id": "snipe-it",
+  "available": true,
+  "port": 20028,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "7.1.15",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Simplifica a gestão de ativos. Foi desenvolvido por pessoas que resolviam problemas reais de TI e gestão de ativos, e uma experiência de usuário sólida sempre foi uma prioridade. Design intuitivo e ações em lote significam realizar tarefas mais rapidamente.",
+  "short_desc": "Simplifica a gestão de ativos. Foi desenvolvido por pessoas que resolviam problemas reais de TI e gestão de ativos, e uma experiência de usuário sólid",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/snipe/snipe-it",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://github.com/snipe/snipe-it",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

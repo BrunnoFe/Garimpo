@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Oscam (LinuxServer.io)",
+  "id": "oscam",
+  "available": true,
+  "port": 8889,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-11989",
+  "categories": [
+    "media"
+  ],
+  "description": "Um software de Módulo de Acesso Condicional de código aberto usado para decodificar transmissões DVB usando cartões inteligentes. Ele funciona tanto como servidor quanto como cliente.",
+  "short_desc": "Um software de Módulo de Acesso Condicional de código aberto usado para decodificar transmissões DVB usando cartões inteligentes. Ele funciona tanto c",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

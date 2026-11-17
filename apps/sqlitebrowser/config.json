@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Sqlitebrowser (LinuxServer.io)",
+  "id": "sqlitebrowser",
+  "available": true,
+  "port": 3074,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "3.13.1",
+  "categories": [
+    "development"
+  ],
+  "description": "Uma ferramenta visual de código aberto e de alta qualidade para criar, projetar e editar arquivos de banco de dados compatíveis com SQLite.",
+  "short_desc": "Uma ferramenta visual de código aberto e de alta qualidade para criar, projetar e editar arquivos de banco de dados compatíveis com SQLite.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

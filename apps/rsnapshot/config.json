@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Rsnapshot (LinuxServer.io)",
+  "id": "rsnapshot",
+  "available": true,
+  "port": 20025,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.4.5",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um utilitário de snapshots do sistema de arquivos baseado em rsync. O Rsnapshot facilita a criação de snapshots periódicos de máquinas locais e remotas via SSH. O código utiliza amplamente links físicos sempre que possível, reduzindo significativamente o espaço em disco necessário.",
+  "short_desc": "Um utilitário de snapshots do sistema de arquivos baseado em rsync. O Rsnapshot facilita a criação de snapshots periódicos de máquinas locais e remota",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

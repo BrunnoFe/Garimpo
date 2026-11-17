@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Doublecommander (LinuxServer.io)",
+  "id": "doublecommander",
+  "available": true,
+  "port": 3019,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-9d9541b7",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um gerenciador de arquivos gratuito, multiplataforma e de código aberto, com dois painéis lado a lado. Ele foi inspirado no Total Commander e apresenta algumas ideias novas.",
+  "short_desc": "Um gerenciador de arquivos gratuito, multiplataforma e de código aberto, com dois painéis lado a lado. Ele foi inspirado no Total Commander e apresent",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

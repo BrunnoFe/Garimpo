@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Limnoria (LinuxServer.io)",
+  "id": "limnoria",
+  "available": true,
+  "port": 8090,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2026.10.4",
+  "categories": [
+    "social"
+  ],
+  "description": "Um bot de IRC em Python robusto, completo e fácil de usar/programar, com muitos plugins já existentes. Sucessor do conhecido Supybot.",
+  "short_desc": "Um bot de IRC em Python robusto, completo e fácil de usar/programar, com muitos plugins já existentes. Sucessor do conhecido Supybot.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Htpcmanager (LinuxServer.io)",
+  "id": "htpcmanager",
+  "available": true,
+  "port": 8089,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-26a641bf",
+  "categories": [
+    "media"
+  ],
+  "description": "Uma interface para diversos aplicativos relacionados a HTPC.",
+  "short_desc": "Uma interface para diversos aplicativos relacionados a HTPC.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

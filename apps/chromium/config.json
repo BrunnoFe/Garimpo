@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Chromium (LinuxServer.io)",
+  "id": "chromium",
+  "available": true,
+  "port": 3011,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-075b0b99",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um projeto de navegador de código aberto que visa construir uma maneira mais segura, rápida e estável para todos os usuários experimentarem a web.",
+  "short_desc": "Um projeto de navegador de código aberto que visa construir uma maneira mais segura, rápida e estável para todos os usuários experimentarem a web.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

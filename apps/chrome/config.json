@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Chrome (LinuxServer.io)",
+  "id": "chrome",
+  "available": true,
+  "port": 3010,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "157.0.8103",
+  "categories": [
+    "utilities"
+  ],
+  "description": "O navegador oficial do Google, desenvolvido para ser rápido, seguro e personalizável.",
+  "short_desc": "O navegador oficial do Google, desenvolvido para ser rápido, seguro e personalizável.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Kali linux (LinuxServer.io)",
+  "id": "kali-linux",
+  "available": true,
+  "port": 3036,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-e9bd8cdf",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Kali Linux é uma distribuição Linux avançada para testes de penetração, hacking ético e avaliações de segurança de rede. Kali Linux™ é uma marca registrada da OffSec.",
+  "short_desc": "Kali Linux é uma distribuição Linux avançada para testes de penetração, hacking ético e avaliações de segurança de rede. Kali Linux™ é uma marca regis",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

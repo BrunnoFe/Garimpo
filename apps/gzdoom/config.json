@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Gzdoom (LinuxServer.io)",
+  "id": "gzdoom",
+  "available": true,
+  "port": 3031,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "4.14.2",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Uma versão otimizada para todos os jogos com o motor Doom, baseada no ZDoom, que adiciona um renderizador OpenGL e poderosos recursos de script.",
+  "short_desc": "Uma versão otimizada para todos os jogos com o motor Doom, baseada no ZDoom, que adiciona um renderizador OpenGL e poderosos recursos de script.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

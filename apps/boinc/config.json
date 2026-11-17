@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Boinc (LinuxServer.io)",
+  "id": "boinc",
+  "available": true,
+  "port": 8081,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "8.2.8",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Uma plataforma para computação de alto desempenho em larga escala (milhares ou milhões de computadores). Pode ser usada para computação voluntária (utilizando dispositivos de consumo) ou computação em grade (utilizando recursos organizacionais). Suporta aplicações virtualizadas, paralelas e baseadas",
+  "short_desc": "Uma plataforma para computação de alto desempenho em larga escala (milhares ou milhões de computadores). Pode ser usada para computação voluntária (ut",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

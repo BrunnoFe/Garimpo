@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Rpcs3 (LinuxServer.io)",
+  "id": "rpcs3",
+  "available": true,
+  "port": 3066,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-build-fb6737b1c8306ceeccb53b7fa051acfc9e641cd7",
+  "categories": [
+    "media"
+  ],
+  "description": "Um emulador e depurador multiplataforma de código aberto para Sony PlayStation 3, escrito em C++ para Windows, Linux, macOS e FreeBSD.",
+  "short_desc": "Um emulador e depurador multiplataforma de código aberto para Sony PlayStation 3, escrito em C++ para Windows, Linux, macOS e FreeBSD.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,17 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Changedetection.io).
+services:
+  changedetection-io:
+    image: linuxserver/changedetection.io:0.70.2
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      BASE_URL: ''
+      PLAYWRIGHT_DRIVER_URL: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 5000
+x-runtipi:
+  schema_version: 2

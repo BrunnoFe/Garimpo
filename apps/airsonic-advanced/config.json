@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Airsonic advanced (LinuxServer.io)",
+  "id": "airsonic-advanced",
+  "available": true,
+  "port": 4040,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "11.1.4",
+  "categories": [
+    "media"
+  ],
+  "description": "Um reprodutor de mídia gratuito baseado na web, que oferece acesso universal à sua música. Use-o para compartilhar suas músicas com amigos ou para ouvir suas próprias músicas enquanto trabalha. Você pode reproduzir músicas em vários dispositivos simultaneamente, por exemplo, em um dispositivo na sua",
+  "short_desc": "Um reprodutor de mídia gratuito baseado na web, que oferece acesso universal à sua música. Use-o para compartilhar suas músicas com amigos ou para ouv",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

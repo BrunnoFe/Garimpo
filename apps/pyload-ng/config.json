@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Pyload ng (LinuxServer.io)",
+  "id": "pyload-ng",
+  "available": true,
+  "port": 8004,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.5.0",
+  "categories": [
+    "media"
+  ],
+  "description": "Um gerenciador de downloads gratuito e de código aberto, escrito em Python e projetado para ser extremamente leve, facilmente extensível e totalmente gerenciável via web.",
+  "short_desc": "Um gerenciador de downloads gratuito e de código aberto, escrito em Python e projetado para ser extremamente leve, facilmente extensível e totalmente ",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

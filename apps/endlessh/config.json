@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Endlessh",
+  "id": "endlessh",
+  "available": true,
+  "port": 2222,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-dfe44eb2",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um \"tarpit\" SSH que envia, muito lentamente, um banner SSH aleatório e interminável. Ele mantém os clientes SSH bloqueados por horas ou até mesmo dias. O objetivo é colocar seu servidor SSH real em outra porta e, em seguida, deixar que os script kiddies fiquem presos nesse \"tarpit\" em vez de sobreca",
+  "short_desc": "Um \"tarpit\" SSH que envia, muito lentamente, um banner SSH aleatório e interminável. Ele mantém os clientes SSH bloqueados por horas ou até mesmo dias",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/skeeto/endlessh",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://github.com/skeeto/endlessh",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

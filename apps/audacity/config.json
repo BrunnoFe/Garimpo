@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Audacity (LinuxServer.io)",
+  "id": "audacity",
+  "available": true,
+  "port": 3002,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "4.0.2",
+  "categories": [
+    "media"
+  ],
+  "description": "Um editor e gravador de áudio multitrack fácil de usar. Desenvolvido por um grupo de voluntários como software livre.",
+  "short_desc": "Um editor e gravador de áudio multitrack fácil de usar. Desenvolvido por um grupo de voluntários como software livre.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

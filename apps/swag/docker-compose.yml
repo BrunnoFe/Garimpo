@@ -1,0 +1,36 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Swag).
+services:
+  swag:
+    image: linuxserver/swag:5.10.0
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      URL: ''
+      VALIDATION: ''
+      SUBDOMAINS: ''
+      CERTPROVIDER: ''
+      CERT_PROFILE: ''
+      DNSPLUGIN: ''
+      PROPAGATION: ''
+      EMAIL: ''
+      ONLY_SUBDOMAINS: ''
+      EXTRA_DOMAINS: ''
+      STAGING: ''
+      DISABLE_F2B: ''
+      SWAG_AUTORELOAD: ''
+      SWAG_AUTORELOAD_WATCHLIST: ''
+    ports:
+    - target: 443
+      published: 443
+      protocol: tcp
+    - target: 443
+      published: 443
+      protocol: udp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+x-runtipi:
+  schema_version: 2

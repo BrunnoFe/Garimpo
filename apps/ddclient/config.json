@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Ddclient (LinuxServer.io)",
+  "id": "ddclient",
+  "available": true,
+  "port": 20007,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "4.0.0",
+  "categories": [
+    "network"
+  ],
+  "description": "Um cliente Perl usado para atualizar entradas de DNS dinâmico para contas em provedores de serviços de rede DNS dinâmico. Foi originalmente escrito por Paul Burry e agora é mantido principalmente por wimpunk. Ele tem a capacidade de atualizar mais do que apenas o DNS dinâmico e pode obter seu endere",
+  "short_desc": "Um cliente Perl usado para atualizar entradas de DNS dinâmico para contas em provedores de serviços de rede DNS dinâmico. Foi originalmente escrito po",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

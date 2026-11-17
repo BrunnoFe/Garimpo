@@ -1,0 +1,16 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Babybuddy).
+services:
+  babybuddy:
+    image: linuxserver/babybuddy:2.11.0
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      CSRF_TRUSTED_ORIGINS: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 8000
+x-runtipi:
+  schema_version: 2

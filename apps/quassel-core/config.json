@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Quassel core",
+  "id": "quassel-core",
+  "available": true,
+  "port": 4242,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.14.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um cliente IRC moderno, multiplataforma e distribuído, o que significa que um (ou vários) cliente(s) pode(m) conectar-se e desconectar-se de um núcleo central. Este contêiner gerencia a conexão IRC (quasselcore) e requer um cliente desktop (quasselclient) para ser usado e configurado. Ele foi projet",
+  "short_desc": "Um cliente IRC moderno, multiplataforma e distribuído, o que significa que um (ou vários) cliente(s) pode(m) conectar-se e desconectar-se de um núcleo",
+  "author": "LinuxServer.io",
+  "source": "http://quassel-irc.org/",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "http://quassel-irc.org/",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

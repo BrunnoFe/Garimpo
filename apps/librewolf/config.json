@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Librewolf (LinuxServer.io)",
+  "id": "librewolf",
+  "available": true,
+  "port": 3042,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "159.0.1",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Uma versão personalizada e independente do Firefox, com os objetivos principais de privacidade, segurança e liberdade do usuário. O LibreWolf também visa remover toda a telemetria, coleta de dados e incômodos, além de desativar recursos que restringem a liberdade, como o DRM.",
+  "short_desc": "Uma versão personalizada e independente do Firefox, com os objetivos principais de privacidade, segurança e liberdade do usuário. O LibreWolf também v",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Remmina (LinuxServer.io)",
+  "id": "remmina",
+  "available": true,
+  "port": 3064,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.4.43",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um cliente de área de trabalho remota escrito em GTK, projetado para ser útil a administradores de sistemas e viajantes que precisam trabalhar com vários computadores remotos em frente a telas grandes ou pequenas. O Remmina suporta múltiplos protocolos de rede em uma interface de usuário integrada e",
+  "short_desc": "Um cliente de área de trabalho remota escrito em GTK, projetado para ser útil a administradores de sistemas e viajantes que precisam trabalhar com vár",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

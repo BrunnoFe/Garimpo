@@ -1,0 +1,49 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Unifi-network-application).
+services:
+  unifi-network-application:
+    image: linuxserver/unifi-network-application:10.6.109
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      MONGO_USER: ''
+      MONGO_PASS: ''
+      MONGO_HOST: ''
+      MONGO_PORT: ''
+      MONGO_DBNAME: ''
+      MONGO_AUTHSOURCE: ''
+      MEM_LIMIT: ''
+      MEM_STARTUP: ''
+      MONGO_TLS: ''
+    ports:
+    - target: 8443
+      published: 8443
+      protocol: tcp
+    - target: 3478
+      published: 3478
+      protocol: udp
+    - target: 10001
+      published: 10001
+      protocol: udp
+    - target: 1900
+      published: 1900
+      protocol: udp
+    - target: 8843
+      published: 8843
+      protocol: tcp
+    - target: 8880
+      published: 8880
+      protocol: tcp
+    - target: 6789
+      published: 6789
+      protocol: tcp
+    - target: 5514
+      published: 5514
+      protocol: udp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,23 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Ubooquity).
+services:
+  ubooquity:
+    image: linuxserver/ubooquity:3.1.0
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      MAXMEM: ''
+    ports:
+    - target: 2203
+      published: 2203
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${APP_DATA_DIR}/data/books:/books
+    - ${APP_DATA_DIR}/data/comics:/comics
+    - ${APP_DATA_DIR}/data/files:/files
+    x-runtipi:
+      is_main: true
+      internal_port: 2202
+x-runtipi:
+  schema_version: 2

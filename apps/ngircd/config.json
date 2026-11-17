@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Ngircd (LinuxServer.io)",
+  "id": "ngircd",
+  "available": true,
+  "port": 6667,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-27-r1",
+  "categories": [
+    "social"
+  ],
+  "description": "Um servidor IRC gratuito, portátil e leve para redes pequenas ou privadas, desenvolvido sob a Licença Pública Geral GNU (GPL). É fácil de configurar, suporta endereços IP dinâmicos e IPv6, conexões protegidas por SSL e PAM para autenticação. Foi escrito do zero e não é baseado no IRCd original.",
+  "short_desc": "Um servidor IRC gratuito, portátil e leve para redes pequenas ou privadas, desenvolvido sob a Licença Pública Geral GNU (GPL). É fácil de configurar, ",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

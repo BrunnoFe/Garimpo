@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Minetest",
+  "id": "minetest",
+  "available": true,
+  "port": 30001,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "5.10.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "(server) é um jogo sandbox de blocos com um mundo quase infinito e um motor de jogo, inspirado em InfiniMiner, Minecraft e similares.",
+  "short_desc": "(server) é um jogo sandbox de blocos com um mundo quase infinito e um motor de jogo, inspirado em InfiniMiner, Minecraft e similares.",
+  "author": "LinuxServer.io",
+  "source": "http://www.minetest.net/",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "http://www.minetest.net/",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

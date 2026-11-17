@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Headphones",
+  "id": "headphones",
+  "available": true,
+  "port": 8181,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-a78f38c1",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um programa para baixar músicas automaticamente em NZB e Torrent, escrito em Python. Ele suporta SABnzbd, NZBget, Transmission, µTorrent e Blackhole.",
+  "short_desc": "Um programa para baixar músicas automaticamente em NZB e Torrent, escrito em Python. Ele suporta SABnzbd, NZBget, Transmission, µTorrent e Blackhole.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/rembo10/headphones",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://github.com/rembo10/headphones",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

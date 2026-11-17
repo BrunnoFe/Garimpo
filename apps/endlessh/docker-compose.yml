@@ -1,0 +1,21 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Endlessh).
+services:
+  endlessh:
+    image: linuxserver/endlessh:version-dfe44eb2
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      MSDELAY: ''
+      MAXLINES: ''
+      MAXCLIENTS: ''
+      LOGFILE: ''
+      BINDFAMILY: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 22
+x-runtipi:
+  schema_version: 2

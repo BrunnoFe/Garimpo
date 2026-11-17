@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Requestrr",
+  "id": "requestrr",
+  "available": true,
+  "port": 4545,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.1.2",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um chatbot usado para simplificar o uso de serviços como Sonarr/Radarr/Ombi por meio de bate-papo.",
+  "short_desc": "Um chatbot usado para simplificar o uso de serviços como Sonarr/Radarr/Ombi por meio de bate-papo.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/darkalfx/requestrr",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://github.com/darkalfx/requestrr",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

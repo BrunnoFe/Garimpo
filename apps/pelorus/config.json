@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Pelorus (LinuxServer.io)",
+  "id": "pelorus",
+  "available": true,
+  "port": 3058,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.2.4",
+  "categories": [
+    "ai"
+  ],
+  "description": "Um navegador de IA para desktops Linux com Selkies. O Pelorus executa um servidor FastAPI que permite que um agente LLM (Ollama, compatível com OpenAI ou Gemini) controle o mouse, o teclado, a captura de tela e o gerenciamento de janelas por meio do backend de uso do computador Pixelflux, uma árvore",
+  "short_desc": "Um navegador de IA para desktops Linux com Selkies. O Pelorus executa um servidor FastAPI que permite que um agente LLM (Ollama, compatível com OpenAI",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

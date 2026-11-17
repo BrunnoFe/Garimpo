@@ -1,0 +1,20 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Cops).
+services:
+  cops:
+    image: linuxserver/cops:4.6.1
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+    ports:
+    - target: 443
+      published: 443
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${APP_DATA_DIR}/data/books:/books
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+x-runtipi:
+  schema_version: 2

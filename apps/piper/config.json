@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Piper (LinuxServer.io)",
+  "id": "piper",
+  "available": true,
+  "port": 10200,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.5.3",
+  "categories": [
+    "ai"
+  ],
+  "description": "Um sistema neural de conversão de texto em fala rápido e local, com ótima qualidade de som e otimizado para o Raspberry Pi 4. Este contêiner fornece um servidor de protocolo Wyoming para o Piper.",
+  "short_desc": "Um sistema neural de conversão de texto em fala rápido e local, com ótima qualidade de som e otimizado para o Raspberry Pi 4. Este contêiner fornece u",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

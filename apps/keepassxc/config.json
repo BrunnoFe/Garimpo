@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Keepassxc (LinuxServer.io)",
+  "id": "keepassxc",
+  "available": true,
+  "port": 3038,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.7.12",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um gerenciador de senhas gratuito e de código aberto. Ele surgiu como um fork da comunidade do KeePassX (que por sua vez é uma adaptação multiplataforma do KeePass).",
+  "short_desc": "Um gerenciador de senhas gratuito e de código aberto. Ele surgiu como um fork da comunidade do KeePassX (que por sua vez é uma adaptação multiplatafor",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

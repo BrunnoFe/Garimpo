@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Faster whisper (LinuxServer.io)",
+  "id": "faster-whisper",
+  "available": true,
+  "port": 10300,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "3.8.1",
+  "categories": [
+    "ai"
+  ],
+  "description": "Uma reimplementação do modelo Whisper da OpenAI usando o CTranslate2, um mecanismo de inferência rápido para modelos Transformer. Este contêiner fornece um servidor de protocolo Wyoming para o faster-whisper.",
+  "short_desc": "Uma reimplementação do modelo Whisper da OpenAI usando o CTranslate2, um mecanismo de inferência rápido para modelos Transformer. Este contêiner forne",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

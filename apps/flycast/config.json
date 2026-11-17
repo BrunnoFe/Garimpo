@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Flycast (LinuxServer.io)",
+  "id": "flycast",
+  "available": true,
+  "port": 3025,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.7.20261115",
+  "categories": [
+    "media"
+  ],
+  "description": "Um emulador multiplataforma para Sega Dreamcast, Naomi, Naomi 2 e Atomiswave derivado do reicast.",
+  "short_desc": "Um emulador multiplataforma para Sega Dreamcast, Naomi, Naomi 2 e Atomiswave derivado do reicast.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

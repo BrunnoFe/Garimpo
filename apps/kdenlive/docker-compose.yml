@@ -1,0 +1,19 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Kdenlive).
+services:
+  kdenlive:
+    image: linuxserver/kdenlive:26.08.3
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+    ports:
+    - target: 3001
+      published: 3001
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+x-runtipi:
+  schema_version: 2

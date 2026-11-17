@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Webcord (LinuxServer.io)",
+  "id": "webcord",
+  "available": true,
+  "port": 3084,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "4.14.0",
+  "categories": [
+    "social"
+  ],
+  "description": "Em resumo, trata-se de um pacote de melhorias de segurança e privacidade, reimplementações de recursos do Discord, correções de bugs do Electron/Chromium/Discord, folhas de estilo, páginas internas e uma página https://discord.com encapsulada, projetada para estar em conformidade com os Termos de Se",
+  "short_desc": "Em resumo, trata-se de um pacote de melhorias de segurança e privacidade, reimplementações de recursos do Discord, correções de bugs do Electron/Chrom",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

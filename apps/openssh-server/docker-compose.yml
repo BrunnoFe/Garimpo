@@ -1,0 +1,25 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Openssh-server).
+services:
+  openssh-server:
+    image: linuxserver/openssh-server:version-10.3_p1-r2
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      PUBLIC_KEY: ''
+      PUBLIC_KEY_FILE: ''
+      PUBLIC_KEY_DIR: ''
+      PUBLIC_KEY_URL: ''
+      SUDO_ACCESS: ''
+      PASSWORD_ACCESS: ''
+      USER_PASSWORD: ''
+      USER_PASSWORD_FILE: ''
+      USER_NAME: ''
+      LOG_STDOUT: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 2222
+x-runtipi:
+  schema_version: 2

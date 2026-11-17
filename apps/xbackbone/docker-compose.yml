@@ -1,0 +1,19 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Xbackbone).
+services:
+  xbackbone:
+    image: linuxserver/xbackbone:3.8.2
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+    ports:
+    - target: 443
+      published: 443
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+x-runtipi:
+  schema_version: 2

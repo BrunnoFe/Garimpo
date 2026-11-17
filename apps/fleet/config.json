@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Fleet",
+  "id": "fleet",
+  "available": true,
+  "port": 8086,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.3.3",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Fornece uma interface web online que exibe um conjunto de imagens mantidas a partir de um ou mais repositórios próprios.",
+  "short_desc": "Fornece uma interface web online que exibe um conjunto de imagens mantidas a partir de um ou mais repositórios próprios.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

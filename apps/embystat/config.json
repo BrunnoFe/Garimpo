@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Embystat",
+  "id": "embystat",
+  "available": true,
+  "port": 6555,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.2.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um servidor web pessoal capaz de calcular todos os tipos de estatísticas do seu servidor Emby (local). Basta instalá-lo no seu servidor e deixar que ele calcule todo tipo de informação interessante.",
+  "short_desc": "Um servidor web pessoal capaz de calcular todos os tipos de estatísticas do seu servidor Emby (local). Basta instalá-lo no seu servidor e deixar que e",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/mregni/EmbyStat",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://github.com/mregni/EmbyStat",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

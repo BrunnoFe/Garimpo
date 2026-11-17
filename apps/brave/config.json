@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Brave (LinuxServer.io)",
+  "id": "brave",
+  "available": true,
+  "port": 3008,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.99.57",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um navegador web rápido, privado e seguro para PC, Mac e dispositivos móveis.",
+  "short_desc": "Um navegador web rápido, privado e seguro para PC, Mac e dispositivos móveis.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

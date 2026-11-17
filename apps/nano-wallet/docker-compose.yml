@@ -1,0 +1,10 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Nano-wallet).
+services:
+  nano-wallet:
+    image: linuxserver/nano-wallet:1.3.2
+    environment: {}
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+x-runtipi:
+  schema_version: 2

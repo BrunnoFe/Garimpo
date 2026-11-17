@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Booksonic air",
+  "id": "booksonic-air",
+  "available": true,
+  "port": 4041,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2201.1.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Uma plataforma para acessar seus audiolivros onde quer que você esteja. No momento, a plataforma consiste em: * Booksonic Air - Um servidor para streaming de seus audiolivros, sucessor do servidor Booksonic original e baseado em Airsonic. * Aplicativo Booksonic - Um aplicativo Android baseado em DSu",
+  "short_desc": "Uma plataforma para acessar seus audiolivros onde quer que você esteja. No momento, a plataforma consiste em: * Booksonic Air - Um servidor para strea",
+  "author": "LinuxServer.io",
+  "source": "https://booksonic.org/",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://booksonic.org/",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

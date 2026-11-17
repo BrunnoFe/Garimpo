@@ -1,0 +1,13 @@
+{
+  "brunos": 1,
+  "nome": "LinuxServer",
+  "selo": "via LinuxServer",
+  "origem": "LinuxServer",
+  "fonte": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "licenca": "GPL-3.0",
+  "sobre": "Apps da LinuxServer-AppStore (imagens do LinuxServer.io no formato do CasaOS), convertidos para o formato do Runtipi.",
+  "garimpo": "https://github.com/BrunnoFe/Garimpo",
+  "apps": 188,
+  "recusados": 12,
+  "repetidos": 49
+}

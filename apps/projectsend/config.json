@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Projectsend (LinuxServer.io)",
+  "id": "projectsend",
+  "available": true,
+  "port": 20021,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-r2098",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um aplicativo auto-hospedado que permite o upload de arquivos e a atribuição deles a clientes específicos criados por você. Seguro, privado e fácil. Chega de depender de serviços externos ou e-mail para enviar arquivos.",
+  "short_desc": "Um aplicativo auto-hospedado que permite o upload de arquivos e a atribuição deles a clientes específicos criados por você. Seguro, privado e fácil. C",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

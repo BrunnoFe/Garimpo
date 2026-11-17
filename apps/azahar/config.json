@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Azahar (LinuxServer.io)",
+  "id": "azahar",
+  "available": true,
+  "port": 3003,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "12126.1.2",
+  "categories": [
+    "media"
+  ],
+  "description": "Um emulador de 3DS de código aberto baseado no Citra.",
+  "short_desc": "Um emulador de 3DS de código aberto baseado no Citra.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

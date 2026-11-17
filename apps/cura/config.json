@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Cura (LinuxServer.io)",
+  "id": "cura",
+  "available": true,
+  "port": 3013,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "5.14.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Software de impressão 3D gratuito e fácil de usar, confiável por milhões de usuários. Ajuste seu modelo 3D com mais de 400 configurações para obter os melhores resultados de fatiamento e impressão.",
+  "short_desc": "Software de impressão 3D gratuito e fácil de usar, confiável por milhões de usuários. Ajuste seu modelo 3D com mais de 400 configurações para obter os",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

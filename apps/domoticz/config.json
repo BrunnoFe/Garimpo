@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Domoticz",
+  "id": "domoticz",
+  "available": true,
+  "port": 8085,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2023.2.20231129",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um sistema de automação residencial que permite monitorar e configurar diversos dispositivos, como luzes, interruptores, sensores/medidores de temperatura, chuva, vento, UV, eletricidade, gás, água e muito mais. Notificações/alertas podem ser enviados para qualquer dispositivo móvel.",
+  "short_desc": "Um sistema de automação residencial que permite monitorar e configurar diversos dispositivos, como luzes, interruptores, sensores/medidores de tempera",
+  "author": "LinuxServer.io",
+  "source": "https://www.domoticz.com",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.domoticz.com",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

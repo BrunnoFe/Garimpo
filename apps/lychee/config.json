@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Lychee (LinuxServer.io)",
+  "id": "lychee",
+  "available": true,
+  "port": 20016,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "7.13.0",
+  "categories": [
+    "media"
+  ],
+  "description": "Uma ferramenta gratuita de gerenciamento de fotos que funciona no seu servidor ou espaço web. A instalação leva apenas alguns segundos. Faça upload, gerencie e compartilhe fotos como se estivesse usando um aplicativo nativo. O Lychee vem com tudo o que você precisa e todas as suas fotos são armazena",
+  "short_desc": "Uma ferramenta gratuita de gerenciamento de fotos que funciona no seu servidor ou espaço web. A instalação leva apenas alguns segundos. Faça upload, g",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

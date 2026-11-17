@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Mediaelch (LinuxServer.io)",
+  "id": "mediaelch",
+  "available": true,
+  "port": 3046,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.12.0",
+  "categories": [
+    "media"
+  ],
+  "description": "Um gerenciador de mídia para Kodi. Informações sobre filmes, séries, shows e músicas são armazenadas como arquivos NFO. Fanarts são baixadas automaticamente do fanart.tv. Usando o gerador de NFO, o MediaElch também pode ser usado com outros media centers.",
+  "short_desc": "Um gerenciador de mídia para Kodi. Informações sobre filmes, séries, shows e músicas são armazenadas como arquivos NFO. Fanarts são baixadas automatic",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

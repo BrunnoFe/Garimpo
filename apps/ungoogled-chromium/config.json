@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Ungoogled chromium (LinuxServer.io)",
+  "id": "ungoogled-chromium",
+  "available": true,
+  "port": 3079,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "156.0.8078",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Google Chromium, sem dependência dos serviços web do Google.",
+  "short_desc": "Google Chromium, sem dependência dos serviços web do Google.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

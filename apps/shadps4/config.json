@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Shadps4 (LinuxServer.io)",
+  "id": "shadps4",
+  "available": true,
+  "port": 3070,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-shadPS4QtLauncher-2026-11-06-ecc85072dae45c05628934fdb6b3aa036e9f1d4b",
+  "categories": [
+    "media"
+  ],
+  "description": "Um dos primeiros emuladores de PlayStation 4 para Windows, Linux e macOS, escrito em C++.",
+  "short_desc": "Um dos primeiros emuladores de PlayStation 4 para Windows, Linux e macOS, escrito em C++.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

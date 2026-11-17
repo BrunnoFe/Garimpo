@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Altus (LinuxServer.io)",
+  "id": "altus",
+  "available": true,
+  "port": 3000,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "5.8.2",
+  "categories": [
+    "social"
+  ],
+  "description": "Um cliente WhatsApp baseado em Electron com temas e suporte a múltiplas contas.",
+  "short_desc": "Um cliente WhatsApp baseado em Electron com temas e suporte a múltiplas contas.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

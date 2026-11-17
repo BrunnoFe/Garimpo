@@ -1,0 +1,20 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Pyload-ng).
+services:
+  pyload-ng:
+    image: linuxserver/pyload-ng:0.5.0
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+    ports:
+    - target: 9666
+      published: 9666
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${APP_DATA_DIR}/data/downloads:/downloads
+    x-runtipi:
+      is_main: true
+      internal_port: 8000
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Spotube (LinuxServer.io)",
+  "id": "spotube",
+  "available": true,
+  "port": 3073,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "6.0.0",
+  "categories": [
+    "media"
+  ],
+  "description": "Um cliente Spotify de código aberto e multiplataforma, compatível com diversas plataformas, que utiliza a API de dados do Spotify e o YouTube, Piped Video ou JioSaavn como fonte de áudio, eliminando a necessidade do Spotify Premium.",
+  "short_desc": "Um cliente Spotify de código aberto e multiplataforma, compatível com diversas plataformas, que utiliza a API de dados do Spotify e o YouTube, Piped V",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

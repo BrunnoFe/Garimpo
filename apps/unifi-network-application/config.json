@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Unifi network-application (LinuxServer.io)",
+  "id": "unifi-network-application",
+  "available": true,
+  "port": 8097,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "10.6.109",
+  "categories": [
+    "network"
+  ],
+  "description": "O software Unifi-network-application é um poderoso mecanismo de software sem fio empresarial, ideal para implantações de clientes de alta densidade que exigem baixa latência e alto desempenho de disponibilidade.",
+  "short_desc": "O software Unifi-network-application é um poderoso mecanismo de software sem fio empresarial, ideal para implantações de clientes de alta densidade qu",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,23 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Quassel-web).
+services:
+  quassel-web:
+    image: linuxserver/quassel-web:version-019bfdc1
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      QUASSEL_CORE: ''
+      QUASSEL_PORT: ''
+      QUASSEL_HTTPS: ''
+      URL_BASE: ''
+    ports:
+    - target: 64443
+      published: 64443
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 64080
+x-runtipi:
+  schema_version: 2

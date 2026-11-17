@@ -1,0 +1,22 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Piper).
+services:
+  piper:
+    image: linuxserver/piper:2.5.3
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      PIPER_VOICE: ''
+      LOCAL_ONLY: ''
+      PIPER_LENGTH: ''
+      PIPER_NOISE: ''
+      PIPER_NOISEW: ''
+      PIPER_SPEAKER: ''
+      NO_STREAMING: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 10200
+x-runtipi:
+  schema_version: 2

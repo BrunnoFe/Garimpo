@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Dolphin (LinuxServer.io)",
+  "id": "dolphin",
+  "available": true,
+  "port": 3017,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-2609b",
+  "categories": [
+    "media"
+  ],
+  "description": "Permite jogar jogos de GameCube e Wii com diversas melhorias gráficas e outros recursos disponíveis para aprimorar sua experiência de jogo.",
+  "short_desc": "Permite jogar jogos de GameCube e Wii com diversas melhorias gráficas e outros recursos disponíveis para aprimorar sua experiência de jogo.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

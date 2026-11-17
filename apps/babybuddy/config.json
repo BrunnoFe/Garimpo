@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Babybuddy (LinuxServer.io)",
+  "id": "babybuddy",
+  "available": true,
+  "port": 8001,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.11.0",
+  "categories": [
+    "automation"
+  ],
+  "description": "Um companheiro para bebês. Ajuda os cuidadores a monitorar o sono, as mamadas, as trocas de fraldas, o tempo de bruços e muito mais, para aprender e prever as necessidades do bebê com menos palpites.",
+  "short_desc": "Um companheiro para bebês. Ajuda os cuidadores a monitorar o sono, as mamadas, as trocas de fraldas, o tempo de bruços e muito mais, para aprender e p",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

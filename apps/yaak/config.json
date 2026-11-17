@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Yaak (LinuxServer.io)",
+  "id": "yaak",
+  "available": true,
+  "port": 3091,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2026.9.1",
+  "categories": [
+    "development"
+  ],
+  "description": "Um cliente de API para desktop que organiza e executa requisições REST, GraphQL e gRPC. Ele foi desenvolvido usando Tauri, Rust e ReactJS.",
+  "short_desc": "Um cliente de API para desktop que organiza e executa requisições REST, GraphQL e gRPC. Ele foi desenvolvido usando Tauri, Rust e ReactJS.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

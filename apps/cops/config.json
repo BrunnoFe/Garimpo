@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Cops (LinuxServer.io)",
+  "id": "cops",
+  "available": true,
+  "port": 20004,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "4.6.1",
+  "categories": [
+    "media"
+  ],
+  "description": "Criado por Sébastien Lucas e agora mantido por MikesPub, COPS significa Calibre OPDS (e HTML) PHP Server. O COPS se conecta ao banco de dados da sua biblioteca Calibre e permite o download e envio de livros por e-mail diretamente de um navegador web, além de fornecer um feed OPDS para conexão com se",
+  "short_desc": "Criado por Sébastien Lucas e agora mantido por MikesPub, COPS significa Calibre OPDS (e HTML) PHP Server. O COPS se conecta ao banco de dados da sua b",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

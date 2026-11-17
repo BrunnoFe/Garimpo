@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Tester",
+  "id": "tester",
+  "available": true,
+  "port": 3077,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-66f677b0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Essa ferramenta interna é usada como um ambiente de teste (sandbox) em nosso processo de CI para capturar uma imagem de um endpoint que esperamos estar funcionando corretamente.",
+  "short_desc": "Essa ferramenta interna é usada como um ambiente de teste (sandbox) em nosso processo de CI para capturar uma imagem de um endpoint que esperamos esta",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

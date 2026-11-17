@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Habridge (LinuxServer.io)",
+  "id": "habridge",
+  "available": true,
+  "port": 8087,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "5.4.1",
+  "categories": [
+    "automation"
+  ],
+  "description": "Emula a API do Philips Hue para outros gateways de automação residencial, como o Amazon Echo/Dot de 1ª geração (a 2ª geração apresenta problemas para detectar o ha-bridge) ou outros sistemas compatíveis com o Philips Hue. O Bridge processa comandos básicos, como ligar, desligar e ajustar o brilho, d",
+  "short_desc": "Emula a API do Philips Hue para outros gateways de automação residencial, como o Amazon Echo/Dot de 1ª geração (a 2ª geração apresenta problemas para ",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

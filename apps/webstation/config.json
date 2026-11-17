@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Webstation (LinuxServer.io)",
+  "id": "webstation",
+  "available": true,
+  "port": 3085,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.15.3-romm",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um ambiente de trabalho LXQt baseado no Ubuntu, focado em emulação nativa da web.",
+  "short_desc": "Um ambiente de trabalho LXQt baseado no Ubuntu, focado em emulação nativa da web.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

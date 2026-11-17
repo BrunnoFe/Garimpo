@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Wps office (LinuxServer.io)",
+  "id": "wps-office",
+  "available": true,
+  "port": 3089,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "12.1.2",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um pacote de escritório completo, leve e repleto de recursos, com alta compatibilidade. Como um software de escritório prático e profissional, o WPS Office permite editar arquivos nos formatos Writer, Presentation, Spreadsheet e PDF para melhorar sua eficiência no trabalho.",
+  "short_desc": "Um pacote de escritório completo, leve e repleto de recursos, com alta compatibilidade. Como um software de escritório prático e profissional, o WPS O",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

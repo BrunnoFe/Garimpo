@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Orcaslicer (LinuxServer.io)",
+  "id": "orcaslicer",
+  "available": true,
+  "port": 3056,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.5.1",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um fatiador de código aberto para impressoras FDM. O OrcaSlicer é um fork do Bambu Studio, anteriormente conhecido como BambuStudio-SoftFever. O Bambu Studio, por sua vez, é um fork do PrusaSlicer, da Prusa Research, que por sua vez é derivado do Slic3r, criado por Alessandro Ranellucci e a comunida",
+  "short_desc": "Um fatiador de código aberto para impressoras FDM. O OrcaSlicer é um fork do Bambu Studio, anteriormente conhecido como BambuStudio-SoftFever. O Bambu",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

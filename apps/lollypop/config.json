@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Lollypop (LinuxServer.io)",
+  "id": "lollypop",
+  "available": true,
+  "port": 3044,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.4.45",
+  "categories": [
+    "media"
+  ],
+  "description": "Um reprodutor de música moderno e leve, projetado para funcionar perfeitamente no ambiente de desktop GNOME.",
+  "short_desc": "Um reprodutor de música moderno e leve, projetado para funcionar perfeitamente no ambiente de desktop GNOME.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

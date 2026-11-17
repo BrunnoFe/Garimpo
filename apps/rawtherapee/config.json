@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Rawtherapee (LinuxServer.io)",
+  "id": "rawtherapee",
+  "available": true,
+  "port": 3063,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "5.13.20261115",
+  "categories": [
+    "media"
+  ],
+  "description": "Um programa gratuito e multiplataforma para processamento de imagens RAW.",
+  "short_desc": "Um programa gratuito e multiplataforma para processamento de imagens RAW.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

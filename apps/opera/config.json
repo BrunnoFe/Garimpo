@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Opera (LinuxServer.io)",
+  "id": "opera",
+  "available": true,
+  "port": 3055,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "140.0.6074",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um navegador web multiplataforma desenvolvido pela empresa de mesmo nome, Opera. O navegador é baseado no Chromium, mas se diferencia de outros navegadores baseados no Chromium (Chrome, Edge, etc.) por sua interface de usuário e outros recursos.",
+  "short_desc": "Um navegador web multiplataforma desenvolvido pela empresa de mesmo nome, Opera. O navegador é baseado no Chromium, mas se diferencia de outros navega",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

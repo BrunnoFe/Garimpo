@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Mame (LinuxServer.io)",
+  "id": "mame",
+  "available": true,
+  "port": 3045,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-0.289dfsg1-0",
+  "categories": [
+    "media"
+  ],
+  "description": "Um emulador gratuito e de código aberto projetado para emular o hardware de jogos de arcade, consoles de videogame, computadores antigos e outros sistemas em software em computadores pessoais modernos.",
+  "short_desc": "Um emulador gratuito e de código aberto projetado para emular o hardware de jogos de arcade, consoles de videogame, computadores antigos e outros sist",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

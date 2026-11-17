@@ -1,0 +1,18 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Nzbget).
+services:
+  nzbget:
+    image: linuxserver/nzbget:26.3.20261113
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      NZBGET_USER: ''
+      NZBGET_PASS: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${APP_DATA_DIR}/data/downloads:/downloads
+    x-runtipi:
+      is_main: true
+      internal_port: 6789
+x-runtipi:
+  schema_version: 2

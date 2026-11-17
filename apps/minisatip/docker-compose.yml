@@ -1,0 +1,23 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Minisatip).
+services:
+  minisatip:
+    image: linuxserver/minisatip:2.0.197
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      RUN_OPTS: ''
+    ports:
+    - target: 554
+      published: 554
+      protocol: tcp
+    - target: 1900
+      published: 1900
+      protocol: udp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 8875
+x-runtipi:
+  schema_version: 2

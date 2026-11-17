@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Unifi controller",
+  "id": "unifi-controller",
+  "available": true,
+  "port": 8443,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "8.0.24",
+  "categories": [
+    "utilities"
+  ],
+  "description": "O software Unifi-controller é um poderoso mecanismo de software sem fio empresarial, ideal para implantações de clientes de alta densidade que exigem baixa latência e alto desempenho de disponibilidade.",
+  "short_desc": "O software Unifi-controller é um poderoso mecanismo de software sem fio empresarial, ideal para implantações de clientes de alta densidade que exigem ",
+  "author": "LinuxServer.io",
+  "source": "https://www.ui.com/software/",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.ui.com/software/",
+  "https": true,
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

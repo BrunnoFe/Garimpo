@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Mysql workbench (LinuxServer.io)",
+  "id": "mysql-workbench",
+  "available": true,
+  "port": 3050,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "8.0.47",
+  "categories": [
+    "development"
+  ],
+  "description": "Uma ferramenta visual unificada para arquitetos de banco de dados, desenvolvedores e administradores de banco de dados (DBAs). O MySQL Workbench oferece modelagem de dados, desenvolvimento SQL e ferramentas abrangentes de administração para configuração de servidor, administração de usuários, backup",
+  "short_desc": "Uma ferramenta visual unificada para arquitetos de banco de dados, desenvolvedores e administradores de banco de dados (DBAs). O MySQL Workbench ofere",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Nano",
+  "id": "nano",
+  "available": true,
+  "port": 8075,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "21.2.20220522",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um protocolo de pagamento digital projetado para ser acessível e leve, com foco na eliminação das ineficiências presentes em outras criptomoedas. Com transações ultrarrápidas e taxas zero em uma rede segura, ecológica e descentralizada, o Nano se torna ideal para transações do dia a dia.",
+  "short_desc": "Um protocolo de pagamento digital projetado para ser acessível e leve, com foco na eliminação das ineficiências presentes em outras criptomoedas. Com ",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

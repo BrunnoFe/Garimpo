@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Hishtory server (LinuxServer.io)",
+  "id": "hishtory-server",
+  "available": true,
+  "port": 8088,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.335.20261113",
+  "categories": [
+    "development"
+  ],
+  "description": "Um histórico de shell aprimorado. Ele armazena seu histórico de shell contextualizado (em qual diretório você executou o comando, se ele foi bem-sucedido ou falhou, quanto tempo levou, etc.). Tudo isso é armazenado localmente e criptografado de ponta a ponta para sincronização com todos os seus outr",
+  "short_desc": "Um histórico de shell aprimorado. Ele armazena seu histórico de shell contextualizado (em qual diretório você executou o comando, se ele foi bem-suced",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Quassel web",
+  "id": "quassel-web",
+  "available": true,
+  "port": 64080,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "version-019bfdc1",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um cliente web para Quassel. Observe que é necessária uma instância do Quassel-Core; temos um contêiner disponível aqui.",
+  "short_desc": "Um cliente web para Quassel. Observe que é necessária uma instância do Quassel-Core; temos um contêiner disponível aqui.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/magne4000/quassel-webserver",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://github.com/magne4000/quassel-webserver",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,13 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Synclounge).
+services:
+  synclounge:
+    image: linuxserver/synclounge:5.2.35
+    environment:
+      AUTH_LIST: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 8088
+x-runtipi:
+  schema_version: 2

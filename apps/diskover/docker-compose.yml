@@ -1,0 +1,18 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Diskover).
+services:
+  diskover:
+    image: linuxserver/diskover:2.3.5
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      ES_HOST: ''
+      ES_PORT: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${APP_DATA_DIR}/data/data:/data
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Krita (LinuxServer.io)",
+  "id": "krita",
+  "available": true,
+  "port": 3040,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "5.3.4",
+  "categories": [
+    "media"
+  ],
+  "description": "Um programa de pintura profissional, GRATUITO e de código aberto. Foi criado por artistas que desejam ferramentas de arte acessíveis a todos.",
+  "short_desc": "Um programa de pintura profissional, GRATUITO e de código aberto. Foi criado por artistas que desejam ferramentas de arte acessíveis a todos.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

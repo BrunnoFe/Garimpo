@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Budge (LinuxServer.io)",
+  "id": "budge",
+  "available": true,
+  "port": 20000,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.0.9",
+  "categories": [
+    "finance"
+  ],
+  "description": "Um aplicativo de finanças pessoais de código aberto para \"orçamento com envelopes\".",
+  "short_desc": "Um aplicativo de finanças pessoais de código aberto para \"orçamento com envelopes\".",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

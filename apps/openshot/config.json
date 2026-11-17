@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Openshot (LinuxServer.io)",
+  "id": "openshot",
+  "available": true,
+  "port": 3054,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "4.1.1",
+  "categories": [
+    "media"
+  ],
+  "description": "O Video Editor é um editor de vídeo gratuito e de código aberto premiado para Linux, Mac e Windows, dedicado a fornecer soluções de edição de vídeo e animação de alta qualidade para o mundo.",
+  "short_desc": "O Video Editor é um editor de vídeo gratuito e de código aberto premiado para Linux, Mac e Windows, dedicado a fornecer soluções de edição de vídeo e ",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

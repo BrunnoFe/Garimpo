@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Overseerr",
+  "id": "overseerr",
+  "available": true,
+  "port": 5055,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.33.2",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Uma ferramenta de gerenciamento de solicitações e descoberta de mídia criada para funcionar com seu ecossistema Plex existente.",
+  "short_desc": "Uma ferramenta de gerenciamento de solicitações e descoberta de mídia criada para funcionar com seu ecossistema Plex existente.",
+  "author": "LinuxServer.io",
+  "source": "https://overseerr.dev/",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://overseerr.dev/",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

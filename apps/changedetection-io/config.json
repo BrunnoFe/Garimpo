@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Changedetection. Io (LinuxServer.io)",
+  "id": "changedetection-io",
+  "available": true,
+  "port": 5000,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.70.2",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Oferece monitoramento, notificação e detecção de alterações em páginas da web de forma gratuita e de código aberto.",
+  "short_desc": "Oferece monitoramento, notificação e detecção de alterações em páginas da web de forma gratuita e de código aberto.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

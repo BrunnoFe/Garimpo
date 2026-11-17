@@ -1,0 +1,24 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Domoticz).
+services:
+  domoticz:
+    image: linuxserver/domoticz:2023.2.20231129
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      WEBROOT: ''
+      DBASE: ''
+    ports:
+    - target: 6144
+      published: 6144
+      protocol: tcp
+    - target: 1443
+      published: 1443
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

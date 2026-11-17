@@ -1,0 +1,16 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Pwndrop).
+services:
+  pwndrop:
+    image: linuxserver/pwndrop:1.0.1
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      SECRET_PATH: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

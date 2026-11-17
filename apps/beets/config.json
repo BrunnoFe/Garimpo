@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Beets (LinuxServer.io)",
+  "id": "beets",
+  "available": true,
+  "port": 8337,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.14.1",
+  "categories": [
+    "media"
+  ],
+  "description": "Trata-se de um gerenciador de biblioteca musical e, em sua maior parte, não de um reprodutor de música. Ele inclui um plugin de reprodução simples e um reprodutor experimental baseado na Web, mas, em geral, deixa a reprodução de som propriamente dita para ferramentas especializadas.",
+  "short_desc": "Trata-se de um gerenciador de biblioteca musical e, em sua maior parte, não de um reprodutor de música. Ele inclui um plugin de reprodução simples e u",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

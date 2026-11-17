@@ -1,0 +1,19 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Filezilla).
+services:
+  filezilla:
+    image: linuxserver/filezilla:3.69.6
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+    ports:
+    - target: 3001
+      published: 3001
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+x-runtipi:
+  schema_version: 2

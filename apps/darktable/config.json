@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Darktable (LinuxServer.io)",
+  "id": "darktable",
+  "available": true,
+  "port": 3014,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "25.6.2",
+  "categories": [
+    "media"
+  ],
+  "description": "Um aplicativo de código aberto para fluxo de trabalho fotográfico e revelação de arquivos RAW. Uma mesa de luz e câmara escura virtuais para fotógrafos. Ele gerencia seus negativos digitais em um banco de dados, permite visualizá-los através de uma mesa de luz com zoom e possibilita revelar e aprimo",
+  "short_desc": "Um aplicativo de código aberto para fluxo de trabalho fotográfico e revelação de arquivos RAW. Uma mesa de luz e câmara escura virtuais para fotógrafo",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,20 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Faster-whisper).
+services:
+  faster-whisper:
+    image: linuxserver/faster-whisper:3.8.1
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      DEBUG: ''
+      LOCAL_ONLY: ''
+      WHISPER_BEAM: ''
+      WHISPER_LANG: ''
+      WHISPER_MODEL: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 10300
+x-runtipi:
+  schema_version: 2

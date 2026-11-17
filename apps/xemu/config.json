@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Xemu (LinuxServer.io)",
+  "id": "xemu",
+  "available": true,
+  "port": 3090,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.8.134",
+  "categories": [
+    "media"
+  ],
+  "description": "Um aplicativo gratuito e de código aberto que emula o console de jogos Xbox original da Microsoft, permitindo que as pessoas joguem seus jogos originais do Xbox em sistemas Windows, macOS e Linux.",
+  "short_desc": "Um aplicativo gratuito e de código aberto que emula o console de jogos Xbox original da Microsoft, permitindo que as pessoas joguem seus jogos origina",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

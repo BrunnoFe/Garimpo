@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Signal (LinuxServer.io)",
+  "id": "signal",
+  "available": true,
+  "port": 3072,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "8.35.0",
+  "categories": [
+    "social"
+  ],
+  "description": "Um aplicativo de mensagens com a privacidade como princípio fundamental. É gratuito e fácil de usar, com criptografia de ponta a ponta robusta que mantém sua comunicação totalmente privada.",
+  "short_desc": "Um aplicativo de mensagens com a privacidade como princípio fundamental. É gratuito e fácil de usar, com criptografia de ponta a ponta robusta que man",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

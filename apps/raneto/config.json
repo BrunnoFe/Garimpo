@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Raneto (LinuxServer.io)",
+  "id": "raneto",
+  "available": true,
+  "port": 3062,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.18.1",
+  "categories": [
+    "utilities"
+  ],
+  "description": "é uma plataforma de base de conhecimento de código aberto que utiliza arquivos Markdown estáticos para alimentar sua base de conhecimento.",
+  "short_desc": "é uma plataforma de base de conhecimento de código aberto que utiliza arquivos Markdown estáticos para alimentar sua base de conhecimento.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

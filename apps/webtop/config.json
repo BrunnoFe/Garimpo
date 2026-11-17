@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Webtop (LinuxServer.io)",
+  "id": "webtop",
+  "available": true,
+  "port": 3086,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "arch-kde-version-2025-07-12",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Contêineres baseados em Alpine, Ubuntu, Fedora e Arch contendo ambientes de desktop completos em versões oficialmente suportadas, acessíveis por meio de qualquer navegador web moderno.",
+  "short_desc": "Contêineres baseados em Alpine, Ubuntu, Fedora e Arch contendo ambientes de desktop completos em versões oficialmente suportadas, acessíveis por meio ",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,22 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Bitcoin-knots).
+services:
+  bitcoin-knots:
+    image: linuxserver/bitcoin-knots:version-29.5knots20260508-resolute2
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+    ports:
+    - target: 3001
+      published: 3001
+      protocol: tcp
+    - target: 8333
+      published: 8333
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+x-runtipi:
+  schema_version: 2

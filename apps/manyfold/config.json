@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Manyfold (LinuxServer.io)",
+  "id": "manyfold",
+  "available": true,
+  "port": 3214,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.154.2",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Uma aplicação web de código aberto e auto-hospedada para gerenciar uma coleção de modelos 3D, com foco especial em impressão 3D.",
+  "short_desc": "Uma aplicação web de código aberto e auto-hospedada para gerenciar uma coleção de modelos 3D, com foco especial em impressão 3D.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

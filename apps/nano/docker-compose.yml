@@ -1,0 +1,29 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Nano).
+services:
+  nano:
+    image: linuxserver/nano:21.2.20220522
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      PEER_HOST: ''
+      LIVE_GENESIS_PUB: ''
+      LIVE_GENESIS_ACCOUNT: ''
+      LIVE_GENESIS_WORK: ''
+      LIVE_GENESIS_SIG: ''
+      CLI_OPTIONS: ''
+      LMDB_BOOTSTRAP_URL: ''
+    ports:
+    - target: 7076
+      published: 3000
+      protocol: tcp
+    - target: 7077
+      published: 3001
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 8075
+x-runtipi:
+  schema_version: 2

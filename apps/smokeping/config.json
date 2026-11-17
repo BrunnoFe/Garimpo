@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Smokeping (LinuxServer.io)",
+  "id": "smokeping",
+  "available": true,
+  "port": 20026,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.9.0",
+  "categories": [
+    "network"
+  ],
+  "description": "Monitora a latência da sua rede. Para ver um exemplo completo das capacidades deste aplicativo, visite o site da UC Davis.",
+  "short_desc": "Monitora a latência da sua rede. Para ver um exemplo completo das capacidades deste aplicativo, visite o site da UC Davis.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

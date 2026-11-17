@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Medusa (LinuxServer.io)",
+  "id": "medusa",
+  "available": true,
+  "port": 8091,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.0.27",
+  "categories": [
+    "media"
+  ],
+  "description": "Um gerenciador automático de videoteca para séries de TV. Ele monitora a disponibilidade de novos episódios dos seus programas favoritos e, quando são publicados, faz a sua mágica.",
+  "short_desc": "Um gerenciador automático de videoteca para séries de TV. Ele monitora a disponibilidade de novos episódios dos seus programas favoritos e, quando são",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Pidgin (LinuxServer.io)",
+  "id": "pidgin",
+  "available": true,
+  "port": 3059,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.14.14",
+  "categories": [
+    "social"
+  ],
+  "description": "Um programa de bate-papo que permite acessar contas em várias redes de bate-papo simultaneamente. Isso significa que você pode conversar com amigos no XMPP e estar em um canal de IRC ao mesmo tempo.",
+  "short_desc": "Um programa de bate-papo que permite acessar contas em várias redes de bate-papo simultaneamente. Isso significa que você pode conversar com amigos no",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

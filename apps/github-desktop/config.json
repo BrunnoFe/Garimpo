@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Github desktop (LinuxServer.io)",
+  "id": "github-desktop",
+  "available": true,
+  "port": 3029,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "3.4.13",
+  "categories": [
+    "development"
+  ],
+  "description": "Um aplicativo GitHub de código aberto baseado em Electron. Ele foi escrito em TypeScript e utiliza React.",
+  "short_desc": "Um aplicativo GitHub de código aberto baseado em Electron. Ele foi escrito em TypeScript e utiliza React.",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

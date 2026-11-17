@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Firefox (LinuxServer.io)",
+  "id": "firefox",
+  "available": true,
+  "port": 3024,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.2404.1",
+  "categories": [
+    "utilities"
+  ],
+  "description": "O Firefox, também conhecido como Mozilla Firefox ou simplesmente Firefox, é um navegador web gratuito e de código aberto desenvolvido pela Mozilla Foundation e sua subsidiária, a Mozilla Corporation. O Firefox utiliza o mecanismo de renderização Gecko para renderizar páginas web, implementando os pa",
+  "short_desc": "O Firefox, também conhecido como Mozilla Firefox ou simplesmente Firefox, é um navegador web gratuito e de código aberto desenvolvido pela Mozilla Fou",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Pwndrop (LinuxServer.io)",
+  "id": "pwndrop",
+  "available": true,
+  "port": 8092,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.0.1",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um serviço de hospedagem de arquivos auto-implantável para envio de payloads de teste de intrusão ou compartilhamento seguro de seus arquivos privados via HTTP e WebDAV.",
+  "short_desc": "Um serviço de hospedagem de arquivos auto-implantável para envio de payloads de teste de intrusão ou compartilhamento seguro de seus arquivos privados",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

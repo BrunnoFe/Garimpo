@@ -1,0 +1,19 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Manyfold).
+services:
+  manyfold:
+    image: linuxserver/manyfold:0.154.2
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      DATABASE_URL: ''
+      REDIS_URL: ''
+      SECRET_KEY_BASE: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${APP_DATA_DIR}/data/libraries:/libraries
+    x-runtipi:
+      is_main: true
+      internal_port: 3214
+x-runtipi:
+  schema_version: 2

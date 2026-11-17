@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Webgrabplus (LinuxServer.io)",
+  "id": "webgrabplus",
+  "available": true,
+  "port": 20032,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "5.6.1",
+  "categories": [
+    "media"
+  ],
+  "description": "Um coletor incremental de EPG XMLTV para múltiplos sites. Ele coleta dados de guias de programação de TV de sites selecionados para seus canais favoritos.",
+  "short_desc": "Um coletor incremental de EPG XMLTV para múltiplos sites. Ele coleta dados de guias de programação de TV de sites selecionados para seus canais favori",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

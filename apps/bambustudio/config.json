@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Bambustudio (LinuxServer.io)",
+  "id": "bambustudio",
+  "available": true,
+  "port": 3004,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "02.09.01",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um software de fatiamento de código aberto, de última geração e repleto de recursos. Ele contém fluxos de trabalho baseados em projetos, algoritmos de fatiamento sistematicamente otimizados e uma interface gráfica fácil de usar, proporcionando aos usuários uma experiência de impressão incrivelmente ",
+  "short_desc": "Um software de fatiamento de código aberto, de última geração e repleto de recursos. Ele contém fluxos de trabalho baseados em projetos, algoritmos de",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}

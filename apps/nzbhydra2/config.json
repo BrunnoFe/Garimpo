@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Nzbhydra2 (LinuxServer.io)",
+  "id": "nzbhydra2",
+  "available": true,
+  "port": 5076,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "9.3.1",
+  "categories": [
+    "media"
+  ],
+  "description": "Um aplicativo de metabusca para indexadores NZB, o sucessor espiritual do NZBmegasearch e uma evolução do aplicativo original NZBHydra. Ele fornece acesso fácil a diversos indexadores baseados em raw e newznab.",
+  "short_desc": "Um aplicativo de metabusca para indexadores NZB, o sucessor espiritual do NZBmegasearch e uma evolução do aplicativo original NZBHydra. Ele fornece ac",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/WisdomSky/LinuxServer-AppStore",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794933869158,
+  "updated_at": 1794933869158
+}
