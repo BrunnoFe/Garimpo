@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Alby Hub ✨",
+  "id": "albyhub",
+  "available": true,
+  "port": 58000,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v1.22.2",
+  "categories": [
+    "finance"
+  ],
+  "description": "Um nó Bitcoin Lightning simples com uma carteira, subcontas e conexões NWC.",
+  "short_desc": "Um nó Bitcoin Lightning simples com uma carteira, subcontas e conexões NWC.",
+  "author": "calganaygun",
+  "source": "https://github.com/getAlby/hub",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://albyhub.com/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

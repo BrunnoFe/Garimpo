@@ -1,0 +1,19 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Anaconda3).
+services:
+  anaconda3:
+    image: continuumio/anaconda3:2024.10-1
+    environment:
+    - LANG=C.UTF-8
+    - LC_ALL=C.UTF-8
+    - PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    volumes:
+    - ${APP_DATA_DIR}/data/notebooks:/opt/notebooks
+    command:
+    - /bin/bash
+    - -c
+    - conda install -c conda-forge jupyterlab -y --quiet && jupyter lab --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root
+    x-runtipi:
+      is_main: true
+      internal_port: 8888
+x-runtipi:
+  schema_version: 2

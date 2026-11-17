@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "OpenSpeedTest",
+  "id": "openspeedtest",
+  "available": true,
+  "port": 3004,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v2.0.6",
+  "categories": [
+    "network"
+  ],
+  "description": "Servidor de teste de velocidade de rede HTML5.",
+  "short_desc": "Servidor de teste de velocidade de rede HTML5.",
+  "author": "OpenSpeedTest",
+  "source": "https://github.com/openspeedtest/Speed-Test",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

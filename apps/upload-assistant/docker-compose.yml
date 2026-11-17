@@ -1,0 +1,22 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/UploadAssistant).
+services:
+  upload-assistant:
+    image: ghcr.io/wastaken7/upload-assistant:v4.9
+    command:
+    - --webui
+    - 0.0.0.0:5000
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      UA_BROWSE_ROOTS: /data/torrents,/state/tmp
+      XDG_CONFIG_HOME: /state/config
+    volumes:
+    - ${APP_DATA_DIR}/data:/state
+    - ${ROOT_FOLDER_HOST}/media/downloads:/data/torrents
+    stop_grace_period: 15s
+    x-runtipi:
+      is_main: true
+      internal_port: 5000
+x-runtipi:
+  schema_version: 2

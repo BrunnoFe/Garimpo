@@ -1,0 +1,22 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Lazylibrarian).
+services:
+  lazylibrarian:
+    environment:
+      DOCKER_MODS: linuxserver/calibre-web:calibre|linuxserver/mods:lazylibrarian-ffmpeg
+      PGID: '1000'
+      PUID: '1000'
+      TZ: ${TZ}
+    image: linuxserver/lazylibrarian:version-169e669f
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    volumes:
+    - ${ROOT_FOLDER_HOST}/media/downloads:/downloads
+    - ${ROOT_FOLDER_HOST}/media/data/books:/books
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 5299
+x-runtipi:
+  schema_version: 2

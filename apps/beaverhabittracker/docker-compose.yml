@@ -1,0 +1,23 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/BeaverHabitTracker).
+services:
+  beaverhabittracker:
+    image: daya0576/beaverhabits:0.9.1
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 128M
+    user: 1000:1000
+    volumes:
+    - ${APP_DATA_DIR}/data:/app/.user
+    environment:
+      HABITS_STORAGE: USER_DISK
+      TRUSTED_LOCAL_EMAIL: your@email.com
+      INDEX_HABIT_DATE_COLUMNS: 5
+      ENABLE_IOS_STANDALONE: true
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

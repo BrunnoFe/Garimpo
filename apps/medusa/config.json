@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Medusa",
+  "id": "medusa",
+  "available": true,
+  "port": 8081,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "master",
+  "categories": [
+    "media"
+  ],
+  "description": "Medusa",
+  "short_desc": "Medusa",
+  "author": "pyMedusa (https://github.com/pymedusa)",
+  "source": "https://github.com/pymedusa/Medusa",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

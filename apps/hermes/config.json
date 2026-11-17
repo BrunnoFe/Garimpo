@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Hermes",
+  "id": "hermes",
+  "available": true,
+  "port": 9119,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v2026.6.5",
+  "categories": [
+    "ai"
+  ],
+  "description": "Um agente de IA autoaperfeiçoável com memória, competências, mensagens e painel web.",
+  "short_desc": "Um agente de IA autoaperfeiçoável com memória, competências, mensagens e painel web.",
+  "author": "Nous Research",
+  "source": "https://github.com/NousResearch/hermes-agent",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://hermes-agent.nousresearch.com/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

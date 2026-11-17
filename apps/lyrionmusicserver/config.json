@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "LyrionMusicServer",
+  "id": "lyrionmusicserver",
+  "available": true,
+  "port": 9000,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "9.1.1",
+  "categories": [
+    "media"
+  ],
+  "description": "O Lyrion Music Server é um servidor de áudio streaming para reprodutores de áudio Squeezebox.",
+  "short_desc": "O Lyrion Music Server é um servidor de áudio streaming para reprodutores de áudio Squeezebox.",
+  "author": "LMS-Community",
+  "source": "https://github.com/lms-community/slimserver",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.lyrion.org",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

@@ -1,0 +1,31 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/LyrionMusicServer).
+services:
+  lyrionmusicserver:
+    image: lmscommunity/lyrionmusicserver:9.1.1
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    ports:
+    - target: 9090
+      published: '9090'
+      protocol: tcp
+    - target: 3483
+      published: '3483'
+      protocol: tcp
+    - target: 3483
+      published: '3483'
+      protocol: udp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${ROOT_FOLDER_HOST}/media/data/music:/music:ro
+    - ${APP_DATA_DIR}/data/playlists:/playlist
+    - /etc/localtime:/etc/localtime:ro
+    - /etc/timezone:/etc/timezone:ro
+    environment:
+      HTTP_PORT: '9000'
+    x-runtipi:
+      is_main: true
+      internal_port: 9000
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,16 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/MySpeed).
+services:
+  myspeed:
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+    image: germannewsmaker/myspeed:1.0.9
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/myspeed/data
+    privileged: false
+    x-runtipi:
+      is_main: true
+      internal_port: 5216
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,45 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Unifi-controller).
+services:
+  unifi-controller:
+    environment:
+      MEM_LIMIT: '1024'
+      MEM_STARTUP: '1024'
+      PGID: '1000'
+      PUID: '1000'
+    image: linuxserver/unifi-controller:8.0.7
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    ports:
+    - target: 3478
+      published: '3478'
+      protocol: udp
+    - target: 10001
+      published: '10001'
+      protocol: udp
+    - target: 8443
+      published: '8443'
+      protocol: tcp
+    - target: 1900
+      published: '1900'
+      protocol: udp
+    - target: 8843
+      published: '8843'
+      protocol: tcp
+    - target: 8880
+      published: '8880'
+      protocol: tcp
+    - target: 6789
+      published: '6789'
+      protocol: tcp
+    - target: 5514
+      published: '5514'
+      protocol: udp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

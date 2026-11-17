@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Sure",
+  "id": "sure-web",
+  "available": true,
+  "port": 23002,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.6.5-hotfix.1",
+  "categories": [
+    "finance"
+  ],
+  "description": "Aplicativo de gerenciamento de finanças pessoais",
+  "short_desc": "Aplicativo de gerenciamento de finanças pessoais",
+  "author": "we-promise",
+  "source": "https://github.com/we-promise/sure",
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "OPENAI_ACCESS_TOKEN (pedido pela receita original)",
+      "env_variable": "OPENAI_ACCESS_TOKEN",
+      "required": false
+    },
+    {
+      "type": "random",
+      "label": "Chave secreta 1 (gerada na instalação)",
+      "env_variable": "GARIMPO_SEGREDO_1",
+      "min": 32
+    }
+  ],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://sure.am",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

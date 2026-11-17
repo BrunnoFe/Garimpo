@@ -1,0 +1,22 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Jellyseerr).
+services:
+  jellyseerr:
+    cpu_shares: 50
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 256M
+    environment:
+    - LOG_LEVEL=debug
+    - TZ=${TZ}
+    image: fallenbagel/jellyseerr:2.7.3
+    volumes:
+    - ${APP_DATA_DIR}/data:/app/config
+    privileged: false
+    x-runtipi:
+      is_main: true
+      internal_port: 5055
+x-runtipi:
+  schema_version: 2

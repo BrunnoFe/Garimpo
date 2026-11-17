@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Unifi Network Application",
+  "id": "unifi-network-application",
+  "available": true,
+  "port": 8443,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "network"
+  ],
+  "description": "The Unifi network application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.",
+  "short_desc": "The Unifi network application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low late",
+  "author": "Ubiquiti and Linuxserver.io",
+  "source": "https://github.com/linuxserver/docker-unifi-network-application",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://ui.com",
+  "https": true,
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

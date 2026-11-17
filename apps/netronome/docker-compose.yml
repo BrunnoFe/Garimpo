@@ -1,0 +1,29 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Netronome).
+services:
+  netronome:
+    image: ghcr.io/autobrr/netronome:v0.13.0
+    entrypoint:
+    - /sbin/tini
+    - --
+    - /bin/sh
+    - -c
+    command:
+    - |-
+      config=/data/.config/netronome/config.toml
+      if [ ! -f "$$config" ]; then
+        netronome generate-config
+      fi
+      exec netronome serve
+    environment:
+      TZ: ${TZ}
+      NETRONOME__HOST: 0.0.0.0
+      NETRONOME__PORT: 7575
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/data
+    cap_add:
+    - NET_RAW
+    x-runtipi:
+      is_main: true
+      internal_port: 7575
+x-runtipi:
+  schema_version: 2

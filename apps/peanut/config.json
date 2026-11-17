@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "PeaNUT",
+  "id": "peanut",
+  "available": true,
+  "port": 8084,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "6.0.0",
+  "categories": [
+    "automation"
+  ],
+  "description": "Sistema de monitorização UPS e notificação de interrupção de energia",
+  "short_desc": "Sistema de monitorização UPS e notificação de interrupção de energia",
+  "author": "brandawg93",
+  "source": "https://github.com/brandawg93/peanut",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

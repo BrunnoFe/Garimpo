@@ -1,0 +1,23 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/LLaMA-Factory_Nvidia).
+services:
+  llama-factory-nvidia:
+    image: hiyouga/llamafactory:0.9.4
+    tty: true
+    stdin_open: true
+    command:
+    - llamafactory-cli
+    - webui
+    deploy:
+      resources:
+        reservations:
+          memory: 6G
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities:
+            - gpu
+    x-runtipi:
+      is_main: true
+      internal_port: 7860
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Gopeed",
+  "id": "gopeed",
+  "available": true,
+  "port": 9999,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v1.9.3",
+  "categories": [
+    "media"
+  ],
+  "description": "Código aberto, leve, nativo, suporta (HTTP, BitTorrent, Magnet, etc.) para descarregamento.",
+  "short_desc": "Código aberto, leve, nativo, suporta (HTTP, BitTorrent, Magnet, etc.) para descarregamento.",
+  "author": "GopeedLab",
+  "source": "https://github.com/gopeedlab/gopeed",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://gopeed.com",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

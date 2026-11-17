@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Downtify",
+  "id": "downtify",
+  "available": true,
+  "port": 8582,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.7.0",
+  "categories": [
+    "media"
+  ],
+  "description": "Baixe músicas do Spotify com a capa do álbum e metadados",
+  "short_desc": "Baixe músicas do Spotify com a capa do álbum e metadados",
+  "author": "Henrique Sebastião",
+  "source": "https://github.com/henriquesebastiao/downtify",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://downtify.henriquesebastiao.com",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

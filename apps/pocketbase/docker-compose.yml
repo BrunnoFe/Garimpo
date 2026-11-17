@@ -1,0 +1,15 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/PocketBase).
+services:
+  pocketbase:
+    image: argonptg/pocketbase:0.26.6
+    deploy:
+      resources:
+        limits:
+          memory: 1024M
+    volumes:
+    - ${APP_DATA_DIR}/data/pb_data:/pb_data
+    x-runtipi:
+      is_main: true
+      internal_port: 8090
+x-runtipi:
+  schema_version: 2

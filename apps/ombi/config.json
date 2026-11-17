@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Ombi",
+  "id": "ombi",
+  "available": true,
+  "port": 3579,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "4.53.5",
+  "categories": [
+    "media"
+  ],
+  "description": "Ferramenta de solicitação de mídia amigável, sincroniza automaticamente com seus servidores de mídia!",
+  "short_desc": "Ferramenta de solicitação de mídia amigável, sincroniza automaticamente com seus servidores de mídia!",
+  "author": "Sabnzbd Team",
+  "source": "https://github.com/Ombi-app/Ombi",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://ombi.io",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

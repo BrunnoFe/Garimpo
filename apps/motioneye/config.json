@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Motioneye",
+  "id": "motioneye",
+  "available": true,
+  "port": 8765,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "master-amd64",
+  "categories": [
+    "automation"
+  ],
+  "description": "A web frontend for the motion daemon.",
+  "short_desc": "A web frontend for the motion daemon.",
+  "author": "Motioneye",
+  "source": "https://github.com/motioneye-project/motioneye",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

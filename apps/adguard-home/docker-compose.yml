@@ -1,0 +1,29 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/AdGuardHome).
+services:
+  adguard-home:
+    image: adguard/adguardhome:v0.107.79
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    ports:
+    - target: 53
+      published: '53'
+      protocol: tcp
+    - target: 53
+      published: '53'
+      protocol: udp
+    - target: 853
+      published: '853'
+      protocol: tcp
+    - target: 784
+      published: '784'
+      protocol: udp
+    volumes:
+    - ${APP_DATA_DIR}/data/opt/adguardhome/work:/opt/adguardhome/work
+    - ${APP_DATA_DIR}/data/opt/adguardhome/conf:/opt/adguardhome/conf
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+x-runtipi:
+  schema_version: 2

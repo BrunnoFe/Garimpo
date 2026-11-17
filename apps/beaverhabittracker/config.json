@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "BeaverHabitTracker",
+  "id": "beaverhabittracker",
+  "available": true,
+  "port": 15580,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.9.1",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Uma ferramenta de rastreamento de hábitos auto-hospedada e sem objetivos.",
+  "short_desc": "Uma ferramenta de rastreamento de hábitos auto-hospedada e sem objetivos.",
+  "author": "daya0576",
+  "source": "https://github.com/daya0576/beaverhabits",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://beaverhabits.com/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

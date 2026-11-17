@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Hugo",
+  "id": "hugo",
+  "available": true,
+  "port": 1313,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v0.161.1",
+  "categories": [
+    "development"
+  ],
+  "description": "O framework mais rápido do mundo para construir websites",
+  "short_desc": "O framework mais rápido do mundo para construir websites",
+  "author": "gohugoio",
+  "source": "https://github.com/gohugoio/hugo",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://gohugo.io/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

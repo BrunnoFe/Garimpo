@@ -1,0 +1,25 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Stremio).
+services:
+  stremio:
+    deploy:
+      resources:
+        limits:
+          memory: 1024M
+    environment:
+    - NO_CORS=1
+    - AUTO_SERVER_URL=1
+    devices:
+    - /dev/dri:/dev/dri
+    image: tsaridas/stremio-docker:v1.3.4
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/root/.stremio-server
+    ports:
+    - target: 11470
+      published: '11470'
+      protocol: tcp
+    privileged: false
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

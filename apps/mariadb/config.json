@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "MariaDB",
+  "id": "mariadb",
+  "available": true,
+  "port": 3306,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "11.4.8",
+  "categories": [
+    "development"
+  ],
+  "description": "O MariaDB Server é um dos servidores de banco de dados mais populares do mundo. É feito pelos desenvolvedores originais do MySQL e garantido para permanecer como código aberto.",
+  "short_desc": "O MariaDB Server é um dos servidores de banco de dados mais populares do mundo. É feito pelos desenvolvedores originais do MySQL e garantido para perm",
+  "author": "MariaDB Foundation",
+  "source": "https://github.com/MariaDB/server",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://mariadb.org/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

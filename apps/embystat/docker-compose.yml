@@ -1,0 +1,19 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Embystat).
+services:
+  embystat:
+    environment:
+      PGID: '1000'
+      PUID: '1000'
+      TZ: Europe/London
+    image: linuxserver/embystat:0.2.0
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 6555
+x-runtipi:
+  schema_version: 2

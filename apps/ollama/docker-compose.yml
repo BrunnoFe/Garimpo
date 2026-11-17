@@ -1,0 +1,17 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Ollama).
+services:
+  ollama:
+    image: ollama/ollama:0.24.0
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+    volumes:
+    - ${APP_DATA_DIR}/data:/root/.ollama
+    x-runtipi:
+      is_main: true
+      internal_port: 11434
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,19 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Siyuan-Note).
+services:
+  siyuan-note:
+    command: --accessAuthCode=casaos --workspace=/siyuan/workspace/
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+    image: b3log/siyuan:v3.6.5
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    volumes:
+    - ${APP_DATA_DIR}/data/workspace:/siyuan/workspace
+    x-runtipi:
+      is_main: true
+      internal_port: 6806
+x-runtipi:
+  schema_version: 2

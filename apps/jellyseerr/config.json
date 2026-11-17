@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Jellyseerr",
+  "id": "jellyseerr",
+  "available": true,
+  "port": 5055,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.7.3",
+  "categories": [
+    "media"
+  ],
+  "description": "Jellyseerr é uma aplicação de software gratuita e de código aberto para gerir pedidos da sua biblioteca multimédia.",
+  "short_desc": "Jellyseerr é uma aplicação de software gratuita e de código aberto para gerir pedidos da sua biblioteca multimédia.",
+  "author": "Fallenbagel",
+  "source": "https://github.com/Fallenbagel/jellyseerr",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://seerr.dev/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

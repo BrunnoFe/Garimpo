@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "TurboDiffusion(Nvidia GPU)",
+  "id": "turbodiffusion-nvidia",
+  "available": true,
+  "port": 27860,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "20260312",
+  "categories": [
+    "ai"
+  ],
+  "description": "Um framework de aceleração para geração por difusão de ponta a ponta mantendo a qualidade de vídeo",
+  "short_desc": "Um framework de aceleração para geração por difusão de ponta a ponta mantendo a qualidade de vídeo",
+  "author": "thu-ml",
+  "source": "https://github.com/thu-ml/TurboDiffusion",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

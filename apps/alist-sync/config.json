@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Alist-Sync",
+  "id": "alist-sync",
+  "available": true,
+  "port": 52441,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.1.5",
+  "categories": [
+    "utilities"
+  ],
+  "description": "An Alist storage synchronization tool based on the Web interface.",
+  "short_desc": "An Alist storage synchronization tool based on the Web interface.",
+  "author": "xjxjin",
+  "source": "https://github.com/xjxjin/alist-sync",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

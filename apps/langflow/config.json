@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Langflow",
+  "id": "langflow",
+  "available": true,
+  "port": 17860,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.9.3",
+  "categories": [
+    "ai"
+  ],
+  "description": "Interface de código aberto para criar e depurar aplicações multi-agente e RAG",
+  "short_desc": "Interface de código aberto para criar e depurar aplicações multi-agente e RAG",
+  "author": "langflowai",
+  "source": "https://github.com/langflow-ai/langflow",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.langflow.org",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

@@ -1,0 +1,13 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/OpenSpeedTest).
+services:
+  openspeedtest:
+    image: openspeedtest/latest:v2.0.6
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Ollama",
+  "id": "ollama",
+  "available": true,
+  "port": 11434,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.24.0",
+  "categories": [
+    "ai"
+  ],
+  "description": "Execute grandes modelos de linguagem localmente",
+  "short_desc": "Execute grandes modelos de linguagem localmente",
+  "author": "ollama",
+  "source": "https://github.com/ollama/ollama",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://ollama.com/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

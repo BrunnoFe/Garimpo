@@ -1,0 +1,13 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Index-TTS).
+services:
+  index-tts:
+    image: icewhaletech/index-tts:2.0
+    deploy:
+      resources:
+        reservations:
+          memory: 12G
+    x-runtipi:
+      is_main: true
+      internal_port: 7860
+x-runtipi:
+  schema_version: 2

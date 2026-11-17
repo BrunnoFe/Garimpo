@@ -1,0 +1,25 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Petio).
+services:
+  petio:
+    image: ghcr.io/petio-team/petio:latest
+    depends_on:
+    - mongo
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/app/api/config
+    - ${APP_DATA_DIR}/data/logs:/app/logs
+    x-runtipi:
+      is_main: true
+      internal_port: 7777
+  mongo:
+    image: mongo:4.4.22
+    hostname: mongo
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+x-runtipi:
+  schema_version: 2

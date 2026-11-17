@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "SnapOtter",
+  "id": "snapotter",
+  "available": true,
+  "port": 1349,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.2.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Self-hosted file toolkit for images, video, audio, PDFs, and files",
+  "short_desc": "Self-hosted file toolkit for images, video, audio, PDFs, and files",
+  "author": "SnapOtter",
+  "source": "https://github.com/snapotter-hq/SnapOtter",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://snapotter.com",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

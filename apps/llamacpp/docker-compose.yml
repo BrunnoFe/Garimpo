@@ -1,0 +1,16 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/llama.cpp).
+services:
+  llamacpp:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    environment:
+    - LLAMA_ARG_N_GPU_LAYERS=999
+    - LLAMA_ARG_CONTEXT_SIZE=8192
+    devices:
+    - /dev/dri:/dev/dri
+    volumes:
+    - ${APP_DATA_DIR}/data/models:/models
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

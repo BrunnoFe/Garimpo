@@ -1,0 +1,25 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/AlbyHub).
+services:
+  albyhub:
+    environment:
+      PGID: '1000'
+      PUID: '1000'
+      TZ: ${TZ}
+      UMASK: '002'
+      WORK_DIR: /data/albyhub
+      LOG_EVENTS: true
+    command: []
+    image: ghcr.io/getalby/hub:v1.22.2
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+    stop_grace_period: 1m
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/data
+    privileged: false
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

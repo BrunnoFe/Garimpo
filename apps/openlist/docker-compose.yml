@@ -1,0 +1,19 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/OpenList).
+services:
+  openlist:
+    image: openlistteam/openlist:v4.2.2
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    user: 999:1000
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/opt/openlist/data
+    environment:
+      UMASK: '022'
+      OPENLIST_ADMIN_PASSWORD: casaos
+    x-runtipi:
+      is_main: true
+      internal_port: 5244
+x-runtipi:
+  schema_version: 2

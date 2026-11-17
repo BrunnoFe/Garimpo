@@ -1,0 +1,20 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Hugo).
+services:
+  hugo:
+    image: ghcr.io/gohugoio/hugo:v0.161.1
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    user: 0:0
+    volumes:
+    - ${APP_DATA_DIR}/data/project:/project
+    - ${APP_DATA_DIR}/data/cache:/cache
+    command:
+    - server
+    - --bind=0.0.0.0
+    x-runtipi:
+      is_main: true
+      internal_port: 1313
+x-runtipi:
+  schema_version: 2

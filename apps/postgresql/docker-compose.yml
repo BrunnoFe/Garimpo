@@ -1,0 +1,22 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/PostgreSQL).
+services:
+  postgresql:
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      POSTGRES_USER: casaos
+      POSTGRES_PASSWORD: casaos
+      POSTGRES_DB: casaos
+    image: postgres:17.4
+    deploy:
+      resources:
+        reservations:
+          memory: 2048M
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/var/lib/postgresql/data
+    x-runtipi:
+      is_main: true
+      internal_port: 5432
+x-runtipi:
+  schema_version: 2

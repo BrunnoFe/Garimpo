@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "PocketBase",
+  "id": "pocketbase",
+  "available": true,
+  "port": 8090,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.26.6",
+  "categories": [
+    "development"
+  ],
+  "description": "Backend open source em tempo real em um único arquivo",
+  "short_desc": "Backend open source em tempo real em um único arquivo",
+  "author": "Gani Georgiev",
+  "source": "https://github.com/pocketbase/pocketbase",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://pocketbase.io",
+  "url_suffix": "/_/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

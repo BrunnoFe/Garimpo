@@ -1,0 +1,17 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/VoceChat).
+services:
+  vocechat:
+    environment:
+      TZ: ${TZ}
+    image: privoce/vocechat-server:v0.5.17
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    volumes:
+    - ${APP_DATA_DIR}/data/home/vocechat-server/data:/home/vocechat-server/data
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+x-runtipi:
+  schema_version: 2

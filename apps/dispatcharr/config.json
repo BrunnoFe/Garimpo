@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Dispatcharr",
+  "id": "dispatcharr",
+  "available": true,
+  "port": 9191,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.29.0",
+  "categories": [
+    "media"
+  ],
+  "description": "IPTV Stream Management and DVR",
+  "short_desc": "IPTV Stream Management and DVR",
+  "author": "Dispatcharr",
+  "source": "https://github.com/Dispatcharr/Dispatcharr",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://dispatcharr.io",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "nzbfast",
+  "id": "nzbfast",
+  "available": true,
+  "port": 6790,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.3.1",
+  "categories": [
+    "media"
+  ],
+  "description": "Fast Usenet downloader with a SABnzbd-compatible API",
+  "short_desc": "Fast Usenet downloader with a SABnzbd-compatible API",
+  "author": "nzbfast",
+  "source": "https://github.com/nzbfast/nzbfast",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://nzbfast.github.io/nzbfast/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

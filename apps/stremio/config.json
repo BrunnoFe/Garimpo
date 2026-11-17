@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Stremio",
+  "id": "stremio",
+  "available": true,
+  "port": 8100,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v1.3.4",
+  "categories": [
+    "media"
+  ],
+  "description": "Stremio é um centro de mídia moderno que lhe dá a liberdade de assistir a tudo o que você quiser.",
+  "short_desc": "Stremio é um centro de mídia moderno que lhe dá a liberdade de assistir a tudo o que você quiser.",
+  "author": "Andreas Tsarida / Stremio",
+  "source": "https://github.com/tsaridas/stremio-docker",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.stremio.com",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

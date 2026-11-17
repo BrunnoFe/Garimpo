@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Nzbget",
+  "id": "nzbget",
+  "available": true,
+  "port": 6789,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "26.1.20260522",
+  "categories": [
+    "media"
+  ],
+  "description": "Downloader Usenet eficiente",
+  "short_desc": "Downloader Usenet eficiente",
+  "author": "Nzbget Team",
+  "source": "https://github.com/nzbgetcom/nzbget",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://nzbget.com",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

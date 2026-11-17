@@ -1,0 +1,27 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/BentoPDF).
+services:
+  bentopdf:
+    image: ghcr.io/alam00000/bentopdf-simple:2.8.8
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      DISABLE_IPV6: 'false'
+    healthcheck:
+      test:
+      - CMD
+      - wget
+      - --spider
+      - -q
+      - http://localhost:8080
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

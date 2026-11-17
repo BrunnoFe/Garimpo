@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Qui",
+  "id": "qui",
+  "available": true,
+  "port": 7476,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v1.28.0",
+  "categories": [
+    "media"
+  ],
+  "description": "Fast, modern web interface for qBittorrent",
+  "short_desc": "Fast, modern web interface for qBittorrent",
+  "author": "autobrr",
+  "source": "https://github.com/autobrr/qui",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://getqui.com",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

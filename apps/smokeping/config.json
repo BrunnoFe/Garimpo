@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Smokeping",
+  "id": "smokeping",
+  "available": true,
+  "port": 10280,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.9.0",
+  "categories": [
+    "network"
+  ],
+  "description": "Ferramenta de monitoramento de desempenho de rede de código aberto gratuita",
+  "short_desc": "Ferramenta de monitoramento de desempenho de rede de código aberto gratuita",
+  "author": "Lazylibrarian Team",
+  "source": "https://github.com/oetiker/SmokePing",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://oss.oetiker.ch/smokeping/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

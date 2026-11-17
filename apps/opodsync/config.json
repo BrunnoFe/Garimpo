@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "oPodSync",
+  "id": "opodsync",
+  "available": true,
+  "port": 8086,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "media"
+  ],
+  "description": "Serviço de sincronização de podcasts",
+  "short_desc": "Serviço de sincronização de podcasts",
+  "author": "ganeshlab",
+  "source": "https://github.com/kd2org/oPodSync",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://fossil.kd2.org/opodsync/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

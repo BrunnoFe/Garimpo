@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "RetroArch",
+  "id": "retroarch",
+  "available": true,
+  "port": 8183,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "media"
+  ],
+  "description": "Emulador de jogos retro online",
+  "short_desc": "Emulador de jogos retro online",
+  "author": "inglebard",
+  "source": "https://github.com/libretro/RetroArch",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.retroarch.com",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

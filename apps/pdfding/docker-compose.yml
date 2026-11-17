@@ -1,0 +1,22 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/PdfDing).
+services:
+  pdfding:
+    image: mrmn/pdfding:v1.7.2
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+    volumes:
+    - ${APP_DATA_DIR}/data/db:/home/nonroot/pdfding/db
+    - ${APP_DATA_DIR}/data/media:/home/nonroot/pdfding/media
+    environment:
+    - HOST_NAME=*
+    - SECRET_KEY=${GARIMPO_SEGREDO_1}
+    - CSRF_COOKIE_SECURE=FALSE
+    - SESSION_COOKIE_SECURE=FALSE
+    - DEBUG=FALSE
+    x-runtipi:
+      is_main: true
+      internal_port: 8000
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "WeKnora",
+  "id": "weknora",
+  "available": true,
+  "port": 1080,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v0.2.14",
+  "categories": [
+    "ai"
+  ],
+  "description": "O WeKnora é uma framework baseada em LLM projetado para compreensão profunda de documentos e recuperação semântica, especialmente para lidar com documentos complexos e heterogéneos.",
+  "short_desc": "O WeKnora é uma framework baseada em LLM projetado para compreensão profunda de documentos e recuperação semântica, especialmente para lidar com docum",
+  "author": "Tencent",
+  "source": "https://github.com/Tencent/WeKnora",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Chave secreta 1 (gerada na instalação)",
+      "env_variable": "GARIMPO_SEGREDO_1",
+      "min": 32
+    },
+    {
+      "type": "random",
+      "label": "Chave secreta 2 (gerada na instalação)",
+      "env_variable": "GARIMPO_SEGREDO_2",
+      "min": 32
+    }
+  ],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://weknora.weixin.qq.com",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

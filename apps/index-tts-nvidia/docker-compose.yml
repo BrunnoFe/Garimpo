@@ -1,0 +1,20 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Index-TTS_Nvidia).
+services:
+  index-tts-nvidia:
+    image: icewhaletech/index-tts:2.0
+    environment:
+      NVIDIA_VISIBLE_DEVICES: all
+    deploy:
+      resources:
+        reservations:
+          memory: 8G
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities:
+            - gpu
+    x-runtipi:
+      is_main: true
+      internal_port: 7860
+x-runtipi:
+  schema_version: 2

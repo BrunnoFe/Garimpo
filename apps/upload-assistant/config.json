@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Upload Assistant",
+  "id": "upload-assistant",
+  "available": true,
+  "port": 5000,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v4.9",
+  "categories": [
+    "media"
+  ],
+  "description": "Prepare and upload releases to private trackers",
+  "short_desc": "Prepare and upload releases to private trackers",
+  "author": "wastaken7",
+  "source": "https://github.com/wastaken7/Upload-Assistant",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://github.com/wastaken7/Upload-Assistant",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

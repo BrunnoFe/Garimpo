@@ -1,0 +1,13 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Alist-Sync).
+services:
+  alist-sync:
+    image: xjxjin/alist-sync:1.1.5
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/app/data
+    environment:
+    - TZ=Asia/Shanghai
+    x-runtipi:
+      is_main: true
+      internal_port: 52441
+x-runtipi:
+  schema_version: 2

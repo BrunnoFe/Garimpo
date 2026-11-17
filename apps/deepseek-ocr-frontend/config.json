@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "DeepSeek OCR(Nvidia GPU)",
+  "id": "deepseek-ocr-frontend",
+  "available": true,
+  "port": 23000,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v2.2.0",
+  "categories": [
+    "ai"
+  ],
+  "description": "OCR poderoso alimentado por DeepSeek AI",
+  "short_desc": "OCR poderoso alimentado por DeepSeek AI",
+  "author": "rdumasia303",
+  "source": "https://github.com/rdumasia303/deepseek_ocr_app",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

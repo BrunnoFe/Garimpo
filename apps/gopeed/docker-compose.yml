@@ -1,0 +1,19 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Gopeed).
+services:
+  gopeed:
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 256M
+    image: liwei2633/gopeed:v1.9.3
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/app/storage
+    - ${ROOT_FOLDER_HOST}/media/downloads:/app/Downloads
+    privileged: false
+    x-runtipi:
+      is_main: true
+      internal_port: 9999
+x-runtipi:
+  schema_version: 2

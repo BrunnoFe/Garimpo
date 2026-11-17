@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Adminer",
+  "id": "adminer",
+  "available": true,
+  "port": 8080,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "5.4.2",
+  "categories": [
+    "development"
+  ],
+  "description": "Database management in a single PHP file",
+  "short_desc": "Database management in a single PHP file",
+  "author": "Jakub Vrána",
+  "source": "https://github.com/vrana/adminer",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.adminer.org",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

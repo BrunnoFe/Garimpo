@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Alist",
+  "id": "alist",
+  "available": true,
+  "port": 5244,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v3.40.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Monte o seu disco na nuvem no seu NAS doméstico",
+  "short_desc": "Monte o seu disco na nuvem no seu NAS doméstico",
+  "author": "Xhofe",
+  "source": "https://github.com/AlistGo/alist",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://alistgo.com/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

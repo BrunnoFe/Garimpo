@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "MongoDB 4",
+  "id": "mongodb4",
+  "available": true,
+  "port": 27017,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "4.4.22",
+  "categories": [
+    "development"
+  ],
+  "description": "Um programa de banco de dados orientado a documentos, gratuito e de código aberto, multiplataforma. O MongoDB é classificado como um programa de banco de dados NoSQL e utiliza documentos semelhantes a JSON com esquemas.",
+  "short_desc": "Um programa de banco de dados orientado a documentos, gratuito e de código aberto, multiplataforma. O MongoDB é classificado como um programa de banco",
+  "author": "MongoDB Inc.",
+  "source": "https://github.com/mongodb/mongo",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.mongodb.com/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

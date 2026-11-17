@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "JDownloader2",
+  "id": "jdownloader2",
+  "available": true,
+  "port": 5800,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "media"
+  ],
+  "description": "Free & open-source download management tool",
+  "short_desc": "Free & open-source download management tool",
+  "author": "jdownloader",
+  "source": "https://github.com/IceWhaleTech/CasaOS-AppStore",
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "JDOWNLOADER_HEADLESS (pedido pela receita original)",
+      "env_variable": "JDOWNLOADER_HEADLESS",
+      "required": false
+    },
+    {
+      "type": "text",
+      "label": "MYJDOWNLOADER_DEVICE_NAME (pedido pela receita original)",
+      "env_variable": "MYJDOWNLOADER_DEVICE_NAME",
+      "required": false
+    },
+    {
+      "type": "text",
+      "label": "MYJDOWNLOADER_EMAIL (pedido pela receita original)",
+      "env_variable": "MYJDOWNLOADER_EMAIL",
+      "required": false
+    },
+    {
+      "type": "text",
+      "label": "MYJDOWNLOADER_PASSWORD (pedido pela receita original)",
+      "env_variable": "MYJDOWNLOADER_PASSWORD",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

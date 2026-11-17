@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "LLaMA Factory(Nvidia GPU)",
+  "id": "llama-factory-nvidia",
+  "available": true,
+  "port": 18877,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.9.4",
+  "categories": [
+    "ai"
+  ],
+  "description": "Ajuste fino unificado de LLM com 100+ modelos",
+  "short_desc": "Ajuste fino unificado de LLM com 100+ modelos",
+  "author": "hiyouga",
+  "source": "https://github.com/hiyouga/LLaMA-Factory",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://llamafactory.readthedocs.io/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

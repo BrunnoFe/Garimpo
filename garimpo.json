@@ -1,0 +1,13 @@
+{
+  "brunos": 1,
+  "nome": "CasaOS",
+  "selo": "via CasaOS",
+  "origem": "CasaOS",
+  "fonte": "https://github.com/IceWhaleTech/CasaOS-AppStore",
+  "licenca": "Apache-2.0",
+  "sobre": "Apps da loja oficial do CasaOS e do ZimaOS (IceWhale), convertidos para o formato do Runtipi.",
+  "garimpo": "https://github.com/BrunnoFe/Garimpo",
+  "apps": 86,
+  "recusados": 26,
+  "repetidos": 71
+}

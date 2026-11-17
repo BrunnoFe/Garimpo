@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Karakeep",
+  "id": "karakeep",
+  "available": true,
+  "port": 14592,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.33.2",
+  "categories": [
+    "utilities"
+  ],
+  "description": "A aplicação para guardar tudo",
+  "short_desc": "A aplicação para guardar tudo",
+  "author": "karakeep-app",
+  "source": "https://github.com/karakeep-app/karakeep",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Chave secreta 1 (gerada na instalação)",
+      "env_variable": "GARIMPO_SEGREDO_1",
+      "min": 32
+    }
+  ],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://karakeep.app/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

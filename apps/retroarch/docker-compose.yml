@@ -1,0 +1,15 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/RetroArch).
+services:
+  retroarch:
+    image: inglebard/retroarch-web:latest
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    environment:
+    - ROOT_WWW_PATH="/var/www/html"
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+x-runtipi:
+  schema_version: 2

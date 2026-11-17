@@ -1,0 +1,18 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/CopyParty).
+services:
+  copyparty:
+    image: icewhaletech/copyparty:1.20.13
+    volumes:
+    - ${APP_DATA_DIR}/data/w:/w
+    - ${APP_DATA_DIR}/data/confg:/cfg
+    deploy:
+      resources:
+        reservations:
+          memory: 512m
+    stdin_open: true
+    tty: true
+    x-runtipi:
+      is_main: true
+      internal_port: 3923
+x-runtipi:
+  schema_version: 2

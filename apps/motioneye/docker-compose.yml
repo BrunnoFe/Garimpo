@@ -1,0 +1,13 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Motioneye).
+services:
+  motioneye:
+    image: ccrisan/motioneye:master-amd64
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/etc/motioneye
+    - ${ROOT_FOLDER_HOST}/media/data/motioneye:/var/lib/motioneye
+    privileged: false
+    x-runtipi:
+      is_main: true
+      internal_port: 8765
+x-runtipi:
+  schema_version: 2

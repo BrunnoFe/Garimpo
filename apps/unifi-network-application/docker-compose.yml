@@ -1,0 +1,55 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Unifi-Network-Application).
+services:
+  unifi-network-application:
+    depends_on:
+      unifi-db:
+        condition: service_started
+        required: true
+    environment:
+    - MONGO_DBNAME=unifi-db
+    - MONGO_HOST=unifi-db
+    - MONGO_PASS=pass
+    - MONGO_PORT=27017
+    - MONGO_USER=unifi
+    - PGID=1000
+    - PUID=1000
+    - TZ=${TZ}
+    image: lscr.io/linuxserver/unifi-network-application:latest
+    ports:
+    - target: 3478
+      published: '3478'
+      protocol: udp
+    - target: 10001
+      published: '10001'
+      protocol: udp
+    - target: 8080
+      published: '8080'
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data:/config
+    privileged: false
+    x-runtipi:
+      is_main: true
+      internal_port: 8443
+  unifi-db:
+    image: docker.io/mongo:3.6
+    configs:
+    - source: init-mongo.js
+      target: /docker-entrypoint-initdb.d/init-mongo.js
+    environment:
+    - PGID=1000
+    - PUID=1000
+    - TZ=${TZ}
+    ports:
+    - target: 27017
+      published: '27017'
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data:/data/db
+    privileged: false
+x-runtipi:
+  schema_version: 2
+configs:
+  init-mongo.js:
+    content: "db.getSiblingDB(\"unifi-db\").createUser({user: \"unifi\", pwd: \"pass\", roles: [{role: \"dbOwner\", db: \"unifi-db\"}]}); \ndb.getSiblingDB(\"unifi-db_stat\").createUser({user: \"unifi\"\
+      , pwd: \"pass\", roles: [{role: \"dbOwner\", db: \"unifi-db_stat\"}]});\n"

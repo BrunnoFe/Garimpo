@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Embystat",
+  "id": "embystat",
+  "available": true,
+  "port": 6555,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "0.2.0",
+  "categories": [
+    "media"
+  ],
+  "description": "Calcule todos os tipos de estatísticas do seu servidor Emby ou Jellyfin (local)",
+  "short_desc": "Calcule todos os tipos de estatísticas do seu servidor Emby ou Jellyfin (local)",
+  "author": "Embystart Team",
+  "source": "https://github.com/mregni/EmbyStat",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

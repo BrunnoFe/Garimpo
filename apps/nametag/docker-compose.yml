@@ -1,0 +1,108 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Nametag).
+services:
+  nametag:
+    image: ghcr.io/mattogodoy/nametag:0.64.0
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    environment:
+      DB_HOST: nametag-db
+      DB_PORT: '5432'
+      DB_NAME: nametag
+      DB_USER: nametag
+      NEXTAUTH_URL: http://localhost:10300
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/app/data
+    entrypoint:
+    - /bin/sh
+    - -c
+    command:
+    - |
+      set -a
+      . /app/data/secrets.env
+      set +a
+      exec docker-entrypoint.sh node server.js
+    depends_on:
+      nametag-init:
+        condition: service_completed_successfully
+      nametag-db:
+        condition: service_healthy
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+  nametag-init:
+    image: alpine:3.20
+    command:
+    - /bin/sh
+    - -c
+    - |
+      set -e
+      cd /data
+      if [ ! -f secrets.env ]; then
+        umask 077
+        {
+          printf 'NEXTAUTH_SECRET='
+          head -c 32 /dev/urandom | od -An -tx1 | tr -d ' \n'
+          printf '\nCRON_SECRET='
+          head -c 24 /dev/urandom | od -An -tx1 | tr -d ' \n'
+          printf '\nDB_PASSWORD='
+          # Keep the database password if Postgres already has one.
+          if [ -s /db-secret/password ]; then
+            tr -d '\n' < /db-secret/password
+          else
+            head -c 24 /dev/urandom | od -An -tx1 | tr -d ' \n'
+          fi
+          printf '\n'
+        } > secrets.env.tmp
+        mv secrets.env.tmp secrets.env
+      fi
+      umask 077
+      sed -n 's/^DB_PASSWORD=//p' secrets.env | tr -d '\n' > /db-secret/password
+      chown 70:70 /db-secret/password
+      chown -R 1001:1001 /data
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/data
+    - ${APP_DATA_DIR}/data/db-secret:/db-secret
+  nametag-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: nametag
+      POSTGRES_PASSWORD_FILE: ${GARIMPO_SEGREDO_1}
+      POSTGRES_DB: nametag
+    volumes:
+    - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
+    - ${APP_DATA_DIR}/data/db-secret:/run/nametag:ro
+    depends_on:
+      nametag-init:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U nametag -d nametag
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  nametag-cron:
+    image: alpine:3.20
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/data:ro
+    command:
+    - /bin/sh
+    - -c
+    - |
+      while [ ! -f /data/secrets.env ]; do sleep 2; done
+      printf '%s\n' \
+        '0 8 * * * send-reminders' \
+        '0 3 * * * purge-deleted' \
+        '0 2,10,18 * * * carddav-sync' \
+        '*/5 * * * * geocode' > /tmp/jobs
+      sed -n 's/^CRON_SECRET=//p' /data/secrets.env > /tmp/secret
+      sed 's|^\(.* \)\([a-z-]*\)|\1wget -q -O - --header="Authorization: Bearer SECRET" http://nametag:3000/api/cron/\2 > /proc/1/fd/1 2>\&1|' /tmp/jobs > /tmp/crontab
+      sed "s|SECRET|`cat /tmp/secret`|" /tmp/crontab > /etc/crontabs/root
+      rm -f /tmp/jobs /tmp/secret /tmp/crontab
+      exec crond -f -l 2
+    depends_on:
+    - nametag
+x-runtipi:
+  schema_version: 2

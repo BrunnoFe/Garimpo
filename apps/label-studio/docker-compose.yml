@@ -1,0 +1,19 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/LabelStudio).
+services:
+  label-studio:
+    environment:
+      PGID: '1000'
+      PUID: '1000'
+      TZ: ${TZ}
+    image: heartexlabs/label-studio:1.23.0
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/label-studio/data
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

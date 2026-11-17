@@ -1,0 +1,253 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/WeKnora).
+services:
+  weknora:
+    image: wechatopenai/weknora-ui:v0.2.14
+    environment:
+    - MAX_FILE_SIZE_MB=50
+    depends_on:
+      app:
+        condition: service_healthy
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+  app:
+    image: wechatopenai/weknora-app:v0.2.14
+    volumes:
+    - ${APP_DATA_DIR}/data/files:/data/files
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    healthcheck:
+      test:
+      - CMD
+      - curl
+      - -f
+      - http://localhost:8080/health
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    environment:
+    - OTEL_EXPORTER_OTLP_ENDPOINT=jaeger:4317
+    - OTEL_SERVICE_NAME=WeKnora
+    - OTEL_TRACES_EXPORTER=otlp
+    - OTEL_METRICS_EXPORTER=none
+    - OTEL_LOGS_EXPORTER=none
+    - OTEL_PROPAGATORS=tracecontext,baggage
+    - QDRANT_HOST=qdrant
+    - QDRANT_PORT=6334
+    - QDRANT_COLLECTION=weknora_embeddings
+    - QDRANT_API_KEY=
+    - QDRANT_USE_TLS=false
+    - MINIO_ENDPOINT=minio:9000
+    - MINIO_ACCESS_KEY_ID=minioadmin
+    - MINIO_SECRET_ACCESS_KEY=minioadmin
+    - MINIO_BUCKET_NAME=weknora
+    - GIN_MODE=release
+    - DISABLE_REGISTRATION=false
+    - DB_DRIVER=postgres
+    - DB_HOST=weknora-postgres
+    - DB_PORT=5432
+    - DB_USER=postgres
+    - DB_PASSWORD=postgres123!@#
+    - DB_NAME=WeKnora
+    - TZ=${TZ}
+    - RETRIEVE_DRIVER=postgres
+    - DOCREADER_ADDR=weknora-docreader:50051
+    - STORAGE_TYPE=minio
+    - LOCAL_STORAGE_BASE_DIR=/data/files
+    - AUTO_RECOVER_DIRTY=true
+    - OLLAMA_BASE_URL=http://host.docker.internal:11434
+    - STREAM_MANAGER_TYPE=redis
+    - REDIS_ADDR=weknora-redis:6379
+    - REDIS_PASSWORD=redis123!@#
+    - REDIS_DB=0
+    - REDIS_PREFIX="stream:"
+    - TENANT_AES_KEY=${GARIMPO_SEGREDO_1}
+    - CONCURRENCY_POOL_SIZE=5
+    - JWT_SECRET=${GARIMPO_SEGREDO_2}
+    - MAX_FILE_SIZE_MB=50
+    depends_on:
+      weknora-redis:
+        condition: service_started
+      weknora-postgres:
+        condition: service_healthy
+      weknora-docreader:
+        condition: service_healthy
+    extra_hosts:
+    - host.docker.internal:host-gateway
+  weknora-docreader:
+    image: wechatopenai/weknora-docreader:v0.2.14
+    environment:
+    - MAX_FILE_SIZE_MB=50
+    - MINIO_ENDPOINT=minio:9000
+    - MINIO_ACCESS_KEY_ID=minioadmin
+    - MINIO_SECRET_ACCESS_KEY=minioadmin
+    - MINIO_BUCKET_NAME=weknora
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    healthcheck:
+      test:
+      - CMD
+      - grpc_health_probe
+      - -addr=:50051
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    extra_hosts:
+    - host.docker.internal:host-gateway
+  weknora-postgres:
+    image: paradedb/paradedb:v0.18.9-pg17
+    environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres123!@#
+    - POSTGRES_DB=WeKnora
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U postgres
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    stop_grace_period: 1m
+  weknora-redis:
+    image: redis:7.0-alpine
+    command:
+    - redis-server
+    - --requirepass redis123!@#
+    - --appendonly
+    - true
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+  minio:
+    image: minio/minio:RELEASE.2025-09-07T16-13-09Z
+    ports:
+    - target: 9000
+      published: '19000'
+      protocol: tcp
+    - target: 9001
+      published: '19001'
+      protocol: tcp
+    environment:
+    - MINIO_ROOT_USER=minioadmin
+    - MINIO_ROOT_PASSWORD=minioadmin
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    command:
+    - server
+    - /data
+    - --console-address
+    - :9001
+    volumes:
+    - ${APP_DATA_DIR}/data/minio-data:/data
+    healthcheck:
+      test:
+      - CMD
+      - curl
+      - -f
+      - http://localhost:9000/minio/health/live
+      interval: 30s
+      timeout: 20s
+      retries: 3
+  jaeger:
+    image: jaegertracing/all-in-one:1.76.0
+    ports:
+    - target: 6831
+      published: '46831'
+      protocol: udp
+    - target: 6832
+      published: '46832'
+      protocol: udp
+    - target: 5778
+      published: '45778'
+      protocol: tcp
+    - target: 16686
+      published: '16686'
+      protocol: tcp
+    - target: 4317
+      published: '44317'
+      protocol: tcp
+    - target: 4318
+      published: '44318'
+      protocol: tcp
+    - target: 14250
+      published: '14250'
+      protocol: tcp
+    - target: 14268
+      published: '14268'
+      protocol: tcp
+    - target: 9411
+      published: '49411'
+      protocol: tcp
+    environment:
+    - COLLECTOR_OTLP_ENABLED=true
+    - COLLECTOR_ZIPKIN_HOST_PORT=:9411
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    volumes:
+    - ${APP_DATA_DIR}/data/jaeger:/var/lib/jaeger
+  neo4j:
+    image: neo4j:2025.10.1
+    profiles:
+    - neo4j
+    - full
+    volumes:
+    - ${APP_DATA_DIR}/data/neo4j-data:/data
+    environment:
+    - NEO4J_AUTH=neo4j/password
+    - NEO4J_apoc_export_file_enabled=true
+    - NEO4J_apoc_import_file_enabled=true
+    - NEO4J_apoc_import_file_use__neo4j__config=true
+    - NEO4JLABS_PLUGINS=["apoc"]
+    ports:
+    - target: 7474
+      published: '47474'
+      protocol: tcp
+    - target: 7687
+      published: '47687'
+      protocol: tcp
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+  qdrant:
+    image: qdrant/qdrant:v1.16.2
+    profiles:
+    - qdrant
+    - full
+    ports:
+    - target: 6333
+      published: '46333'
+      protocol: tcp
+    - target: 6334
+      published: '46334'
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/storage:/qdrant/storage
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+x-runtipi:
+  schema_version: 2

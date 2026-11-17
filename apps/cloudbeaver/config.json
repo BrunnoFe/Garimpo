@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "CloudBeaver",
+  "id": "cloudbeaver",
+  "available": true,
+  "port": 8978,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "26.0.5",
+  "categories": [
+    "development"
+  ],
+  "description": "Administrador de Banco de Dados na Nuvem.",
+  "short_desc": "Administrador de Banco de Dados na Nuvem.",
+  "author": "dbeaver",
+  "source": "https://github.com/dbeaver/cloudbeaver",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://dbeaver.com/download/cloudbeaver/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

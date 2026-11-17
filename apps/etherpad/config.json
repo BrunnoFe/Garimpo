@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Etherpad",
+  "id": "etherpad",
+  "available": true,
+  "port": 9001,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "3.1.0",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Editor colaborativo de documentos em tempo real",
+  "short_desc": "Editor colaborativo de documentos em tempo real",
+  "author": "Etherpad Foundation",
+  "source": "https://github.com/ether/etherpad",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://etherpad.org/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

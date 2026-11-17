@@ -1,0 +1,15 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Ddns-go).
+services:
+  ddns-go:
+    image: jeessy/ddns-go:v6.17.1
+    deploy:
+      resources:
+        reservations:
+          memory: 32M
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/root
+    x-runtipi:
+      is_main: true
+      internal_port: 9876
+x-runtipi:
+  schema_version: 2

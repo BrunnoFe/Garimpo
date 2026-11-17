@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "VoceChat",
+  "id": "vocechat",
+  "available": true,
+  "port": 3009,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v0.5.17",
+  "categories": [
+    "social"
+  ],
+  "description": "Tenha um Espaço Social Privado Hospedado no Seu Site",
+  "short_desc": "Tenha um Espaço Social Privado Hospedado no Seu Site",
+  "author": "Privoce",
+  "source": "https://github.com/Privoce/vocechat-server-rust",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://voce.chat",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

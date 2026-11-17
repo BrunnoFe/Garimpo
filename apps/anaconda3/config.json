@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Anaconda3",
+  "id": "anaconda3",
+  "available": true,
+  "port": 8888,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2024.10-1",
+  "categories": [
+    "ai"
+  ],
+  "description": "Your machine learning Env work with Jupyter Lab",
+  "short_desc": "Your machine learning Env work with Jupyter Lab",
+  "author": "LisonEvf",
+  "source": "https://github.com/anaconda/docker-images",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.anaconda.com",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

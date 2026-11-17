@@ -1,0 +1,28 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Wallabag).
+services:
+  wallabag:
+    image: wallabag/wallabag:2.6.14
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    volumes:
+    - ${APP_DATA_DIR}/data/images:/var/www/wallabag/web/assets/images
+    environment:
+      SYMFONY__ENV__DOMAIN_NAME: http://<IP>:25661
+      SYMFONY__ENV__SERVER_NAME: Wallabag
+    healthcheck:
+      test:
+      - CMD
+      - wget
+      - --no-verbose
+      - --tries=1
+      - --spider
+      - http://localhost/api/info
+      interval: 1m
+      timeout: 3s
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,17 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Peanut).
+services:
+  peanut:
+    image: brandawg93/peanut:6.0.0
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    environment:
+      WEB_PORT: 8080
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

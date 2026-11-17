@@ -1,0 +1,16 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/CloudBeaver).
+services:
+  cloudbeaver:
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    image: dbeaver/cloudbeaver:26.0.5
+    volumes:
+    - ${APP_DATA_DIR}/data/workspace:/opt/cloudbeaver/workspace
+    privileged: false
+    x-runtipi:
+      is_main: true
+      internal_port: 8978
+x-runtipi:
+  schema_version: 2

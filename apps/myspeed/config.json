@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "MySpeed",
+  "id": "myspeed",
+  "available": true,
+  "port": 5216,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.0.9",
+  "categories": [
+    "network"
+  ],
+  "description": "Software de análise que mostra a velocidade da sua internet por até 30 dias.",
+  "short_desc": "Software de análise que mostra a velocidade da sua internet por até 30 dias.",
+  "author": "Mathias Wagner",
+  "source": "https://github.com/gnmyt/myspeed",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://myspeed.dev",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

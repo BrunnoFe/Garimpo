@@ -1,0 +1,17 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/PsiTransfer).
+services:
+  psitransfer:
+    image: psitrax/psitransfer:v2.4.1
+    environment:
+      PSITRANSFER_ADMIN_PASS: secret
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/data
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+x-runtipi:
+  schema_version: 2

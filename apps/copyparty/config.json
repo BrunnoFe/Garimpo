@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "CopyParty",
+  "id": "copyparty",
+  "available": true,
+  "port": 29708,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.20.13",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Um servidor de ficheiros simples e privado.",
+  "short_desc": "Um servidor de ficheiros simples e privado.",
+  "author": "CopyParty",
+  "source": "https://github.com/9001/copyparty",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://copyparty.eu/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

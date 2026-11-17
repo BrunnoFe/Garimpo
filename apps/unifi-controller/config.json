@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Unifi-controller [legacy]",
+  "id": "unifi-controller",
+  "available": true,
+  "port": 8383,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "8.0.7",
+  "categories": [
+    "network"
+  ],
+  "description": "O software Unifi-controller é um poderoso motor de software sem fio corporativo ideal para implantações de clientes de alta densidade que exigem baixa latência e alto desempenho de disponibilidade.",
+  "short_desc": "O software Unifi-controller é um poderoso motor de software sem fio corporativo ideal para implantações de clientes de alta densidade que exigem baixa",
+  "author": "LinuxServer.io",
+  "source": "https://github.com/linuxserver/docker-unifi-controller",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://ui.com",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

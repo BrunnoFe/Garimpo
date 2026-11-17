@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "HFS",
+  "id": "hfs",
+  "available": true,
+  "port": 8082,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v3.3.4",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Share files through your browser",
+  "short_desc": "Share files through your browser",
+  "author": "rejetto",
+  "source": "https://github.com/rejetto/hfs",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://rejetto.com/hfs/",
+  "url_suffix": "/~/admin/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

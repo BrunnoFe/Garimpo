@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Petio",
+  "id": "petio",
+  "available": true,
+  "port": 7777,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "media"
+  ],
+  "description": "Um aplicativo complementar de terceiros disponível para proprietários de servidores Plex, permitindo que seus usuários solicitem, revisem e descubram conteúdo.",
+  "short_desc": "Um aplicativo complementar de terceiros disponível para proprietários de servidores Plex, permitindo que seus usuários solicitem, revisem e descubram ",
+  "author": "Petio Team",
+  "source": "https://github.com/petio-team/petio",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://petio.tv",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

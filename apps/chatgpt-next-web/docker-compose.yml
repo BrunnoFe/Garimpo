@@ -1,0 +1,20 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/ChatGPT-Next-Web).
+services:
+  chatgpt-next-web:
+    environment:
+      PGID: '1000'
+      PUID: '1000'
+      TZ: ${TZ}
+      CODE: ''
+      PROXY_URL: ''
+      BASE_URL: https://api.openai.com
+    image: yidadaa/chatgpt-next-web:v2.16.1
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+x-runtipi:
+  schema_version: 2

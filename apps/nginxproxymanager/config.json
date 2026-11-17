@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Nginx Proxy Manager",
+  "id": "nginxproxymanager",
+  "available": true,
+  "port": 20000,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "2.13.5",
+  "categories": [
+    "network"
+  ],
+  "description": "Gerenciando hosts proxy do Nginx com uma interface simples e poderosa.",
+  "short_desc": "Gerenciando hosts proxy do Nginx com uma interface simples e poderosa.",
+  "author": "Nginx Proxy Manager",
+  "source": "https://github.com/NginxProxyManager/nginx-proxy-manager",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://nginxproxymanager.com",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

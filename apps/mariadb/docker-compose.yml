@@ -1,0 +1,20 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/MariaDB).
+services:
+  mariadb:
+    image: linuxserver/mariadb:11.4.8
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: ${TZ}
+      MYSQL_ROOT_PASSWORD: casaos
+      MYSQL_DATABASE: casaos
+      MYSQL_USER: casaos
+      MYSQL_PASSWORD: casaos
+      REMOTE_SQL: ''
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    x-runtipi:
+      is_main: true
+      internal_port: 3306
+x-runtipi:
+  schema_version: 2

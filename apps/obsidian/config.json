@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Obsidian",
+  "id": "obsidian",
+  "available": true,
+  "port": 15324,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.12.7",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Obsidian é uma aplicação de gestão de conhecimento para criar, ligar e organizar visualmente notas Markdown.",
+  "short_desc": "Obsidian é uma aplicação de gestão de conhecimento para criar, ligar e organizar visualmente notas Markdown.",
+  "author": "linuxserver",
+  "source": "https://github.com/obsidianmd/obsidian-releases",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://obsidian.md",
+  "https": true,
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

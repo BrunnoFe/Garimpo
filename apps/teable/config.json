@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Teable",
+  "id": "teable",
+  "available": true,
+  "port": 3200,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "utilities"
+  ],
+  "description": "O Teable adota uma interface de planilha concisa, mas cria aplicativos de banco de dados poderosos",
+  "short_desc": "O Teable adota uma interface de planilha concisa, mas cria aplicativos de banco de dados poderosos",
+  "author": "teableio",
+  "source": "https://github.com/teableio/teable",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://teable.ai",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "PostgreSQL",
+  "id": "postgresql",
+  "available": true,
+  "port": 5432,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "17.4",
+  "categories": [
+    "development"
+  ],
+  "description": "O PostgreSQL é um sistema avançado de banco de dados relacional, de classe empresarial e de código aberto. O PostgreSQL suporta tanto consultas SQL (relacionais) quanto consultas JSON (não relacionais).",
+  "short_desc": "O PostgreSQL é um sistema avançado de banco de dados relacional, de classe empresarial e de código aberto. O PostgreSQL suporta tanto consultas SQL (r",
+  "author": "PostgreSQL Global Dev't Group",
+  "source": "https://github.com/postgres/postgres",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://www.postgresql.org",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

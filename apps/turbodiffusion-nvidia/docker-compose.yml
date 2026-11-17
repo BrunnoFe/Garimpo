@@ -1,0 +1,31 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/TurboDiffusion_Nvidia).
+services:
+  turbodiffusion-nvidia:
+    image: icewhaletech/turbodiffusion:20260312
+    deploy:
+      resources:
+        reservations:
+          memory: 40G
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities:
+            - gpu
+    environment:
+      MODEL_PATHS: /workspace/TurboDiffusion/checkpoints_host,/workspace/TurboDiffusion/checkpoints
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility,video
+      CUDA_HOME: /usr/local/cuda
+      PYTHONPATH: /workspace/TurboDiffusion/turbodiffusion
+    volumes:
+    - ${APP_DATA_DIR}/data/models:/workspace/TurboDiffusion/checkpoints_host
+    - ${APP_DATA_DIR}/data/outputs:/workspace/TurboDiffusion/outputs
+    working_dir: /workspace/TurboDiffusion
+    command:
+    - python
+    - turbodiffusion/app_gradio.py
+    x-runtipi:
+      is_main: true
+      internal_port: 7860
+x-runtipi:
+  schema_version: 2

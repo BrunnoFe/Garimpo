@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "SiYuan Note",
+  "id": "siyuan-note",
+  "available": true,
+  "port": 6806,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v3.6.5",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Private personal knowledge management",
+  "short_desc": "Private personal knowledge management",
+  "author": "siyuan-note",
+  "source": "https://github.com/siyuan-note/siyuan",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://b3log.org/siyuan/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

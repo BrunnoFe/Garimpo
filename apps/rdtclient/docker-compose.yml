@@ -1,0 +1,24 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/RDTClient).
+services:
+  rdtclient:
+    environment:
+      PGID: '1000'
+      PUID: '1000'
+      TZ: ${TZ}
+      UMASK: '002'
+    cpu_shares: 50
+    command: []
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    image: rogerfar/rdtclient:2.0.136
+    volumes:
+    - ${ROOT_FOLDER_HOST}/media/downloads:/data/downloads
+    - ${APP_DATA_DIR}/data/db:/data/db
+    privileged: false
+    x-runtipi:
+      is_main: true
+      internal_port: 6500
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,92 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Maybe).
+services:
+  maybe-web:
+    image: ghcr.io/maybe-finance/maybe:latest
+    volumes:
+    - ${APP_DATA_DIR}/data/app/storage:/rails/storage
+    environment:
+      POSTGRES_USER: maybe_user
+      POSTGRES_PASSWORD: maybe_password
+      POSTGRES_DB: maybe_production
+      SECRET_KEY_BASE: ${GARIMPO_SEGREDO_1}
+      SELF_HOSTED: 'true'
+      RAILS_FORCE_SSL: 'false'
+      RAILS_ASSUME_SSL: 'false'
+      DB_HOST: maybe-db
+      DB_PORT: 5432
+      REDIS_URL: redis://maybe-redis:6379/1
+      OPENAI_ACCESS_TOKEN: ${OPENAI_ACCESS_TOKEN}
+    depends_on:
+      maybe-db:
+        condition: service_healthy
+      maybe-redis:
+        condition: service_healthy
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+    x-runtipi:
+      is_main: true
+      internal_port: 3000
+  maybe-worker:
+    image: ghcr.io/maybe-finance/maybe:latest
+    command:
+    - bundle
+    - exec
+    - sidekiq
+    depends_on:
+      maybe-redis:
+        condition: service_healthy
+    environment:
+      POSTGRES_USER: maybe_user
+      POSTGRES_PASSWORD: maybe_password
+      POSTGRES_DB: maybe_production
+      SECRET_KEY_BASE: ${GARIMPO_SEGREDO_1}
+      SELF_HOSTED: 'true'
+      RAILS_FORCE_SSL: 'false'
+      RAILS_ASSUME_SSL: 'false'
+      DB_HOST: maybe-db
+      DB_PORT: 5432
+      REDIS_URL: redis://maybe-redis:6379/1
+      OPENAI_ACCESS_TOKEN: ${OPENAI_ACCESS_TOKEN}
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+  maybe-db:
+    image: postgres:16
+    volumes:
+    - ${APP_DATA_DIR}/data/pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: maybe_user
+      POSTGRES_PASSWORD: maybe_password
+      POSTGRES_DB: maybe_production
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U maybe_user -d maybe_production
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+  maybe-redis:
+    image: redis:8.2.1-alpine3.22
+    volumes:
+    - ${APP_DATA_DIR}/data/redis/data:/data
+    healthcheck:
+      test:
+      - CMD
+      - redis-cli
+      - ping
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+x-runtipi:
+  schema_version: 2

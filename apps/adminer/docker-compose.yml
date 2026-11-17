@@ -1,0 +1,13 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Adminer).
+services:
+  adminer:
+    image: adminer:5.4.2
+    deploy:
+      resources:
+        reservations:
+          memory: 32M
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+x-runtipi:
+  schema_version: 2

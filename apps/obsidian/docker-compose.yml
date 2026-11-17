@@ -1,0 +1,24 @@
+# Convertido pelo Garimpo do BrunOS a partir de https://github.com/IceWhaleTech/CasaOS-AppStore (Apps/Obsidian).
+services:
+  obsidian:
+    image: lscr.io/linuxserver/obsidian:1.12.7
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    shm_size: 1gb
+    ports:
+    - target: 3000
+      published: '15323'
+      protocol: tcp
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: ${TZ}
+    x-runtipi:
+      is_main: true
+      internal_port: 3001
+x-runtipi:
+  schema_version: 2

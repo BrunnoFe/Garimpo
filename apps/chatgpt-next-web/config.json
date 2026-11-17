@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "ChatGPT Next Web",
+  "id": "chatgpt-next-web",
+  "available": true,
+  "port": 3002,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v2.16.1",
+  "categories": [
+    "ai"
+  ],
+  "description": "A well-designed cross-platform ChatGPT UI.",
+  "short_desc": "A well-designed cross-platform ChatGPT UI.",
+  "author": "Yidadaa",
+  "source": "https://github.com/ChatGPTNextWeb/NextChat",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://nextchat.club",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "AdGuard Home",
+  "id": "adguard-home",
+  "available": true,
+  "port": 3001,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "v0.107.79",
+  "categories": [
+    "network"
+  ],
+  "description": "Servidor DNS de bloqueio de anúncios e rastreadores em nível de rede",
+  "short_desc": "Servidor DNS de bloqueio de anúncios e rastreadores em nível de rede",
+  "author": "AdguardTeam",
+  "source": "https://github.com/AdguardTeam/AdGuardHome",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "website": "https://adguard.com/en/adguard-home/overview.html",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}

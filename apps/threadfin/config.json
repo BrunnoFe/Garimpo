@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.runtipi.io/app-info.json",
+  "name": "Threadfin",
+  "id": "threadfin",
+  "available": true,
+  "port": 34400,
+  "exposable": true,
+  "dynamic_config": true,
+  "tipi_version": 1,
+  "version": "1.2.37",
+  "categories": [
+    "media"
+  ],
+  "description": "M3U proxy server",
+  "short_desc": "M3U proxy server",
+  "author": "jdownloader",
+  "source": "https://github.com/Threadfin/Threadfin",
+  "form_fields": [],
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "min_tipi_version": "4.7.0",
+  "url_suffix": "/web/",
+  "created_at": 1794934190919,
+  "updated_at": 1794934190919
+}
