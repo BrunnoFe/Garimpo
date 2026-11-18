@@ -64,6 +64,23 @@ USUARIO_NOME = re.compile(r"(^|_)(USER|USERNAME)$|^(ADMIN|ROOT|WEBUI|WEB|UI)_?(U
 BANCO_NOME = re.compile(r"^(DB|DATABASE|POSTGRES|PG|MYSQL|MARIADB|MONGO|MONGODB|REDIS|SQL|ELASTIC|ELASTICSEARCH|OPENSEARCH|MINIO|"
                         r"RABBITMQ|INFLUX|INFLUXDB|CLICKHOUSE|MEILI|NEO4J|ARANGO|KEYDB|VALKEY)_", re.I)
 SIM_NAO = {"true", "false", "yes", "no", "on", "off", "0", "1", ""}
+# programas de computador com tela pelo navegador (LinuxServer.io, KasmVNC/Selkies): navegadores baseados no
+# Chromium travam com os 64 MB de /dev/shm do Docker; o LinuxServer recomenda shm_size 1gb. A mesma lista do
+# BrunOS (internal/appcfg/recipe.go, desktopImages).
+DESKTOP = {"brave", "chromium", "firefox", "librewolf", "mullvad-browser", "opera", "vivaldi", "ungoogled-chromium", "webtop",
+           "obsidian", "libreoffice", "kicad", "freecad", "blender", "gimp", "inkscape", "krita", "digikam", "darktable",
+           "kdenlive", "calibre", "rdesktop", "remmina", "steamos", "kasm", "signal", "telegram", "thunderbird", "zotero",
+           "audacity", "handbrake"}
+
+
+def imagem_desktop(imagem):
+    repo = str(imagem or "").split("@")[0]
+    if repo.rfind(":") > repo.rfind("/"):
+        repo = repo[:repo.rfind(":")]
+    for p in ("linuxserver/", "lscr.io/linuxserver/", "ghcr.io/linuxserver/"):
+        if repo.startswith(p):
+            return repo[len(p):] in DESKTOP
+    return False
 COMUNS = {"TZ", "PUID", "PGID", "UMASK", "UMASK_SET", "LANG", "LANGUAGE", "LC_ALL", "PORT", "WEBUI_PORT", "HOST",
           "UID", "GID", "USER_ID", "GROUP_ID"}
 
@@ -583,6 +600,8 @@ def converte_app(pasta, compose, origem, oficiais, usados_ids, excecoes=None):
         aplica_trocas(s, trocas_env.get(n))
         if n == principal:
             s["image"], versao = imagem_e_versao(s.get("image"))
+            if imagem_desktop(s["image"]) and "shm_size" not in s:
+                s["shm_size"] = "1gb"  # sem isso o navegador fica lento e travando (64 MB do Docker)
         if n == web and n == rede_host:
             porta_ui = porta_interna = int(mapa_porta)
             s["x-runtipi"] = {"is_main": True, "internal_port": porta_interna}

@@ -265,6 +265,13 @@ x-casaos: {main: web, port_map: "3701", title: {en_US: Pilha}}
         self.assertNotIn("x-runtipi", comp["services"]["web"])
         self.assertEqual(comp["services"]["db"]["volumes"], ["${APP_DATA_DIR}/data/db:/var/lib/postgresql/data"])
 
+    def test_navegador_ganha_memoria_compartilhada(self):
+        txt = SIMPLES.replace("image: exemplo/meuapp:1.2.3", "image: lscr.io/linuxserver/brave:1.99")
+        _, _, comp, _, _ = self.converte(txt)
+        self.assertEqual(comp["services"]["meuapp"]["shm_size"], "1gb")
+        _, _, comp, _, _ = self.converte(SIMPLES)
+        self.assertNotIn("shm_size", comp["services"]["meuapp"])
+
     def test_imagem_sem_tag(self):
         self.assertEqual(c.imagem_e_versao("nginx"), ("nginx:latest", "latest"))
         self.assertEqual(c.imagem_e_versao("ghcr.io:443/a/b@sha256:abc"), ("ghcr.io:443/a/b:latest", "latest"))
