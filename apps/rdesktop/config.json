@@ -6,7 +6,7 @@
   "port": 3389,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "arch-kde-version-arch-2025-01-10",
   "categories": [
     "utilities"
@@ -22,5 +22,5 @@
   ],
   "min_tipi_version": "4.7.0",
   "created_at": 1794954319126,
-  "updated_at": 1794954319126
+  "updated_at": 1794962762809
 }

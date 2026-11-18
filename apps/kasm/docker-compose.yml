@@ -13,6 +13,7 @@ services:
     - ${APP_DATA_DIR}/data/profiles:/profiles
     - /dev/input:/dev/input
     - /run/udev/data:/run/udev/data
+    shm_size: 1gb
     x-runtipi:
       is_main: true
       internal_port: 443

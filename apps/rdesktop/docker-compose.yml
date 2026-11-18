@@ -10,6 +10,7 @@ services:
     - ${APP_DATA_DIR}/data/config:/config
     - /var/run/docker.sock:/var/run/docker.sock
     - ${APP_DATA_DIR}/data/config:/config
+    shm_size: 1gb
     x-runtipi:
       is_main: true
       internal_port: 3389
