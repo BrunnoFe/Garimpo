@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Socket-proxy).
 services:
   socket-proxy:
-    image: linuxserver/socket-proxy:3.4.7
+    image: linuxserver/socket-proxy:3.4.8
     environment:
       PUID: '1000'
       PGID: '1000'

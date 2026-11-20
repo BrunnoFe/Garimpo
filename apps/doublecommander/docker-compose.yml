@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Doublecommander).
 services:
   doublecommander:
-    image: linuxserver/doublecommander:version-9d9541b7
+    image: linuxserver/doublecommander:version-8426aaaf
     environment:
       PUID: '1000'
       PGID: '1000'

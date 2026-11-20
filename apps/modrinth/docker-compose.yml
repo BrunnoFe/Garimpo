@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Modrinth).
 services:
   modrinth:
-    image: linuxserver/modrinth:0.23.3
+    image: linuxserver/modrinth:0.23.4
     environment:
       PUID: '1000'
       PGID: '1000'

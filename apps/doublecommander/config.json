@@ -6,8 +6,8 @@
   "port": 3019,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 1,
-  "version": "version-9d9541b7",
+  "tipi_version": 2,
+  "version": "version-8426aaaf",
   "categories": [
     "utilities"
   ],
@@ -22,5 +22,5 @@
   ],
   "min_tipi_version": "4.7.0",
   "created_at": 1794933869158,
-  "updated_at": 1794933869158
+  "updated_at": 1795188389180
 }
