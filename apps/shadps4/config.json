@@ -6,8 +6,8 @@
   "port": 3070,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 2,
-  "version": "version-shadPS4QtLauncher-2026-11-19-0cf4b97c70815faed8cbdfae77cdd582ce2abbea",
+  "tipi_version": 3,
+  "version": "version-shadPS4QtLauncher-2026-11-19-1c35b9b147a8e67474fba6500bdfc309bef6f8e1",
   "categories": [
     "media"
   ],
@@ -21,5 +21,5 @@
   ],
   "min_tipi_version": "4.7.0",
   "created_at": 1794933869158,
-  "updated_at": 1795188389180
+  "updated_at": 1795271905156
 }

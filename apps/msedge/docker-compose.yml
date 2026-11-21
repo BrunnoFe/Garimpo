@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Msedge).
 services:
   msedge:
-    image: linuxserver/msedge:157.0.4341
+    image: linuxserver/msedge:158.0.4370
     environment:
       PUID: '1000'
       PGID: '1000'

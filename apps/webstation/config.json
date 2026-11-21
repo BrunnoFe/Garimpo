@@ -6,8 +6,8 @@
   "port": 3085,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 1,
-  "version": "0.15.3-romm",
+  "tipi_version": 2,
+  "version": "version-3ec33b0e",
   "categories": [
     "utilities"
   ],
@@ -21,5 +21,5 @@
   ],
   "min_tipi_version": "4.7.0",
   "created_at": 1794933869158,
-  "updated_at": 1794933869158
+  "updated_at": 1795271905156
 }

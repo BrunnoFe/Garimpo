@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Hishtory-server).
 services:
   hishtory-server:
-    image: linuxserver/hishtory-server:0.335.20261113
+    image: linuxserver/hishtory-server:0.335.20261120
     environment:
       PUID: '1000'
       PGID: '1000'
