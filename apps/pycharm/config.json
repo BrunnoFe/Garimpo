@@ -6,8 +6,8 @@
   "port": 3061,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 3,
-  "version": "2026.3.20261118",
+  "tipi_version": 4,
+  "version": "2026.3.20261120",
   "categories": [
     "development"
   ],
@@ -21,5 +21,5 @@
   ],
   "min_tipi_version": "4.7.0",
   "created_at": 1794933869158,
-  "updated_at": 1795188389180
+  "updated_at": 1795357960435
 }

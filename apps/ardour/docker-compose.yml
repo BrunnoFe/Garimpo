@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Ardour).
 services:
   ardour:
-    image: linuxserver/ardour:version-2026-11-13
+    image: linuxserver/ardour:version-2026-11-20
     environment:
       PUID: '1000'
       PGID: '1000'
