@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Modmanager).
 services:
   modmanager:
-    image: linuxserver/modmanager:version-c8a9fb60
+    image: linuxserver/modmanager:version-f1ed0aaa
     environment:
       PUID: '1000'
       PGID: '1000'

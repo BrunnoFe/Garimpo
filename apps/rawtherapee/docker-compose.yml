@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Rawtherapee).
 services:
   rawtherapee:
-    image: linuxserver/rawtherapee:5.13.20261115
+    image: linuxserver/rawtherapee:5.13.20261122
     environment:
       PUID: '1000'
       PGID: '1000'

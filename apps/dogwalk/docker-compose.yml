@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Dogwalk).
 services:
   dogwalk:
-    image: linuxserver/dogwalk:version-2508f138
+    image: linuxserver/dogwalk:version-95d4032a
     environment:
       PUID: '1000'
       PGID: '1000'

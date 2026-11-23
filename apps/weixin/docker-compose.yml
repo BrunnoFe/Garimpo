@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Weixin).
 services:
   weixin:
-    image: linuxserver/weixin:version-80cf79b7
+    image: linuxserver/weixin:version-d87de7e4
     environment:
       PUID: '1000'
       PGID: '1000'

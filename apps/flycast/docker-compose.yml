@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Flycast).
 services:
   flycast:
-    image: linuxserver/flycast:2.7.20261115
+    image: linuxserver/flycast:2.7.20261122
     environment:
       PUID: '1000'
       PGID: '1000'
