@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Kali-linux).
 services:
   kali-linux:
-    image: linuxserver/kali-linux:version-e9bd8cdf
+    image: linuxserver/kali-linux:version-69f17fb6
     environment:
       PUID: '1000'
       PGID: '1000'

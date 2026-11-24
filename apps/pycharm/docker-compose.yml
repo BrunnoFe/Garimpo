@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Pycharm).
 services:
   pycharm:
-    image: linuxserver/pycharm:2026.3.20261123
+    image: linuxserver/pycharm:2026.3.20261124
     environment:
       PUID: '1000'
       PGID: '1000'
