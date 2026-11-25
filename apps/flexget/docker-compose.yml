@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Flexget).
 services:
   flexget:
-    image: linuxserver/flexget:3.22.13
+    image: linuxserver/flexget:3.22.14
     environment:
       PUID: '1000'
       PGID: '1000'

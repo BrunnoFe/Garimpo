@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Vscode).
 services:
   vscode:
-    image: linuxserver/vscode:1.146.0
+    image: linuxserver/vscode:1.147.0
     environment:
       PUID: '1000'
       PGID: '1000'
