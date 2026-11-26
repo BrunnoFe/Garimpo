@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Steam).
 services:
   steam:
-    image: linuxserver/steam:version-3590ed9a
+    image: linuxserver/steam:version-0bcb325f
     environment:
       PUID: '1000'
       PGID: '1000'

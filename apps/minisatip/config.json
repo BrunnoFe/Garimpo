@@ -6,8 +6,8 @@
   "port": 8875,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 3,
-  "version": "2.0.202",
+  "tipi_version": 4,
+  "version": "2.0.203",
   "categories": [
     "media"
   ],
@@ -22,5 +22,5 @@
   ],
   "min_tipi_version": "4.7.0",
   "created_at": 1794933869158,
-  "updated_at": 1795626746103
+  "updated_at": 1795711936240
 }

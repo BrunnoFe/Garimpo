@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Altus).
 services:
   altus:
-    image: linuxserver/altus:5.8.3
+    image: linuxserver/altus:5.8.4
     environment:
       PUID: '1000'
       PGID: '1000'

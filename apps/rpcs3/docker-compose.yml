@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Rpcs3).
 services:
   rpcs3:
-    image: linuxserver/rpcs3:version-build-d264e2f19ff82d8313474549a8e78ae8f03b8060
+    image: linuxserver/rpcs3:version-build-0ca5eb0efe50ec4e8aa07892ab86d57842246eb4
     environment:
       PUID: '1000'
       PGID: '1000'

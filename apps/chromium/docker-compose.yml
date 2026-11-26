@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Chromium).
 services:
   chromium:
-    image: linuxserver/chromium:version-075b0b99
+    image: linuxserver/chromium:version-b8f70cfa
     environment:
       PUID: '1000'
       PGID: '1000'

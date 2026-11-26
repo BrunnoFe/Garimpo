@@ -6,8 +6,8 @@
   "port": 5299,
   "exposable": true,
   "dynamic_config": true,
-  "tipi_version": 7,
-  "version": "version-01795c70",
+  "tipi_version": 8,
+  "version": "version-4a554fc2",
   "categories": [
     "media"
   ],
@@ -22,5 +22,5 @@
   ],
   "min_tipi_version": "4.7.0",
   "created_at": 1794933869158,
-  "updated_at": 1795626746103
+  "updated_at": 1795711936240
 }
