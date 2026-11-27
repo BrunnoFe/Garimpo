@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Blade-of-agony).
 services:
   blade-of-agony:
-    image: linuxserver/blade-of-agony:3.1.20261119
+    image: linuxserver/blade-of-agony:3.1.20261127
     environment:
       PUID: '1000'
       PGID: '1000'

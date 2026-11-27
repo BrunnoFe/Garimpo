@@ -1,7 +1,7 @@
 # Convertido pelo Garimpo do BrunOS a partir de https://github.com/WisdomSky/LinuxServer-AppStore (Apps/Intellij-idea).
 services:
   intellij-idea:
-    image: linuxserver/intellij-idea:2026.3.20261122
+    image: linuxserver/intellij-idea:2026.3.20261127
     environment:
       PUID: '1000'
       PGID: '1000'
